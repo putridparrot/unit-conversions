@@ -1,7 +1,7 @@
 {
     "name": "conversion-units",
     "version": "0.1.0",
-    "description": "Units of measure package",
+    "description": "Unit conversion package",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
     "scripts": {
