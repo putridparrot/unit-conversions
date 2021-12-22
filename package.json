@@ -1,0 +1,15 @@
+{
+    "name": "conversion-units",
+    "version": "0.1.0",
+    "description": "Units of measure package",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts",
+    "scripts": {
+      "prepublish": "tsc"
+    },
+    "devDependencies": {
+      "typescript": "^4.1.3"
+    },
+    "author": "PutridParrot",
+    "license": "MIT"
+  }
