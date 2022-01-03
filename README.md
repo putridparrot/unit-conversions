@@ -11,7 +11,11 @@ The main aim for this project is to produce conversion functions for the various
 
 Example of usage:
 
-var fahrenheit = Temperature.Celsius.toFahrenheit(12.0);
+```
+import { Temperature } from '@putridparrot/conversion-units';
+
+console.log(Temperature.Celsius.toFahrenheit(12.0));
+```
 
 Each unit of measure then includes functions to convert to each for example, converting each Temperature unit of measure to each other Temperature.
 

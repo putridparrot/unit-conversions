@@ -4,12 +4,25 @@
     "description": "Units of measure converters package",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
+    "keywords": [
+      "units",
+      "conversion",
+      "convert",
+      "unit of measure"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/putridparrot/unit-conversions"
+    },
     "scripts": {
       "build": "tsc"
     },
     "devDependencies": {
       "typescript": "^4.1.3"
     },
-    "author": "PutridParrot",
+    "author": {
+      "name": "Mark Timmings",
+      "email": "mark.timmings@putridparrot.com"
+    },
     "license": "MIT"
   }
