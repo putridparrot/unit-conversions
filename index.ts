@@ -5,7 +5,7 @@ export { Energy } from './src/Energy';
 export { Frequency } from './src/Frequency';
 export { Length } from './src/Length';
 export { LuminousEnergy } from './src/LuminousEnergy';
-export { LuminousIntensity } from './src/LuminousIntensity';
+// export { LuminousIntensity } from './src/LuminousIntensity';
 export { MagnetomotiveForce } from './src/MagnetomotiveForce';
 export { Mass } from './src/Mass';
 export { Pressure } from './src/Pressure';
