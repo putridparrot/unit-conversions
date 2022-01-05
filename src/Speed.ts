@@ -7,31 +7,31 @@
 export namespace Speed {
 	export class FeetPerSecond {
 		static toMilesPerHour(value: number): number {
-			return value * 0.681818;
+			return value / 1.46667;
 		}
 		static toKilometresPerHour(value: number): number {
 			return value * 1.09728;
 		}
 		static toMetresPerSecond(value: number): number {
-			return value * 0.3048;
+			return value / 3.28084;
 		}
 		static toKnots(value: number): number {
-			return value * 0.592484;
+			return value / 1.68781;
 		}
 	}
 
 	export class KilometresPerHour {
 		static toMilesPerHour(value: number): number {
-			return value * 0.621371;
+			return value / 1.60934;
 		}
 		static toFeetPerSecond(value: number): number {
-			return value * 0.911344;
+			return value / 1.09728;
 		}
 		static toMetresPerSecond(value: number): number {
-			return value * 0.277778;
+			return value / 3.6;
 		}
 		static toKnots(value: number): number {
-			return value * 0.539957;
+			return value / 1.852;
 		}
 	}
 
@@ -46,7 +46,7 @@ export namespace Speed {
 			return value * 1.68781;
 		}
 		static toMetresPerSecond(value: number): number {
-			return value * 0.514444;
+			return value / 1.94384;
 		}
 	}
 
@@ -73,10 +73,10 @@ export namespace Speed {
 			return value * 1.46667;
 		}
 		static toMetresPerSecond(value: number): number {
-			return value * 0.44704;
+			return value / 2.23694;
 		}
 		static toKnots(value: number): number {
-			return value * 0.868976;
+			return value / 1.15078;
 		}
 	}
 }

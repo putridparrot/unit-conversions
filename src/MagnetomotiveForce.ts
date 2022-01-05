@@ -7,7 +7,7 @@
 export namespace MagnetomotiveForce {
 	export class Ampereturns {
 		static toGilberts(value: number): number {
-			return value * 1.256637061436;
+			return value / 0.7957747154595;
 		}
 	}
 

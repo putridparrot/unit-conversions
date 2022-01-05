@@ -97,7 +97,7 @@ export namespace Energy {
 			return value / 4184.0;
 		}
 		static toBtu(value: number): number {
-			return value / 1055.0;
+			return value / 1055.06;
 		}
 		static toCalories(value: number): number {
 			return value / 4.184;

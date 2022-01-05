@@ -325,7 +325,7 @@ it('From GigaBits Per Second to Kibibits Per Second and back', () => {
 });
 
 it('Convert known GigaBits Per Second to Kibibits Per Second', () => {
-    expect(DataTransferRate.GigaBitsPerSecond.toKibibitsPerSecond(0.8)).toBeCloseTo(781250.4, 1);
+    expect(DataTransferRate.GigaBitsPerSecond.toKibibitsPerSecond(0.8)).toBeCloseTo(781250.0, 1);
     expect(DataTransferRate.GigaBitsPerSecond.toKibibitsPerSecond(0.012)).toBeCloseTo(11718.75, 1);
     expect(DataTransferRate.GigaBitsPerSecond.toKibibitsPerSecond(0.002)).toBeCloseTo(1953.125, 1);
 });

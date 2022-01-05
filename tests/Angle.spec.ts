@@ -56,6 +56,7 @@ it('Convert known Degrees to Milliradians', () => {
     expect(Angle.Degrees.toMilliradians(900.0)).toBeCloseTo(15707.969, 1);
     expect(Angle.Degrees.toMilliradians(76.0)).toBeCloseTo(1326.45, 1);
     expect(Angle.Degrees.toMilliradians(4.5)).toBeCloseTo(78.5398, 1);
+    expect(Angle.Degrees.toMilliradians(23333.11)).toBeCloseTo(407239.5873, 1);
 });
 
 it('From Degrees to Minute Of Arc and back', () => {
@@ -139,8 +140,8 @@ it('From Gradians to Milliradians and back', () => {
 
 it('Convert known Gradians to Milliradians', () => {
     expect(Angle.Gradians.toMilliradians(8.1)).toBeCloseTo(127.2348, 1);
-    expect(Angle.Gradians.toMilliradians(900.0)).toBeCloseTo(14137.2, 1);
-    expect(Angle.Gradians.toMilliradians(1902.5)).toBeCloseTo(29884.47, 1);
+    expect(Angle.Gradians.toMilliradians(900.0)).toBeCloseTo(14137.167, 1);
+    expect(Angle.Gradians.toMilliradians(1902.5)).toBeCloseTo(29884.4, 1);
 });
 
 it('From Gradians to Minute Of Arc and back', () => {
@@ -192,6 +193,7 @@ it('Convert known Milliradians to Degrees', () => {
     expect(Angle.Milliradians.toDegrees(5.9)).toBeCloseTo(0.338045, 1);
     expect(Angle.Milliradians.toDegrees(109.0)).toBeCloseTo(6.24524, 1);
     expect(Angle.Milliradians.toDegrees(7009.0)).toBeCloseTo(401.5861, 1);
+    expect(Angle.Milliradians.toDegrees(407239.5873)).toBeCloseTo(23333.11, 1);
 });
 
 it('From Milliradians to Radians and back', () => {

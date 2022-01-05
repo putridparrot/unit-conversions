@@ -61,7 +61,7 @@ export namespace Volume {
 			return value * 4.546091879;
 		}
 		static toKilolitres(value: number): number {
-			return value * 0.004546091879;
+			return value * 0.0045460918799;
 		}
 		static toTeaspoons(value: number): number {
 			return value * 768.0;

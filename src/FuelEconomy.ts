@@ -19,7 +19,7 @@ export namespace FuelEconomy {
 			return value / 2.82481;
 		}
 		static toUSMilesPerGallon(value: number): number {
-			return value / 1.201;
+			return value / 1.20095;
 		}
 	}
 
@@ -28,7 +28,7 @@ export namespace FuelEconomy {
 			return value / 2.35215;
 		}
 		static toMilesPerGallon(value: number): number {
-			return value * 1.201;
+			return value * 1.20095;
 		}
 	}
 }

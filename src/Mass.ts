@@ -43,7 +43,7 @@ export namespace Mass {
 			return value * 2.20462;
 		}
 		static toStones(value: number): number {
-			return value * 0.157473;
+			return value / 6.35029;
 		}
 	}
 
@@ -76,7 +76,7 @@ export namespace Mass {
 			return value * 28.3495231;
 		}
 		static toKilograms(value: number): number {
-			return value * 0.0283495;
+			return value / 35.274;
 		}
 		static toTonnes(value: number): number {
 			return value * 0.0000283495231;
@@ -85,7 +85,7 @@ export namespace Mass {
 			return value * 0.0625;
 		}
 		static toStones(value: number): number {
-			return value * 0.00446429;
+			return value / 224.0;
 		}
 	}
 
@@ -97,7 +97,7 @@ export namespace Mass {
 			return value * 453.59237;
 		}
 		static toKilograms(value: number): number {
-			return value * 0.453592;
+			return value / 2.20462;
 		}
 		static toTonnes(value: number): number {
 			return value / 2204.62;
@@ -121,7 +121,7 @@ export namespace Mass {
 			return value * 6.35029;
 		}
 		static toTonnes(value: number): number {
-			return value * 0.00635029;
+			return value / 157.473;
 		}
 		static toOunces(value: number): number {
 			return value * 224.0;

@@ -13,7 +13,7 @@ export namespace Angle {
 			return value * 200.0/180.0;
 		}
 		static toMilliradians(value: number): number {
-			return value * 17.4533;
+			return value * (1000.0 * Math.PI)/180.0;
 		}
 		static toMinuteOfArc(value: number): number {
 			return value * 60.0;
@@ -31,7 +31,7 @@ export namespace Angle {
 			return value * Math.PI/200.0;
 		}
 		static toMilliradians(value: number): number {
-			return value * 15.708;
+			return value * (1000.0*Math.PI)/200.0;
 		}
 		static toMinuteOfArc(value: number): number {
 			return value * 54.0;

@@ -325,7 +325,7 @@ it('From Gigabits to Kibibits and back', () => {
 });
 
 it('Convert known Gigabits to Kibibits', () => {
-    expect(DataStorage.Gigabits.toKibibits(0.8)).toBeCloseTo(781250.4, 1);
+    expect(DataStorage.Gigabits.toKibibits(0.8)).toBeCloseTo(781250.0, 1);
     expect(DataStorage.Gigabits.toKibibits(0.012)).toBeCloseTo(11718.75, 1);
     expect(DataStorage.Gigabits.toKibibits(0.002)).toBeCloseTo(1953.125, 1);
 });
