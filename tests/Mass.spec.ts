@@ -7,6 +7,125 @@
 import * as fc from 'fast-check';
 import { Mass } from '../src/Mass';
 
+it('From Carats to Milligrams and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Mass.Carats.toMilligrams(value)
+            const convertBack = Mass.Milligrams.toCarats(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Carats to Milligrams', () => {
+    expect(Mass.Carats.toMilligrams(2.1)).toBeCloseTo(420.0, 1);
+    expect(Mass.Carats.toMilligrams(123.0)).toBeCloseTo(24600.0, 1);
+    expect(Mass.Carats.toMilligrams(0.8)).toBeCloseTo(160.0, 1);
+});
+
+it('From Carats to Grams and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Mass.Carats.toGrams(value)
+            const convertBack = Mass.Grams.toCarats(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Carats to Grams', () => {
+    expect(Mass.Carats.toGrams(0.8)).toBeCloseTo(0.16, 1);
+    expect(Mass.Carats.toGrams(1.5)).toBeCloseTo(0.3, 1);
+    expect(Mass.Carats.toGrams(12.0)).toBeCloseTo(2.4, 1);
+});
+
+it('From Carats to Kilograms and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Mass.Carats.toKilograms(value)
+            const convertBack = Mass.Kilograms.toCarats(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Carats to Kilograms', () => {
+    expect(Mass.Carats.toKilograms(1009.0)).toBeCloseTo(0.2018, 1);
+    expect(Mass.Carats.toKilograms(999.0)).toBeCloseTo(0.1998, 1);
+    expect(Mass.Carats.toKilograms(1234.5)).toBeCloseTo(0.2469, 1);
+});
+
+it('From Carats to Tonnes and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Mass.Carats.toTonnes(value)
+            const convertBack = Mass.Tonnes.toCarats(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Carats to Tonnes', () => {
+    expect(Mass.Carats.toTonnes(1234567.0)).toBeCloseTo(0.2469134, 1);
+    expect(Mass.Carats.toTonnes(9999999.0)).toBeCloseTo(1.9999998, 1);
+    expect(Mass.Carats.toTonnes(998877.99)).toBeCloseTo(0.199775598, 1);
+});
+
+it('From Carats to Ounces and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Mass.Carats.toOunces(value)
+            const convertBack = Mass.Ounces.toCarats(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Carats to Ounces', () => {
+    expect(Mass.Carats.toOunces(900.0)).toBeCloseTo(6.34931, 1);
+    expect(Mass.Carats.toOunces(123.45)).toBeCloseTo(0.870914121, 1);
+    expect(Mass.Carats.toOunces(800.0)).toBeCloseTo(5.64383, 1);
+});
+
+it('From Carats to Pounds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Mass.Carats.toPounds(value)
+            const convertBack = Mass.Pounds.toCarats(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Carats to Pounds', () => {
+    expect(Mass.Carats.toPounds(1000.0)).toBeCloseTo(0.440925, 1);
+    expect(Mass.Carats.toPounds(123456.0)).toBeCloseTo(54.4347781, 1);
+    expect(Mass.Carats.toPounds(800.0)).toBeCloseTo(0.35274, 1);
+});
+
+it('From Carats to Stones and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Mass.Carats.toStones(value)
+            const convertBack = Mass.Stones.toCarats(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Carats to Stones', () => {
+    expect(Mass.Carats.toStones(9000.0)).toBeCloseTo(0.2834515, 1);
+    expect(Mass.Carats.toStones(123456.0)).toBeCloseTo(3.88819843, 1);
+    expect(Mass.Carats.toStones(80000.8)).toBeCloseTo(2.519593906, 1);
+});
+
 it('From Grams to Milligrams and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -107,6 +226,23 @@ it('Convert known Grams to Stones', () => {
     expect(Mass.Grams.toStones(8000.0)).toBeCloseTo(1.259784, 1);
     expect(Mass.Grams.toStones(12345.0)).toBeCloseTo(1.9440047, 1);
     expect(Mass.Grams.toStones(900.0)).toBeCloseTo(0.141726, 1);
+});
+
+it('From Grams to Carats and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Mass.Grams.toCarats(value)
+            const convertBack = Mass.Carats.toGrams(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Grams to Carats', () => {
+    expect(Mass.Grams.toCarats(123.0)).toBeCloseTo(615.0, 1);
+    expect(Mass.Grams.toCarats(90.1)).toBeCloseTo(450.5, 1);
+    expect(Mass.Grams.toCarats(5000.0)).toBeCloseTo(25000.0, 1);
 });
 
 it('From Kilograms to Milligrams and back', () => {
@@ -211,6 +347,23 @@ it('Convert known Kilograms to Stones', () => {
     expect(Mass.Kilograms.toStones(1.2)).toBeCloseTo(0.188968, 1);
 });
 
+it('From Kilograms to Carats and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Mass.Kilograms.toCarats(value)
+            const convertBack = Mass.Carats.toKilograms(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Kilograms to Carats', () => {
+    expect(Mass.Kilograms.toCarats(0.1)).toBeCloseTo(500.0, 1);
+    expect(Mass.Kilograms.toCarats(0.08)).toBeCloseTo(400.0, 1);
+    expect(Mass.Kilograms.toCarats(2.0)).toBeCloseTo(10000.0, 1);
+});
+
 it('From Milligrams to Grams and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -311,6 +464,23 @@ it('Convert known Milligrams to Stones', () => {
     expect(Mass.Milligrams.toStones(900000.0)).toBeCloseTo(0.14172574, 1);
     expect(Mass.Milligrams.toStones(12345678.0)).toBeCloseTo(1.9441115001, 1);
     expect(Mass.Milligrams.toStones(800100.0)).toBeCloseTo(0.125994183, 1);
+});
+
+it('From Milligrams to Carats and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Mass.Milligrams.toCarats(value)
+            const convertBack = Mass.Carats.toMilligrams(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Milligrams to Carats', () => {
+    expect(Mass.Milligrams.toCarats(600.0)).toBeCloseTo(3.0, 1);
+    expect(Mass.Milligrams.toCarats(1234.0)).toBeCloseTo(6.17, 1);
+    expect(Mass.Milligrams.toCarats(9090.0)).toBeCloseTo(45.45, 1);
 });
 
 it('From Ounces to Milligrams and back', () => {
@@ -415,6 +585,23 @@ it('Convert known Ounces to Stones', () => {
     expect(Mass.Ounces.toStones(1234.5)).toBeCloseTo(5.51116071, 1);
 });
 
+it('From Ounces to Carats and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Mass.Ounces.toCarats(value)
+            const convertBack = Mass.Carats.toOunces(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Ounces to Carats', () => {
+    expect(Mass.Ounces.toCarats(0.0012)).toBeCloseTo(0.170097139, 1);
+    expect(Mass.Ounces.toCarats(4.0)).toBeCloseTo(566.99, 1);
+    expect(Mass.Ounces.toCarats(1.4)).toBeCloseTo(198.447, 1);
+});
+
 it('From Pounds to Milligrams and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -515,6 +702,23 @@ it('Convert known Pounds to Stones', () => {
     expect(Mass.Pounds.toStones(89.1)).toBeCloseTo(6.364286, 1);
     expect(Mass.Pounds.toStones(1.2)).toBeCloseTo(0.0857143, 1);
     expect(Mass.Pounds.toStones(789.0)).toBeCloseTo(56.3571, 1);
+});
+
+it('From Pounds to Carats and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Mass.Pounds.toCarats(value)
+            const convertBack = Mass.Carats.toPounds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Pounds to Carats', () => {
+    expect(Mass.Pounds.toCarats(80.0)).toBeCloseTo(181436.7522, 1);
+    expect(Mass.Pounds.toCarats(2.34)).toBeCloseTo(5307.031, 1);
+    expect(Mass.Pounds.toCarats(0.9)).toBeCloseTo(2041.17, 1);
 });
 
 it('From Stones to Milligrams and back', () => {
@@ -619,6 +823,23 @@ it('Convert known Stones to Pounds', () => {
     expect(Mass.Stones.toPounds(52.1)).toBeCloseTo(729.4, 1);
 });
 
+it('From Stones to Carats and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Mass.Stones.toCarats(value)
+            const convertBack = Mass.Carats.toStones(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Stones to Carats', () => {
+    expect(Mass.Stones.toCarats(0.01)).toBeCloseTo(317.5147, 1);
+    expect(Mass.Stones.toCarats(0.006)).toBeCloseTo(190.5088, 1);
+    expect(Mass.Stones.toCarats(2.1)).toBeCloseTo(66677.25, 1);
+});
+
 it('From Tonnes to Milligrams and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -719,5 +940,22 @@ it('Convert known Tonnes to Stones', () => {
     expect(Mass.Tonnes.toStones(12.0)).toBeCloseTo(1889.68, 1);
     expect(Mass.Tonnes.toStones(8.4)).toBeCloseTo(1322.77, 1);
     expect(Mass.Tonnes.toStones(0.3)).toBeCloseTo(47.2419, 1);
+});
+
+it('From Tonnes to Carats and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Mass.Tonnes.toCarats(value)
+            const convertBack = Mass.Carats.toTonnes(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Tonnes to Carats', () => {
+    expect(Mass.Tonnes.toCarats(0.003)).toBeCloseTo(15000.0, 1);
+    expect(Mass.Tonnes.toCarats(0.09)).toBeCloseTo(450000.0, 1);
+    expect(Mass.Tonnes.toCarats(0.0012)).toBeCloseTo(6000.0, 1);
 });
 

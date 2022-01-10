@@ -5,6 +5,30 @@
 // </auto-generated>
 
 export namespace Mass {
+	export class Carats {
+		static toMilligrams(value: number): number {
+			return value * 200.0;
+		}
+		static toGrams(value: number): number {
+			return value / 5.0;
+		}
+		static toKilograms(value: number): number {
+			return value / 5000.0;
+		}
+		static toTonnes(value: number): number {
+			return value / 5e+6;
+		}
+		static toOunces(value: number): number {
+			return value * 0.00705479;
+		}
+		static toPounds(value: number): number {
+			return value * 0.000440925;
+		}
+		static toStones(value: number): number {
+			return value * 3.1495e-5;
+		}
+	}
+
 	export class Grams {
 		static toMilligrams(value: number): number {
 			return value * 1000.0;
@@ -23,6 +47,9 @@ export namespace Mass {
 		}
 		static toStones(value: number): number {
 			return value / 6350.29318;
+		}
+		static toCarats(value: number): number {
+			return value * 5.0;
 		}
 	}
 
@@ -45,6 +72,9 @@ export namespace Mass {
 		static toStones(value: number): number {
 			return value / 6.35029;
 		}
+		static toCarats(value: number): number {
+			return value * 5000.0;
+		}
 	}
 
 	export class Milligrams {
@@ -65,6 +95,9 @@ export namespace Mass {
 		}
 		static toStones(value: number): number {
 			return value / 6350293.18;
+		}
+		static toCarats(value: number): number {
+			return value / 200.0;
 		}
 	}
 
@@ -87,6 +120,9 @@ export namespace Mass {
 		static toStones(value: number): number {
 			return value / 224.0;
 		}
+		static toCarats(value: number): number {
+			return value / 0.00705479;
+		}
 	}
 
 	export class Pounds {
@@ -107,6 +143,9 @@ export namespace Mass {
 		}
 		static toStones(value: number): number {
 			return value / 14.0;
+		}
+		static toCarats(value: number): number {
+			return value / 0.000440925;
 		}
 	}
 
@@ -129,6 +168,9 @@ export namespace Mass {
 		static toPounds(value: number): number {
 			return value * 14.0;
 		}
+		static toCarats(value: number): number {
+			return value / 3.1495e-5;
+		}
 	}
 
 	export class Tonnes {
@@ -149,6 +191,9 @@ export namespace Mass {
 		}
 		static toStones(value: number): number {
 			return value * 157.473;
+		}
+		static toCarats(value: number): number {
+			return value * 5e+6;
 		}
 	}
 }
