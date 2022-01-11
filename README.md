@@ -11,9 +11,11 @@ The main aim for this project is to produce conversion functions for the various
 
 [C#](https://github.com/putridparrot/PutridParrot.Units)  
 [F#](https://github.com/putridparrot/FSharp.Units)  
-[Java](https://github.com/putridparrot/JavaUnits)   
-[Rust](https://github.com/putridparrot/RustUnits)  
+[Java](https://github.com/putridparrot/JavaUnits)  
+[Python](https://github.com/putridparrot/PyUnits)  
+[Rust](https://github.com/putridparrot/RustUnits)   
 [Swift](https://github.com/putridparrot/SwiftUnits)  
+
 
 ### Example
 
@@ -189,4 +191,3 @@ Each unit of measure then includes functions to convert to each for example, con
 	* US Quarts (usqt)
 	* US Tablespoons (ustbsp)
 	* US Teaspoons (ustsp)
-
