@@ -1668,7 +1668,7 @@ it('From Quarts to Fluid Ounces and back', () => {
 });
 
 it('Convert known Quarts to Fluid Ounces', () => {
-    expect(Volume.Quarts.toFluidOunces(67.6)).toBeCloseTo(2704, 1);
+    expect(Volume.Quarts.toFluidOunces(67.6)).toBeCloseTo(2704.0, 1);
     expect(Volume.Quarts.toFluidOunces(1009.0)).toBeCloseTo(40360.0, 1);
     expect(Volume.Quarts.toFluidOunces(6.2)).toBeCloseTo(248.0, 1);
 });

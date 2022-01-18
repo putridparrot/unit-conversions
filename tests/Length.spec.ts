@@ -463,7 +463,7 @@ it('From Kilometres to Metres and back', () => {
 it('Convert known Kilometres to Metres', () => {
     expect(Length.Kilometres.toMetres(0.8)).toBeCloseTo(800.0, 1);
     expect(Length.Kilometres.toMetres(45.0)).toBeCloseTo(45000.0, 1);
-    expect(Length.Kilometres.toMetres(1.2)).toBeCloseTo(1200, 1);
+    expect(Length.Kilometres.toMetres(1.2)).toBeCloseTo(1200.0, 1);
 });
 
 it('From Kilometres to Inches and back', () => {
@@ -478,8 +478,8 @@ it('From Kilometres to Inches and back', () => {
 });
 
 it('Convert known Kilometres to Inches', () => {
-    expect(Length.Kilometres.toInches(1.2)).toBeCloseTo(47244.1, 1);
-    expect(Length.Kilometres.toInches(0.65)).toBeCloseTo(25590.55, 1);
+    expect(Length.Kilometres.toInches(1.2)).toBeCloseTo(47244.094488, 1);
+    expect(Length.Kilometres.toInches(0.65)).toBeCloseTo(25590.551181, 1);
     expect(Length.Kilometres.toInches(5.0)).toBeCloseTo(196850.3937, 1);
 });
 

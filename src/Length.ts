@@ -67,10 +67,10 @@ export namespace Length {
 			return value * 2.54;
 		}
 		static toMetres(value: number): number {
-			return value * 0.0254;
+			return value / 39.3701;
 		}
 		static toKilometres(value: number): number {
-			return value * 0.0000254;
+			return value / 39370.07874;
 		}
 		static toFeet(value: number): number {
 			return value / 12.0;
@@ -97,7 +97,7 @@ export namespace Length {
 			return value * 1000.0;
 		}
 		static toInches(value: number): number {
-			return value / 0.0000254;
+			return value * 39370.07874;
 		}
 		static toFeet(value: number): number {
 			return value / 0.0003048;
@@ -124,7 +124,7 @@ export namespace Length {
 			return value / 1000.0;
 		}
 		static toInches(value: number): number {
-			return value / 0.0254;
+			return value * 39.3701;
 		}
 		static toFeet(value: number): number {
 			return value / 0.3048;

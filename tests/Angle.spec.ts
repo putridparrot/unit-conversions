@@ -89,7 +89,7 @@ it('From Degrees to Seconds Of Arc and back', () => {
 
 it('Convert known Degrees to Seconds Of Arc', () => {
     expect(Angle.Degrees.toSecondsOfArc(12.0)).toBeCloseTo(43200.0, 1);
-    expect(Angle.Degrees.toSecondsOfArc(910.4)).toBeCloseTo(3277440, 1);
+    expect(Angle.Degrees.toSecondsOfArc(910.4)).toBeCloseTo(3277440.0, 1);
     expect(Angle.Degrees.toSecondsOfArc(5.6)).toBeCloseTo(20160.0, 1);
 });
 

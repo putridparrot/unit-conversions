@@ -37,8 +37,8 @@ it('From Btu to Kilocalories and back', () => {
 
 it('Convert known Btu to Kilocalories', () => {
     expect(Energy.Btu.toKilocalories(67.9)).toBeCloseTo(17.12196, 1);
-    expect(Energy.Btu.toKilocalories(109.9)).toBeCloseTo(27.712868, 1);
-    expect(Energy.Btu.toKilocalories(5000.0)).toBeCloseTo(1260.716, 1);
+    expect(Energy.Btu.toKilocalories(109.9)).toBeCloseTo(27.7009516484, 1);
+    expect(Energy.Btu.toKilocalories(5000.0)).toBeCloseTo(1260.279874814, 1);
 });
 
 it('From Btu to Joules and back', () => {
@@ -598,8 +598,8 @@ it('From Kilocalories to Btu and back', () => {
 
 it('Convert known Kilocalories to Btu', () => {
     expect(Energy.Kilocalories.toBtu(3.4)).toBeCloseTo(13.4833, 1);
-    expect(Energy.Kilocalories.toBtu(109.0)).toBeCloseTo(432.2940, 1);
-    expect(Energy.Kilocalories.toBtu(22.89)).toBeCloseTo(90.774114, 1);
+    expect(Energy.Kilocalories.toBtu(109.0)).toBeCloseTo(432.4436269206, 1);
+    expect(Energy.Kilocalories.toBtu(22.89)).toBeCloseTo(90.8131616, 1);
 });
 
 it('From Kilocalories to Calories and back', () => {

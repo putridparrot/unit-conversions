@@ -360,7 +360,7 @@ it('From Gigabytes to Bits and back', () => {
 
 it('Convert known Gigabytes to Bits', () => {
     expect(DataStorage.Gigabytes.toBits(0.004)).toBeCloseTo(32000000.0, 1);
-    expect(DataStorage.Gigabytes.toBits(0.012)).toBeCloseTo(96000000, 1);
+    expect(DataStorage.Gigabytes.toBits(0.012)).toBeCloseTo(96000000.0, 1);
     expect(DataStorage.Gigabytes.toBits(3e-9)).toBeCloseTo(24.0, 1);
 });
 
@@ -582,7 +582,7 @@ it('From Kibibits to Gigabits and back', () => {
 it('Convert known Kibibits to Gigabits', () => {
     expect(DataStorage.Kibibits.toGigabits(123456.0)).toBeCloseTo(0.126418944, 1);
     expect(DataStorage.Kibibits.toGigabits(8000000.0)).toBeCloseTo(8.192, 1);
-    expect(DataStorage.Kibibits.toGigabits(1276876)).toBeCloseTo(1.307521024, 1);
+    expect(DataStorage.Kibibits.toGigabits(1276876.0)).toBeCloseTo(1.307521024, 1);
 });
 
 it('From Kibibits to Terabits and back', () => {
@@ -750,7 +750,7 @@ it('From Kilobits to Terabits and back', () => {
 });
 
 it('Convert known Kilobits to Terabits', () => {
-    expect(DataStorage.Kilobits.toTerabits(191987578)).toBeCloseTo(0.191987578, 1);
+    expect(DataStorage.Kilobits.toTerabits(191987578.0)).toBeCloseTo(0.191987578, 1);
     expect(DataStorage.Kilobits.toTerabits(9010081903.0)).toBeCloseTo(9.010081903, 1);
     expect(DataStorage.Kilobits.toTerabits(123456789.0)).toBeCloseTo(0.123456789, 1);
 });
@@ -871,7 +871,7 @@ it('From Kilobytes to Bits and back', () => {
 it('Convert known Kilobytes to Bits', () => {
     expect(DataStorage.Kilobytes.toBits(123.456)).toBeCloseTo(987648.0, 1);
     expect(DataStorage.Kilobytes.toBits(900.0)).toBeCloseTo(7.2e+6, 1);
-    expect(DataStorage.Kilobytes.toBits(100200.0)).toBeCloseTo(801600000, 1);
+    expect(DataStorage.Kilobytes.toBits(100200.0)).toBeCloseTo(801600000.0, 1);
 });
 
 it('From Kilobytes to Kilobits and back', () => {
@@ -989,7 +989,7 @@ it('From Kilobytes to Terabytes and back', () => {
 
 it('Convert known Kilobytes to Terabytes', () => {
     expect(DataStorage.Kilobytes.toTerabytes(0.9)).toBeCloseTo(9e-10, 1);
-    expect(DataStorage.Kilobytes.toTerabytes(140000000)).toBeCloseTo(0.14, 1);
+    expect(DataStorage.Kilobytes.toTerabytes(140000000.0)).toBeCloseTo(0.14, 1);
     expect(DataStorage.Kilobytes.toTerabytes(7.0)).toBeCloseTo(7e-9, 1);
 });
 

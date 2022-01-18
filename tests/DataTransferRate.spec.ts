@@ -360,7 +360,7 @@ it('From GigaBytes Per Second to Bits Per Second and back', () => {
 
 it('Convert known GigaBytes Per Second to Bits Per Second', () => {
     expect(DataTransferRate.GigaBytesPerSecond.toBitsPerSecond(0.004)).toBeCloseTo(32000000.0, 1);
-    expect(DataTransferRate.GigaBytesPerSecond.toBitsPerSecond(0.012)).toBeCloseTo(96000000, 1);
+    expect(DataTransferRate.GigaBytesPerSecond.toBitsPerSecond(0.012)).toBeCloseTo(96000000.0, 1);
     expect(DataTransferRate.GigaBytesPerSecond.toBitsPerSecond(3e-9)).toBeCloseTo(24.0, 1);
 });
 
@@ -582,7 +582,7 @@ it('From Kibibits Per Second to GigaBits Per Second and back', () => {
 it('Convert known Kibibits Per Second to GigaBits Per Second', () => {
     expect(DataTransferRate.KibibitsPerSecond.toGigaBitsPerSecond(123456.0)).toBeCloseTo(0.126418944, 1);
     expect(DataTransferRate.KibibitsPerSecond.toGigaBitsPerSecond(8000000.0)).toBeCloseTo(8.192, 1);
-    expect(DataTransferRate.KibibitsPerSecond.toGigaBitsPerSecond(1276876)).toBeCloseTo(1.307521024, 1);
+    expect(DataTransferRate.KibibitsPerSecond.toGigaBitsPerSecond(1276876.0)).toBeCloseTo(1.307521024, 1);
 });
 
 it('From Kibibits Per Second to TeraBits Per Second and back', () => {
@@ -750,7 +750,7 @@ it('From KiloBits Per Second to TeraBits Per Second and back', () => {
 });
 
 it('Convert known KiloBits Per Second to TeraBits Per Second', () => {
-    expect(DataTransferRate.KiloBitsPerSecond.toTeraBitsPerSecond(191987578)).toBeCloseTo(0.191987578, 1);
+    expect(DataTransferRate.KiloBitsPerSecond.toTeraBitsPerSecond(191987578.0)).toBeCloseTo(0.191987578, 1);
     expect(DataTransferRate.KiloBitsPerSecond.toTeraBitsPerSecond(9010081903.0)).toBeCloseTo(9.010081903, 1);
     expect(DataTransferRate.KiloBitsPerSecond.toTeraBitsPerSecond(123456789.0)).toBeCloseTo(0.123456789, 1);
 });
@@ -871,7 +871,7 @@ it('From KiloBytes Per Second to Bits Per Second and back', () => {
 it('Convert known KiloBytes Per Second to Bits Per Second', () => {
     expect(DataTransferRate.KiloBytesPerSecond.toBitsPerSecond(123.456)).toBeCloseTo(987648.0, 1);
     expect(DataTransferRate.KiloBytesPerSecond.toBitsPerSecond(900.0)).toBeCloseTo(7.2e+6, 1);
-    expect(DataTransferRate.KiloBytesPerSecond.toBitsPerSecond(100200.0)).toBeCloseTo(801600000, 1);
+    expect(DataTransferRate.KiloBytesPerSecond.toBitsPerSecond(100200.0)).toBeCloseTo(801600000.0, 1);
 });
 
 it('From KiloBytes Per Second to KiloBits Per Second and back', () => {
@@ -989,7 +989,7 @@ it('From KiloBytes Per Second to TeraBytes Per Second and back', () => {
 
 it('Convert known KiloBytes Per Second to TeraBytes Per Second', () => {
     expect(DataTransferRate.KiloBytesPerSecond.toTeraBytesPerSecond(0.9)).toBeCloseTo(9e-10, 1);
-    expect(DataTransferRate.KiloBytesPerSecond.toTeraBytesPerSecond(140000000)).toBeCloseTo(0.14, 1);
+    expect(DataTransferRate.KiloBytesPerSecond.toTeraBytesPerSecond(140000000.0)).toBeCloseTo(0.14, 1);
     expect(DataTransferRate.KiloBytesPerSecond.toTeraBytesPerSecond(7.0)).toBeCloseTo(7e-9, 1);
 });
 

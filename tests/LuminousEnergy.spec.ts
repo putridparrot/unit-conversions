@@ -38,7 +38,7 @@ it('From LumenHour to LumenMinute and back', () => {
 it('Convert known LumenHour to LumenMinute', () => {
     expect(LuminousEnergy.LumenHour.toLumenMinute(1.2)).toBeCloseTo(72.0, 1);
     expect(LuminousEnergy.LumenHour.toLumenMinute(0.8)).toBeCloseTo(48.0, 1);
-    expect(LuminousEnergy.LumenHour.toLumenMinute(109.00)).toBeCloseTo(6540, 1);
+    expect(LuminousEnergy.LumenHour.toLumenMinute(109.00)).toBeCloseTo(6540.0, 1);
 });
 
 it('From LumenHour to LumenSecond and back', () => {

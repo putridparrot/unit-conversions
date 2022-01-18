@@ -54,8 +54,8 @@ it('From Celsius to Rankine and back', () => {
 
 it('Convert known Celsius to Rankine', () => {
     expect(Temperature.Celsius.toRankine(900.0)).toBeCloseTo(2111.67, 1);
-    expect(Temperature.Celsius.toRankine(12)).toBeCloseTo(513.27, 1);
-    expect(Temperature.Celsius.toRankine(-3)).toBeCloseTo(486.27, 1);
+    expect(Temperature.Celsius.toRankine(12.0)).toBeCloseTo(513.27, 1);
+    expect(Temperature.Celsius.toRankine(-3.0)).toBeCloseTo(486.27, 1);
 });
 
 it('From Fahrenheit to Celsius and back', () => {

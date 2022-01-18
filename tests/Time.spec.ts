@@ -443,7 +443,7 @@ it('From Minutes to Seconds and back', () => {
 });
 
 it('Convert known Minutes to Seconds', () => {
-    expect(Time.Minutes.toSeconds(90.0)).toBeCloseTo(5400, 1);
+    expect(Time.Minutes.toSeconds(90.0)).toBeCloseTo(5400.0, 1);
     expect(Time.Minutes.toSeconds(0.9)).toBeCloseTo(54.0, 1);
     expect(Time.Minutes.toSeconds(123.0)).toBeCloseTo(7380.0, 1);
 });

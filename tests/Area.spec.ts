@@ -665,9 +665,9 @@ it('From Square Metres to Square Feet and back', () => {
 });
 
 it('Convert known Square Metres to Square Feet', () => {
-    expect(Area.SquareMetres.toSquareFeet(90.0)).toBeCloseTo(968.752, 1);
-    expect(Area.SquareMetres.toSquareFeet(180.0)).toBeCloseTo(1937.52, 1);
-    expect(Area.SquareMetres.toSquareFeet(123.4)).toBeCloseTo(1328.2775, 1);
+    expect(Area.SquareMetres.toSquareFeet(90.0)).toBeCloseTo(968.7519375, 1);
+    expect(Area.SquareMetres.toSquareFeet(180.0)).toBeCloseTo(1937.503875, 1);
+    expect(Area.SquareMetres.toSquareFeet(123.4)).toBeCloseTo(1328.2665454, 1);
 });
 
 it('From Square Metres to Square Inches and back', () => {
@@ -818,7 +818,7 @@ it('From Square Miles to Hectares and back', () => {
 });
 
 it('Convert known Square Miles to Hectares', () => {
-    expect(Area.SquareMiles.toHectares(100.0)).toBeCloseTo(25900.0, 1);
+    expect(Area.SquareMiles.toHectares(100.0)).toBeCloseTo(25899.881103, 1);
     expect(Area.SquareMiles.toHectares(2.3)).toBeCloseTo(595.697, 1);
     expect(Area.SquareMiles.toHectares(0.9)).toBeCloseTo(233.099, 1);
 });

@@ -37,7 +37,7 @@ export namespace Area {
 			return value * 10000.0;
 		}
 		static toSquareMiles(value: number): number {
-			return value / 259.0;
+			return value / 258.99881103;
 		}
 		static toSquareYards(value: number): number {
 			return value * 11959.900463011;
@@ -58,7 +58,7 @@ export namespace Area {
 			return value / 10763910.41671;
 		}
 		static toSquareMetres(value: number): number {
-			return value / 10.764;
+			return value / 10.76391042;
 		}
 		static toSquareMiles(value: number): number {
 			return value / 27878400.0;
@@ -133,10 +133,10 @@ export namespace Area {
 			return value / 2589988.10;
 		}
 		static toSquareYards(value: number): number {
-			return value * 1.196;
+			return value * 1.1959900463;
 		}
 		static toSquareFeet(value: number): number {
-			return value * 10.764;
+			return value * 10.76391042;
 		}
 		static toSquareInches(value: number): number {
 			return value * 1550.0;
@@ -166,7 +166,7 @@ export namespace Area {
 			return value * 4014489600.0;
 		}
 		static toHectares(value: number): number {
-			return value * 259.0;
+			return value * 258.99881103;
 		}
 		static toAcres(value: number): number {
 			return value * 640.0;
@@ -178,7 +178,7 @@ export namespace Area {
 			return value / 1195990.05;
 		}
 		static toSquareMetres(value: number): number {
-			return value / 1.196;
+			return value / 1.1959900463;
 		}
 		static toSquareMiles(value: number): number {
 			return value / 3097600.0;
