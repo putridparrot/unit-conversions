@@ -143,6 +143,23 @@ it('Convert known Btu to Foot Pounds', () => {
     expect(Energy.Btu.toFootPounds(2.6)).toBeCloseTo(2023.24, 1);
 });
 
+it('From Btu to Electronvolts and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Energy.Btu.toElectronvolts(value)
+            const convertBack = Energy.Electronvolts.toBtu(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Btu to Electronvolts', () => {
+    expect(Energy.Btu.toElectronvolts(0.0000000789)).toBeCloseTo(519567655294184.88, 1);
+    expect(Energy.Btu.toElectronvolts(0.000001002)).toBeCloseTo(6598311667994592.0, 1);
+    expect(Energy.Btu.toElectronvolts(0.000000001)).toBeCloseTo(6585141385224.14, 1);
+});
+
 it('From Calories to Kilojoules and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -277,6 +294,176 @@ it('Convert known Calories to Foot Pounds', () => {
     expect(Energy.Calories.toFootPounds(123.0)).toBeCloseTo(379.573, 1);
     expect(Energy.Calories.toFootPounds(9.01)).toBeCloseTo(27.8045, 1);
     expect(Energy.Calories.toFootPounds(2.8)).toBeCloseTo(8.64069, 1);
+});
+
+it('From Calories to Electronvolts and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Energy.Calories.toElectronvolts(value)
+            const convertBack = Energy.Electronvolts.toCalories(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Calories to Electronvolts', () => {
+    expect(Energy.Calories.toElectronvolts(0.0000091)).toBeCloseTo(237800626261534.66, 1);
+    expect(Energy.Calories.toElectronvolts(0.0008)).toBeCloseTo(20905549561453600.0, 1);
+    expect(Energy.Calories.toElectronvolts(0.00123)).toBeCloseTo(32142282450734908.0, 1);
+});
+
+it('From Electronvolts to Kilojoules and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Energy.Electronvolts.toKilojoules(value)
+            const convertBack = Energy.Kilojoules.toElectronvolts(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Electronvolts to Kilojoules', () => {
+    expect(Energy.Electronvolts.toKilojoules(123456789.0)).toBeCloseTo(1.9779957413e-14, 1);
+    expect(Energy.Electronvolts.toKilojoules(900900900.0)).toBeCloseTo(1.4434023094e-13, 1);
+    expect(Energy.Electronvolts.toKilojoules(123456789123456789.0)).toBeCloseTo(1.977995743237493669e-5, 1);
+});
+
+it('From Electronvolts to Kilocalories and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Energy.Electronvolts.toKilocalories(value)
+            const convertBack = Energy.Kilocalories.toElectronvolts(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Electronvolts to Kilocalories', () => {
+    expect(Energy.Electronvolts.toKilocalories(100200300400.0)).toBeCloseTo(1.6053857310684e-11, 1);
+    expect(Energy.Electronvolts.toKilocalories(123456789.0)).toBeCloseTo(1.9779957413e-14, 1);
+    expect(Energy.Electronvolts.toKilocalories(900800700600.0)).toBeCloseTo(1.4432417722369e-10, 1);
+});
+
+it('From Electronvolts to Joules and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Energy.Electronvolts.toJoules(value)
+            const convertBack = Energy.Joules.toElectronvolts(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Electronvolts to Joules', () => {
+    expect(Energy.Electronvolts.toJoules(123456789123.0)).toBeCloseTo(1.9779957432302e-8, 1);
+    expect(Energy.Electronvolts.toJoules(900800700600.0)).toBeCloseTo(1.4432417722369e-7, 1);
+    expect(Energy.Electronvolts.toJoules(999888777666.0)).toBeCloseTo(1.601998367183e-7, 1);
+});
+
+it('From Electronvolts to Btu and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Energy.Electronvolts.toBtu(value)
+            const convertBack = Energy.Btu.toElectronvolts(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Electronvolts to Btu', () => {
+    expect(Energy.Electronvolts.toBtu(100020003000100020003000.0)).toBeCloseTo(15.188741377060267723, 1);
+    expect(Energy.Electronvolts.toBtu(999888777666999888777666.0)).toBeCloseTo(151.84014791315084381, 1);
+    expect(Energy.Electronvolts.toBtu(12345678912341234567891234.0)).toBeCloseTo(1874.7782293466862029, 1);
+});
+
+it('From Electronvolts to Calories and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Energy.Electronvolts.toCalories(value)
+            const convertBack = Energy.Calories.toElectronvolts(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Electronvolts to Calories', () => {
+    expect(Energy.Electronvolts.toCalories(666333111999.0)).toBeCloseTo(2.5515853167503e-8, 1);
+    expect(Energy.Electronvolts.toCalories(999888777666555.0)).toBeCloseTo(3.8288679904011702e-5, 1);
+    expect(Energy.Electronvolts.toCalories(12345678901234.0)).toBeCloseTo(4.727523282641506e-7, 1);
+});
+
+it('From Electronvolts to US Therms and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Energy.Electronvolts.toUSTherms(value)
+            const convertBack = Energy.USTherms.toElectronvolts(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Electronvolts to US Therms', () => {
+    expect(Energy.Electronvolts.toUSTherms(666333111999.0)).toBeCloseTo(1.0118737258101e-10, 1);
+    expect(Energy.Electronvolts.toUSTherms(999888777666555.0)).toBeCloseTo(1.5184014791308327e-7, 1);
+    expect(Energy.Electronvolts.toUSTherms(12345678901234.0)).toBeCloseTo(1.874778227659974e-9, 1);
+});
+
+it('From Electronvolts to Watt Hours and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Energy.Electronvolts.toWattHours(value)
+            const convertBack = Energy.WattHours.toElectronvolts(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Electronvolts to Watt Hours', () => {
+    expect(Energy.Electronvolts.toWattHours(100900700100.0)).toBeCloseTo(4.490576030342e-12, 1);
+    expect(Energy.Electronvolts.toWattHours(9000800070006000.0)).toBeCloseTo(4.00579748289276988e-7, 1);
+    expect(Energy.Electronvolts.toWattHours(12345678987654321.0)).toBeCloseTo(5.494432653620188248e-7, 1);
+});
+
+it('From Electronvolts to Kilowatt Hours and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Energy.Electronvolts.toKilowattHours(value)
+            const convertBack = Energy.KilowattHours.toElectronvolts(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Electronvolts to Kilowatt Hours', () => {
+    expect(Energy.Electronvolts.toKilowattHours(100900700100.0)).toBeCloseTo(4.490576030342e-15, 1);
+    expect(Energy.Electronvolts.toKilowattHours(999988887777.0)).toBeCloseTo(4.4504410034909e-14, 1);
+    expect(Energy.Electronvolts.toKilowattHours(12345678987654321.0)).toBeCloseTo(5.494432653620187834e-10, 1);
+});
+
+it('From Electronvolts to Foot Pounds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Energy.Electronvolts.toFootPounds(value)
+            const convertBack = Energy.FootPounds.toElectronvolts(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Electronvolts to Foot Pounds', () => {
+    expect(Energy.Electronvolts.toFootPounds(100900700100.0)).toBeCloseTo(1.1923484070355e-8, 1);
+    expect(Energy.Electronvolts.toFootPounds(999988887777.0)).toBeCloseTo(1.1816916594359e-7, 1);
+    expect(Energy.Electronvolts.toFootPounds(12345678987654321.0)).toBeCloseTo(0.0014588948005427860004, 1);
 });
 
 it('From Foot Pounds to Kilojoules and back', () => {
@@ -415,6 +602,23 @@ it('Convert known Foot Pounds to Kilowatt Hours', () => {
     expect(Energy.FootPounds.toKilowattHours(9876543.0)).toBeCloseTo(3.719665074, 1);
 });
 
+it('From Foot Pounds to Electronvolts and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Energy.FootPounds.toElectronvolts(value)
+            const convertBack = Energy.Electronvolts.toFootPounds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Foot Pounds to Electronvolts', () => {
+    expect(Energy.FootPounds.toElectronvolts(0.00123)).toBeCloseTo(10408691651641586.0, 1);
+    expect(Energy.FootPounds.toElectronvolts(0.0009)).toBeCloseTo(7616115842664575.0, 1);
+    expect(Energy.FootPounds.toElectronvolts(0.00000888)).toBeCloseTo(75145676314290.469, 1);
+});
+
 it('From Joules to Kilojoules and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -549,6 +753,23 @@ it('Convert known Joules to Foot Pounds', () => {
     expect(Energy.Joules.toFootPounds(900.0)).toBeCloseTo(663.806, 1);
     expect(Energy.Joules.toFootPounds(10.2)).toBeCloseTo(7.523134, 1);
     expect(Energy.Joules.toFootPounds(6.7)).toBeCloseTo(4.94167, 1);
+});
+
+it('From Joules to Electronvolts and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Energy.Joules.toElectronvolts(value)
+            const convertBack = Energy.Electronvolts.toJoules(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Joules to Electronvolts', () => {
+    expect(Energy.Joules.toElectronvolts(0.00000888)).toBeCloseTo(55424602968504.0, 1);
+    expect(Energy.Joules.toElectronvolts(0.00001234)).toBeCloseTo(77020225296322.0, 1);
+    expect(Energy.Joules.toElectronvolts(0.00000666)).toBeCloseTo(41568452226378.0, 1);
 });
 
 it('From Kilocalories to Kilojoules and back', () => {
@@ -687,6 +908,23 @@ it('Convert known Kilocalories to Foot Pounds', () => {
     expect(Energy.Kilocalories.toFootPounds(2.4)).toBeCloseTo(7406.3, 1);
 });
 
+it('From Kilocalories to Electronvolts and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Energy.Kilocalories.toElectronvolts(value)
+            const convertBack = Energy.Electronvolts.toKilocalories(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Kilocalories to Electronvolts', () => {
+    expect(Energy.Kilocalories.toElectronvolts(0.0000000666)).toBeCloseTo(1740388069688132.2, 1);
+    expect(Energy.Kilocalories.toElectronvolts(0.000002)).toBeCloseTo(52263905996640608.0, 1);
+    expect(Energy.Kilocalories.toElectronvolts(0.000000999)).toBeCloseTo(26105821045321988.0, 1);
+});
+
 it('From Kilojoules to Kilocalories and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -821,6 +1059,23 @@ it('Convert known Kilojoules to Foot Pounds', () => {
     expect(Energy.Kilojoules.toFootPounds(100.9)).toBeCloseTo(74420.00579, 1);
     expect(Energy.Kilojoules.toFootPounds(2.4)).toBeCloseTo(1770.15, 1);
     expect(Energy.Kilojoules.toFootPounds(0.9)).toBeCloseTo(663.806, 1);
+});
+
+it('From Kilojoules to Electronvolts and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Energy.Kilojoules.toElectronvolts(value)
+            const convertBack = Energy.Electronvolts.toKilojoules(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Kilojoules to Electronvolts', () => {
+    expect(Energy.Kilojoules.toElectronvolts(0.000000999)).toBeCloseTo(6235268234766989.0, 1);
+    expect(Energy.Kilojoules.toElectronvolts(0.0000002)).toBeCloseTo(1248301948902300.0, 1);
+    expect(Energy.Kilojoules.toElectronvolts(0.00567)).toBeCloseTo(3.5389360251380204E+19, 1);
 });
 
 it('From Kilowatt Hours to Kilojoules and back', () => {
@@ -959,6 +1214,23 @@ it('Convert known Kilowatt Hours to Foot Pounds', () => {
     expect(Energy.KilowattHours.toFootPounds(0.0006)).toBeCloseTo(1593.1177314, 1);
 });
 
+it('From Kilowatt Hours to Electronvolts and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Energy.KilowattHours.toElectronvolts(value)
+            const convertBack = Energy.Electronvolts.toKilowattHours(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Kilowatt Hours to Electronvolts', () => {
+    expect(Energy.KilowattHours.toElectronvolts(0.000008)).toBeCloseTo(179755440000000000000.0, 1);
+    expect(Energy.KilowattHours.toElectronvolts(0.0000000128)).toBeCloseTo(2.8760870400000003E+17, 1);
+    expect(Energy.KilowattHours.toElectronvolts(0.0000000001)).toBeCloseTo(2246943000000000.2, 1);
+});
+
 it('From US Therms to Kilojoules and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -1095,6 +1367,23 @@ it('Convert known US Therms to Foot Pounds', () => {
     expect(Energy.USTherms.toFootPounds(0.0003)).toBeCloseTo(23345.081129, 1);
 });
 
+it('From US Therms to Electronvolts and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Energy.USTherms.toElectronvolts(value)
+            const convertBack = Energy.Electronvolts.toUSTherms(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Therms to Electronvolts', () => {
+    expect(Energy.USTherms.toElectronvolts(0.0000009)).toBeCloseTo(592520940098199000000.0, 1);
+    expect(Energy.USTherms.toElectronvolts(0.000000001339)).toBeCloseTo(8.815394875460983E+17, 1);
+    expect(Energy.USTherms.toElectronvolts(0.0000000000666)).toBeCloseTo(43846549567266728.0, 1);
+});
+
 it('From Watt Hours to Kilojoules and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -1229,5 +1518,22 @@ it('Convert known Watt Hours to Foot Pounds', () => {
     expect(Energy.WattHours.toFootPounds(1.5)).toBeCloseTo(3982.829, 1);
     expect(Energy.WattHours.toFootPounds(0.3)).toBeCloseTo(796.567, 1);
     expect(Energy.WattHours.toFootPounds(90.1)).toBeCloseTo(239235.3219, 1);
+});
+
+it('From Watt Hours to Electronvolts and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Energy.WattHours.toElectronvolts(value)
+            const convertBack = Energy.Electronvolts.toWattHours(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Watt Hours to Electronvolts', () => {
+    expect(Energy.WattHours.toElectronvolts(0.0000000000666)).toBeCloseTo(1496463565615.39, 1);
+    expect(Energy.WattHours.toElectronvolts(0.000000008)).toBeCloseTo(179755383257104.03, 1);
+    expect(Energy.WattHours.toElectronvolts(0.0000123)).toBeCloseTo(2.7637390175779744E+17, 1);
 });
 

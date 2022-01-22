@@ -30,6 +30,9 @@ export namespace Energy {
 		static toFootPounds(value: number): number {
 			return value * 778.169;
 		}
+		static toElectronvolts(value: number): number {
+			return value * 6585141385224143241216.00;
+		}
 	}
 
 	export class Calories {
@@ -57,9 +60,39 @@ export namespace Energy {
 		static toFootPounds(value: number): number {
 			return value * 3.08596;
 		}
+		static toElectronvolts(value: number): number {
+			return value * 2.6131936951817e+19;
+		}
 	}
 
-	export class ElectronVolts {
+	export class Electronvolts {
+		static toKilojoules(value: number): number {
+			return value / 6241509744511500156928.00;
+		}
+		static toKilocalories(value: number): number {
+			return value / 26131952998320305078272.00;
+		}
+		static toJoules(value: number): number {
+			return value / 6241509343300000000.0;
+		}
+		static toBtu(value: number): number {
+			return value / 6585141385224143241216.0;
+		}
+		static toCalories(value: number): number {
+			return value / 2.6131936951817e+19;
+		}
+		static toUSTherms(value: number): number {
+			return value / 6.5835660010911e+26;
+		}
+		static toWattHours(value: number): number {
+			return value / 2.2469422907138e+22;
+		}
+		static toKilowattHours(value: number): number {
+			return value / 2.246943e+25;
+		}
+		static toFootPounds(value: number): number {
+			return value / 8462350936293971968.00;
+		}
 	}
 
 	export class FootPounds {
@@ -86,6 +119,9 @@ export namespace Energy {
 		}
 		static toKilowattHours(value: number): number {
 			return value * 0.00000037662;
+		}
+		static toElectronvolts(value: number): number {
+			return value * 8462350936293971968.00;
 		}
 	}
 
@@ -114,6 +150,9 @@ export namespace Energy {
 		static toFootPounds(value: number): number {
 			return value / 1.35582;
 		}
+		static toElectronvolts(value: number): number {
+			return value * 6241509343300000000.0;
+		}
 	}
 
 	export class Kilocalories {
@@ -140,6 +179,9 @@ export namespace Energy {
 		}
 		static toFootPounds(value: number): number {
 			return value * 3085.96;
+		}
+		static toElectronvolts(value: number): number {
+			return value * 26131952998320305078272.00;
 		}
 	}
 
@@ -168,6 +210,9 @@ export namespace Energy {
 		static toFootPounds(value: number): number {
 			return value * 737.562;
 		}
+		static toElectronvolts(value: number): number {
+			return value * 6241509744511500156928.00;
+		}
 	}
 
 	export class KilowattHours {
@@ -194,6 +239,9 @@ export namespace Energy {
 		}
 		static toFootPounds(value: number): number {
 			return value / 0.00000037662;
+		}
+		static toElectronvolts(value: number): number {
+			return value * 2.246943e+25;
 		}
 	}
 
@@ -222,6 +270,9 @@ export namespace Energy {
 		static toFootPounds(value: number): number {
 			return value * 77816937.099186;
 		}
+		static toElectronvolts(value: number): number {
+			return value * 6.5835660010911e+26;
+		}
 	}
 
 	export class WattHours {
@@ -248,6 +299,9 @@ export namespace Energy {
 		}
 		static toFootPounds(value: number): number {
 			return value * 2655.22;
+		}
+		static toElectronvolts(value: number): number {
+			return value * 2.2469422907138e+22;
 		}
 	}
 }

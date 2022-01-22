@@ -619,7 +619,7 @@ it('From Months to Days and back', () => {
 
 it('Convert known Months to Days', () => {
     expect(Time.Months.toDays(4.5)).toBeCloseTo(136.875, 1);
-    expect(Time.Months.toDays(90.0)).toBeCloseTo(2737.53, 1);
+    expect(Time.Months.toDays(90.0)).toBeCloseTo(2737.5029, 1);
     expect(Time.Months.toDays(0.4)).toBeCloseTo(12.1667, 1);
 });
 
@@ -636,7 +636,7 @@ it('From Months to Weeks and back', () => {
 
 it('Convert known Months to Weeks', () => {
     expect(Time.Months.toWeeks(0.5)).toBeCloseTo(2.17262, 1);
-    expect(Time.Months.toWeeks(88.0)).toBeCloseTo(382.359, 1);
+    expect(Time.Months.toWeeks(88.0)).toBeCloseTo(382.381120, 1);
     expect(Time.Months.toWeeks(12.6)).toBeCloseTo(54.75006, 1);
 });
 
@@ -884,7 +884,7 @@ it('From Weeks to Months and back', () => {
 
 it('Convert known Weeks to Months', () => {
     expect(Time.Weeks.toMonths(4.0)).toBeCloseTo(0.920547, 1);
-    expect(Time.Weeks.toMonths(900.0)).toBeCloseTo(207.134637, 1);
+    expect(Time.Weeks.toMonths(900.0)).toBeCloseTo(207.12319687, 1);
     expect(Time.Weeks.toMonths(3.8)).toBeCloseTo(0.87452, 1);
 });
 

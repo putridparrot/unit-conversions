@@ -19,7 +19,7 @@ export namespace Time {
 			return value * 36500.0;
 		}
 		static toWeeks(value: number): number {
-			return value * 5214.0;
+			return value * 5214.29;
 		}
 		static toMonths(value: number): number {
 			return value * 1200.0;
@@ -46,7 +46,7 @@ export namespace Time {
 			return value / 7.0;
 		}
 		static toMonths(value: number): number {
-			return value / 30.417;
+			return value / 30.4167;
 		}
 		static toYears(value: number): number {
 			return value / 365.0;
@@ -100,7 +100,7 @@ export namespace Time {
 			return value / 168.0;
 		}
 		static toMonths(value: number): number {
-			return value / 730.0;
+			return value / 730.001;
 		}
 		static toYears(value: number): number {
 			return value / 8760.0;
@@ -148,13 +148,13 @@ export namespace Time {
 			return value * 43800.0;
 		}
 		static toHours(value: number): number {
-			return value * 730.0;
+			return value * 730.001;
 		}
 		static toDays(value: number): number {
-			return value * 30.417;
+			return value * 30.4167;
 		}
 		static toWeeks(value: number): number {
-			return value * 4.345;
+			return value * 4.34524;
 		}
 		static toYears(value: number): number {
 			return value / 12.0;
@@ -208,7 +208,7 @@ export namespace Time {
 			return value * 7.0;
 		}
 		static toMonths(value: number): number {
-			return value / 4.345;
+			return value / 4.34524;
 		}
 		static toYears(value: number): number {
 			return value / 52.143;
@@ -217,7 +217,7 @@ export namespace Time {
 			return value / 521.0;
 		}
 		static toCenturies(value: number): number {
-			return value / 5214.0;
+			return value / 5214.29;
 		}
 	}
 
