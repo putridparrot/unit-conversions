@@ -10,13 +10,13 @@ export namespace Energy {
 			return value * 1.0550559;
 		}
 		static toKilocalories(value: number): number {
-			return value / 3.9673727240424;
+			return value * 0.2521644007218;
 		}
 		static toJoules(value: number): number {
 			return value * 1055.06;
 		}
 		static toCalories(value: number): number {
-			return value * 252.164;
+			return value * 252.1644007218;
 		}
 		static toUSTherms(value: number): number {
 			return value / 99976.12448781215;
@@ -46,7 +46,7 @@ export namespace Energy {
 			return value * 4.184;
 		}
 		static toBtu(value: number): number {
-			return value / 252.164;
+			return value / 252.1644007218;
 		}
 		static toUSTherms(value: number): number {
 			return value / 25210420.0;
@@ -163,13 +163,13 @@ export namespace Energy {
 			return value * 4184.0;
 		}
 		static toBtu(value: number): number {
-			return value * 3.9673727240424;
+			return value / 0.2521644007218;
 		}
 		static toCalories(value: number): number {
 			return value * 1000.0;
 		}
 		static toUSTherms(value: number): number {
-			return value / 25210.4;
+			return value / 25210.44007218;
 		}
 		static toWattHours(value: number): number {
 			return value * 1.16222;
@@ -250,7 +250,7 @@ export namespace Energy {
 			return value * 105480.04;
 		}
 		static toKilocalories(value: number): number {
-			return value * 25210.4;
+			return value * 25210.44007218;
 		}
 		static toJoules(value: number): number {
 			return value * 105480400.0;

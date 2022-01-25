@@ -25,7 +25,7 @@ export namespace Area {
 			return value * 6272640.0;
 		}
 		static toHectares(value: number): number {
-			return value / 2.471;
+			return value / 2.4710538146717;
 		}
 	}
 
@@ -49,7 +49,7 @@ export namespace Area {
 			return value * 15500031.0;
 		}
 		static toAcres(value: number): number {
-			return value * 2.471;
+			return value * 2.4710538146717;
 		}
 	}
 

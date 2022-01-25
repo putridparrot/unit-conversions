@@ -37,8 +37,8 @@ it('From Btu to Kilocalories and back', () => {
 
 it('Convert known Btu to Kilocalories', () => {
     expect(Energy.Btu.toKilocalories(67.9)).toBeCloseTo(17.12196, 1);
-    expect(Energy.Btu.toKilocalories(109.9)).toBeCloseTo(27.7009516484, 1);
-    expect(Energy.Btu.toKilocalories(5000.0)).toBeCloseTo(1260.279874814, 1);
+    expect(Energy.Btu.toKilocalories(109.9)).toBeCloseTo(27.712867639325825, 1);
+    expect(Energy.Btu.toKilocalories(5000.0)).toBeCloseTo(1260.8220036090, 1);
 });
 
 it('From Btu to Joules and back', () => {
@@ -70,8 +70,8 @@ it('From Btu to Calories and back', () => {
 });
 
 it('Convert known Btu to Calories', () => {
-    expect(Energy.Btu.toCalories(56.0)).toBeCloseTo(14121.184, 1);
-    expect(Energy.Btu.toCalories(123.0)).toBeCloseTo(31016.172, 1);
+    expect(Energy.Btu.toCalories(56.0)).toBeCloseTo(14121.20644042079, 1);
+    expect(Energy.Btu.toCalories(123.0)).toBeCloseTo(31016.221288781402, 1);
     expect(Energy.Btu.toCalories(0.9)).toBeCloseTo(226.9476, 1);
 });
 
@@ -819,8 +819,8 @@ it('From Kilocalories to Btu and back', () => {
 
 it('Convert known Kilocalories to Btu', () => {
     expect(Energy.Kilocalories.toBtu(3.4)).toBeCloseTo(13.4833, 1);
-    expect(Energy.Kilocalories.toBtu(109.0)).toBeCloseTo(432.4436269206, 1);
-    expect(Energy.Kilocalories.toBtu(22.89)).toBeCloseTo(90.8131616, 1);
+    expect(Energy.Kilocalories.toBtu(109.0)).toBeCloseTo(432.2576846216055, 1);
+    expect(Energy.Kilocalories.toBtu(22.89)).toBeCloseTo(90.77411377053717, 1);
 });
 
 it('From Kilocalories to Calories and back', () => {
@@ -1260,7 +1260,7 @@ it('From US Therms to Kilocalories and back', () => {
 });
 
 it('Convert known US Therms to Kilocalories', () => {
-    expect(Energy.USTherms.toKilocalories(1.1)).toBeCloseTo(27731.44, 1);
+    expect(Energy.USTherms.toKilocalories(1.1)).toBeCloseTo(27731.484079398004, 1);
     expect(Energy.USTherms.toKilocalories(0.04)).toBeCloseTo(1008.417, 1);
     expect(Energy.USTherms.toKilocalories(0.0123)).toBeCloseTo(310.088174, 1);
 });
