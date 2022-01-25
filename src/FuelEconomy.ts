@@ -12,12 +12,12 @@ export namespace FuelEconomy {
 		static toMilesPerGallon(value: number): number {
 			return value * 2.82481;
 		}
-		static toLitresper100Kilometres(value: number): number {
+		static toLitresPer100Kilometres(value: number): number {
 			return 100.0 / value;
 		}
 	}
 
-	export class Litresper100Kilometres {
+	export class LitresPer100Kilometres {
 		static toKilometrePerLitre(value: number): number {
 			return 100.0 / value;
 		}
@@ -36,7 +36,7 @@ export namespace FuelEconomy {
 		static toUSMilesPerGallon(value: number): number {
 			return value / 1.20095;
 		}
-		static toLitresper100Kilometres(value: number): number {
+		static toLitresPer100Kilometres(value: number): number {
 			return 282.481 / value;
 		}
 	}
@@ -48,7 +48,7 @@ export namespace FuelEconomy {
 		static toMilesPerGallon(value: number): number {
 			return value * 1.20095;
 		}
-		static toLitresper100Kilometres(value: number): number {
+		static toLitresPer100Kilometres(value: number): number {
 			return 235.215 / value;
 		}
 	}

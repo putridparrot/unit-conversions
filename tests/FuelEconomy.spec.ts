@@ -41,72 +41,72 @@ it('Convert known Kilometre Per Litre to Miles Per Gallon', () => {
     expect(FuelEconomy.KilometrePerLitre.toMilesPerGallon(5.4)).toBeCloseTo(15.254, 1);
 });
 
-it('From Kilometre Per Litre to Litres per 100 Kilometres and back', () => {
+it('From Kilometre Per Litre to Litres Per 100 Kilometres and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
-            const convertTo = FuelEconomy.KilometrePerLitre.toLitresper100Kilometres(value)
-            const convertBack = FuelEconomy.Litresper100Kilometres.toKilometrePerLitre(convertTo)
+            const convertTo = FuelEconomy.KilometrePerLitre.toLitresPer100Kilometres(value)
+            const convertBack = FuelEconomy.LitresPer100Kilometres.toKilometrePerLitre(convertTo)
 
             expect(convertBack).toBeCloseTo(convertBack, 1);
         })
     )
 });
 
-it('Convert known Kilometre Per Litre to Litres per 100 Kilometres', () => {
-    expect(FuelEconomy.KilometrePerLitre.toLitresper100Kilometres(109.0)).toBeCloseTo(0.917431, 1);
-    expect(FuelEconomy.KilometrePerLitre.toLitresper100Kilometres(0.8)).toBeCloseTo(125.0, 1);
-    expect(FuelEconomy.KilometrePerLitre.toLitresper100Kilometres(2.3)).toBeCloseTo(43.4783, 1);
+it('Convert known Kilometre Per Litre to Litres Per 100 Kilometres', () => {
+    expect(FuelEconomy.KilometrePerLitre.toLitresPer100Kilometres(109.0)).toBeCloseTo(0.917431, 1);
+    expect(FuelEconomy.KilometrePerLitre.toLitresPer100Kilometres(0.8)).toBeCloseTo(125.0, 1);
+    expect(FuelEconomy.KilometrePerLitre.toLitresPer100Kilometres(2.3)).toBeCloseTo(43.4783, 1);
 });
 
-it('From Litres per 100 Kilometres to Kilometre Per Litre and back', () => {
+it('From Litres Per 100 Kilometres to Kilometre Per Litre and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
-            const convertTo = FuelEconomy.Litresper100Kilometres.toKilometrePerLitre(value)
-            const convertBack = FuelEconomy.KilometrePerLitre.toLitresper100Kilometres(convertTo)
+            const convertTo = FuelEconomy.LitresPer100Kilometres.toKilometrePerLitre(value)
+            const convertBack = FuelEconomy.KilometrePerLitre.toLitresPer100Kilometres(convertTo)
 
             expect(convertBack).toBeCloseTo(convertBack, 1);
         })
     )
 });
 
-it('Convert known Litres per 100 Kilometres to Kilometre Per Litre', () => {
-    expect(FuelEconomy.Litresper100Kilometres.toKilometrePerLitre(0.7)).toBeCloseTo(142.857, 1);
-    expect(FuelEconomy.Litresper100Kilometres.toKilometrePerLitre(109.0)).toBeCloseTo(0.917431, 1);
-    expect(FuelEconomy.Litresper100Kilometres.toKilometrePerLitre(0.012)).toBeCloseTo(8333.3333, 1);
+it('Convert known Litres Per 100 Kilometres to Kilometre Per Litre', () => {
+    expect(FuelEconomy.LitresPer100Kilometres.toKilometrePerLitre(0.7)).toBeCloseTo(142.857, 1);
+    expect(FuelEconomy.LitresPer100Kilometres.toKilometrePerLitre(109.0)).toBeCloseTo(0.917431, 1);
+    expect(FuelEconomy.LitresPer100Kilometres.toKilometrePerLitre(0.012)).toBeCloseTo(8333.3333, 1);
 });
 
-it('From Litres per 100 Kilometres to Miles Per Gallon and back', () => {
+it('From Litres Per 100 Kilometres to Miles Per Gallon and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
-            const convertTo = FuelEconomy.Litresper100Kilometres.toMilesPerGallon(value)
-            const convertBack = FuelEconomy.MilesPerGallon.toLitresper100Kilometres(convertTo)
+            const convertTo = FuelEconomy.LitresPer100Kilometres.toMilesPerGallon(value)
+            const convertBack = FuelEconomy.MilesPerGallon.toLitresPer100Kilometres(convertTo)
 
             expect(convertBack).toBeCloseTo(convertBack, 1);
         })
     )
 });
 
-it('Convert known Litres per 100 Kilometres to Miles Per Gallon', () => {
-    expect(FuelEconomy.Litresper100Kilometres.toMilesPerGallon(107.0)).toBeCloseTo(2.64001, 1);
-    expect(FuelEconomy.Litresper100Kilometres.toMilesPerGallon(0.8)).toBeCloseTo(353.101, 1);
-    expect(FuelEconomy.Litresper100Kilometres.toMilesPerGallon(0.02)).toBeCloseTo(14124.05, 1);
+it('Convert known Litres Per 100 Kilometres to Miles Per Gallon', () => {
+    expect(FuelEconomy.LitresPer100Kilometres.toMilesPerGallon(107.0)).toBeCloseTo(2.64001, 1);
+    expect(FuelEconomy.LitresPer100Kilometres.toMilesPerGallon(0.8)).toBeCloseTo(353.101, 1);
+    expect(FuelEconomy.LitresPer100Kilometres.toMilesPerGallon(0.02)).toBeCloseTo(14124.05, 1);
 });
 
-it('From Litres per 100 Kilometres to US Miles Per Gallon and back', () => {
+it('From Litres Per 100 Kilometres to US Miles Per Gallon and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
-            const convertTo = FuelEconomy.Litresper100Kilometres.toUSMilesPerGallon(value)
-            const convertBack = FuelEconomy.USMilesPerGallon.toLitresper100Kilometres(convertTo)
+            const convertTo = FuelEconomy.LitresPer100Kilometres.toUSMilesPerGallon(value)
+            const convertBack = FuelEconomy.USMilesPerGallon.toLitresPer100Kilometres(convertTo)
 
             expect(convertBack).toBeCloseTo(convertBack, 1);
         })
     )
 });
 
-it('Convert known Litres per 100 Kilometres to US Miles Per Gallon', () => {
-    expect(FuelEconomy.Litresper100Kilometres.toUSMilesPerGallon(12.0)).toBeCloseTo(19.6012, 1);
-    expect(FuelEconomy.Litresper100Kilometres.toUSMilesPerGallon(0.3)).toBeCloseTo(784.049, 1);
-    expect(FuelEconomy.Litresper100Kilometres.toUSMilesPerGallon(1.5)).toBeCloseTo(156.81, 1);
+it('Convert known Litres Per 100 Kilometres to US Miles Per Gallon', () => {
+    expect(FuelEconomy.LitresPer100Kilometres.toUSMilesPerGallon(12.0)).toBeCloseTo(19.6012, 1);
+    expect(FuelEconomy.LitresPer100Kilometres.toUSMilesPerGallon(0.3)).toBeCloseTo(784.049, 1);
+    expect(FuelEconomy.LitresPer100Kilometres.toUSMilesPerGallon(1.5)).toBeCloseTo(156.81, 1);
 });
 
 it('From Miles Per Gallon to Kilometre Per Litre and back', () => {
@@ -143,21 +143,21 @@ it('Convert known Miles Per Gallon to US Miles Per Gallon', () => {
     expect(FuelEconomy.MilesPerGallon.toUSMilesPerGallon(0.8)).toBeCloseTo(0.666139, 1);
 });
 
-it('From Miles Per Gallon to Litres per 100 Kilometres and back', () => {
+it('From Miles Per Gallon to Litres Per 100 Kilometres and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
-            const convertTo = FuelEconomy.MilesPerGallon.toLitresper100Kilometres(value)
-            const convertBack = FuelEconomy.Litresper100Kilometres.toMilesPerGallon(convertTo)
+            const convertTo = FuelEconomy.MilesPerGallon.toLitresPer100Kilometres(value)
+            const convertBack = FuelEconomy.LitresPer100Kilometres.toMilesPerGallon(convertTo)
 
             expect(convertBack).toBeCloseTo(convertBack, 1);
         })
     )
 });
 
-it('Convert known Miles Per Gallon to Litres per 100 Kilometres', () => {
-    expect(FuelEconomy.MilesPerGallon.toLitresper100Kilometres(22.3)).toBeCloseTo(12.66731, 1);
-    expect(FuelEconomy.MilesPerGallon.toLitresper100Kilometres(0.4)).toBeCloseTo(706.202, 1);
-    expect(FuelEconomy.MilesPerGallon.toLitresper100Kilometres(5.2)).toBeCloseTo(54.3233, 1);
+it('Convert known Miles Per Gallon to Litres Per 100 Kilometres', () => {
+    expect(FuelEconomy.MilesPerGallon.toLitresPer100Kilometres(22.3)).toBeCloseTo(12.66731, 1);
+    expect(FuelEconomy.MilesPerGallon.toLitresPer100Kilometres(0.4)).toBeCloseTo(706.202, 1);
+    expect(FuelEconomy.MilesPerGallon.toLitresPer100Kilometres(5.2)).toBeCloseTo(54.3233, 1);
 });
 
 it('From US Miles Per Gallon to Kilometre Per Litre and back', () => {
@@ -194,20 +194,20 @@ it('Convert known US Miles Per Gallon to Miles Per Gallon', () => {
     expect(FuelEconomy.USMilesPerGallon.toMilesPerGallon(0.9)).toBeCloseTo(1.08086, 1);
 });
 
-it('From US Miles Per Gallon to Litres per 100 Kilometres and back', () => {
+it('From US Miles Per Gallon to Litres Per 100 Kilometres and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
-            const convertTo = FuelEconomy.USMilesPerGallon.toLitresper100Kilometres(value)
-            const convertBack = FuelEconomy.Litresper100Kilometres.toUSMilesPerGallon(convertTo)
+            const convertTo = FuelEconomy.USMilesPerGallon.toLitresPer100Kilometres(value)
+            const convertBack = FuelEconomy.LitresPer100Kilometres.toUSMilesPerGallon(convertTo)
 
             expect(convertBack).toBeCloseTo(convertBack, 1);
         })
     )
 });
 
-it('Convert known US Miles Per Gallon to Litres per 100 Kilometres', () => {
-    expect(FuelEconomy.USMilesPerGallon.toLitresper100Kilometres(111.0)).toBeCloseTo(2.11905, 1);
-    expect(FuelEconomy.USMilesPerGallon.toLitresper100Kilometres(0.4)).toBeCloseTo(588.036, 1);
-    expect(FuelEconomy.USMilesPerGallon.toLitresper100Kilometres(5.2)).toBeCloseTo(45.2336, 1);
+it('Convert known US Miles Per Gallon to Litres Per 100 Kilometres', () => {
+    expect(FuelEconomy.USMilesPerGallon.toLitresPer100Kilometres(111.0)).toBeCloseTo(2.11905, 1);
+    expect(FuelEconomy.USMilesPerGallon.toLitresPer100Kilometres(0.4)).toBeCloseTo(588.036, 1);
+    expect(FuelEconomy.USMilesPerGallon.toLitresPer100Kilometres(5.2)).toBeCloseTo(45.2336, 1);
 });
 
