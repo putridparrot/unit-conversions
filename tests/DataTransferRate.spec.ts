@@ -343,8 +343,8 @@ it('From GigaBits Per Second to Mebibits Per Second and back', () => {
 
 it('Convert known GigaBits Per Second to Mebibits Per Second', () => {
     expect(DataTransferRate.GigaBitsPerSecond.toMebibitsPerSecond(0.002)).toBeCloseTo(1.9073486, 1);
-    expect(DataTransferRate.GigaBitsPerSecond.toMebibitsPerSecond(0.9)).toBeCloseTo(858.6, 1);
-    expect(DataTransferRate.GigaBitsPerSecond.toMebibitsPerSecond(6.1)).toBeCloseTo(5819.4, 1);
+    expect(DataTransferRate.GigaBitsPerSecond.toMebibitsPerSecond(0.9)).toBeCloseTo(858.3068847656, 1);
+    expect(DataTransferRate.GigaBitsPerSecond.toMebibitsPerSecond(6.1)).toBeCloseTo(5817.413330078, 1);
 });
 
 it('From GigaBytes Per Second to Bits Per Second and back', () => {
@@ -1006,7 +1006,7 @@ it('From KiloBytes Per Second to Kibibits Per Second and back', () => {
 
 it('Convert known KiloBytes Per Second to Kibibits Per Second', () => {
     expect(DataTransferRate.KiloBytesPerSecond.toKibibitsPerSecond(0.009)).toBeCloseTo(0.0703125, 1);
-    expect(DataTransferRate.KiloBytesPerSecond.toKibibitsPerSecond(6e+3)).toBeCloseTo(46872.0, 1);
+    expect(DataTransferRate.KiloBytesPerSecond.toKibibitsPerSecond(6e+3)).toBeCloseTo(46875.0, 1);
     expect(DataTransferRate.KiloBytesPerSecond.toKibibitsPerSecond(1.23)).toBeCloseTo(9.609375, 1);
 });
 

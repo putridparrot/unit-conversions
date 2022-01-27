@@ -73,7 +73,7 @@ export namespace Time {
 			return value * 3650.0;
 		}
 		static toWeeks(value: number): number {
-			return value * 521.0;
+			return value * 521.429;
 		}
 		static toMonths(value: number): number {
 			return value * 120.0;
@@ -214,7 +214,7 @@ export namespace Time {
 			return value / 52.143;
 		}
 		static toDecades(value: number): number {
-			return value / 521.0;
+			return value / 521.429;
 		}
 		static toCenturies(value: number): number {
 			return value / 5214.29;

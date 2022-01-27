@@ -67,7 +67,7 @@ export namespace DataTransferRate {
 			return value * 976562.5;
 		}
 		static toMebibitsPerSecond(value: number): number {
-			return value * 954.0;
+			return value * 953.67431640625;
 		}
 	}
 
@@ -121,7 +121,7 @@ export namespace DataTransferRate {
 			return value / 976562500.0;
 		}
 		static toKiloBytesPerSecond(value: number): number {
-			return value / 7.812;
+			return value / 7.8125;
 		}
 		static toMegaBytesPerSecond(value: number): number {
 			return value / 7812.5;
@@ -196,7 +196,7 @@ export namespace DataTransferRate {
 			return value / 1e+9;
 		}
 		static toKibibitsPerSecond(value: number): number {
-			return value * 7.812;
+			return value * 7.8125;
 		}
 		static toMebibitsPerSecond(value: number): number {
 			return value * 0.00762939;
@@ -214,7 +214,7 @@ export namespace DataTransferRate {
 			return value * 1.04858;
 		}
 		static toGigaBitsPerSecond(value: number): number {
-			return value / 954.0;
+			return value / 953.67431640625;
 		}
 		static toTeraBitsPerSecond(value: number): number {
 			return value / 953674.0;

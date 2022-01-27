@@ -343,8 +343,8 @@ it('From Gigabits to Mebibits and back', () => {
 
 it('Convert known Gigabits to Mebibits', () => {
     expect(DataStorage.Gigabits.toMebibits(0.002)).toBeCloseTo(1.9073486, 1);
-    expect(DataStorage.Gigabits.toMebibits(0.9)).toBeCloseTo(858.6, 1);
-    expect(DataStorage.Gigabits.toMebibits(6.1)).toBeCloseTo(5819.4, 1);
+    expect(DataStorage.Gigabits.toMebibits(0.9)).toBeCloseTo(858.30688476562, 1);
+    expect(DataStorage.Gigabits.toMebibits(6.1)).toBeCloseTo(5817.413330078125, 1);
 });
 
 it('From Gigabytes to Bits and back', () => {
@@ -1006,7 +1006,7 @@ it('From Kilobytes to Kibibits and back', () => {
 
 it('Convert known Kilobytes to Kibibits', () => {
     expect(DataStorage.Kilobytes.toKibibits(0.009)).toBeCloseTo(0.0703125, 1);
-    expect(DataStorage.Kilobytes.toKibibits(6e+3)).toBeCloseTo(46872.0, 1);
+    expect(DataStorage.Kilobytes.toKibibits(6e+3)).toBeCloseTo(46875.0, 1);
     expect(DataStorage.Kilobytes.toKibibits(1.23)).toBeCloseTo(9.609375, 1);
 });
 
