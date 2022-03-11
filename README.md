@@ -12,6 +12,7 @@ Package available via [npm](https://www.npmjs.com/package/@putridparrot/conversi
 ### Unit conversions also available for 
 
 [C#](https://github.com/putridparrot/PutridParrot.Units)  
+[Dart](https://github.com/putridparrot/DartUnits)  
 [F#](https://github.com/putridparrot/FSharp.Units)  
 [Java](https://github.com/putridparrot/JavaUnits)  
 [Python](https://github.com/putridparrot/PyUnits)  
