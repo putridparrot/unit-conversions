@@ -6,6 +6,15 @@
 
 export namespace Time {
 	export class Centuries {
+		static toNanoseconds(value: number): number {
+			return value * 3.154e+18;
+		}
+		static toMicroseconds(value: number): number {
+			return value * 3.154e+15;
+		}
+		static toMilliseconds(value: number): number {
+			return value * 3.154e+12;
+		}
 		static toSeconds(value: number): number {
 			return value * 3.154e+9;
 		}
@@ -33,6 +42,15 @@ export namespace Time {
 	}
 
 	export class Days {
+		static toNanoseconds(value: number): number {
+			return value * 8.64e+13;
+		}
+		static toMicroseconds(value: number): number {
+			return value * 8.64e+10;
+		}
+		static toMilliseconds(value: number): number {
+			return value * 8.64e+7;
+		}
 		static toSeconds(value: number): number {
 			return value * 86400.0;
 		}
@@ -60,6 +78,15 @@ export namespace Time {
 	}
 
 	export class Decades {
+		static toNanoseconds(value: number): number {
+			return value * 3.154e+17;
+		}
+		static toMicroseconds(value: number): number {
+			return value * 3.154e+14;
+		}
+		static toMilliseconds(value: number): number {
+			return value * 3.154e+11;
+		}
 		static toSeconds(value: number): number {
 			return value * 3.154e+8;
 		}
@@ -87,6 +114,15 @@ export namespace Time {
 	}
 
 	export class Hours {
+		static toNanoseconds(value: number): number {
+			return value * 3.6e+12;
+		}
+		static toMicroseconds(value: number): number {
+			return value * 3.6e+9;
+		}
+		static toMilliseconds(value: number): number {
+			return value * 3.6e+6;
+		}
 		static toSeconds(value: number): number {
 			return value * 3600.0;
 		}
@@ -113,7 +149,88 @@ export namespace Time {
 		}
 	}
 
+	export class Microseconds {
+		static toNanoseconds(value: number): number {
+			return value * 1000.0;
+		}
+		static toMilliseconds(value: number): number {
+			return value / 1000.0;
+		}
+		static toSeconds(value: number): number {
+			return value / 1e+6;
+		}
+		static toMinutes(value: number): number {
+			return value / 6e+7;
+		}
+		static toHours(value: number): number {
+			return value / 3.6e+9;
+		}
+		static toDays(value: number): number {
+			return value / 8.64e+10;
+		}
+		static toWeeks(value: number): number {
+			return value / 6.048e+11;
+		}
+		static toMonths(value: number): number {
+			return value / 2629746000000.0;
+		}
+		static toYears(value: number): number {
+			return value / 3.154e+13;
+		}
+		static toDecades(value: number): number {
+			return value / 3.154e+14;
+		}
+		static toCenturies(value: number): number {
+			return value / 3.154e+15;
+		}
+	}
+
+	export class Milliseconds {
+		static toNanoseconds(value: number): number {
+			return value * 1e+6;
+		}
+		static toMicroseconds(value: number): number {
+			return value * 1000.0;
+		}
+		static toSeconds(value: number): number {
+			return value / 1000.0;
+		}
+		static toMinutes(value: number): number {
+			return value / 60000.0;
+		}
+		static toHours(value: number): number {
+			return value / 3.6e+6;
+		}
+		static toDays(value: number): number {
+			return value / 8.64e+7;
+		}
+		static toWeeks(value: number): number {
+			return value / 6.048e+8;
+		}
+		static toMonths(value: number): number {
+			return value / 2629746000.0;
+		}
+		static toYears(value: number): number {
+			return value / 31556952000.0;
+		}
+		static toDecades(value: number): number {
+			return value / 3.154e+11;
+		}
+		static toCenturies(value: number): number {
+			return value / 3.154e+12;
+		}
+	}
+
 	export class Minutes {
+		static toNanoseconds(value: number): number {
+			return value * 6e+10;
+		}
+		static toMicroseconds(value: number): number {
+			return value * 6e+7;
+		}
+		static toMilliseconds(value: number): number {
+			return value * 60000.0;
+		}
 		static toSeconds(value: number): number {
 			return value * 60.0;
 		}
@@ -141,6 +258,15 @@ export namespace Time {
 	}
 
 	export class Months {
+		static toNanoseconds(value: number): number {
+			return value * 2629746000000000.0;
+		}
+		static toMicroseconds(value: number): number {
+			return value * 2629746000000.0;
+		}
+		static toMilliseconds(value: number): number {
+			return value * 2629746000.0;
+		}
 		static toSeconds(value: number): number {
 			return value * 2.628e+6;
 		}
@@ -167,7 +293,52 @@ export namespace Time {
 		}
 	}
 
+	export class Nanoseconds {
+		static toMicroseconds(value: number): number {
+			return value / 1000.0;
+		}
+		static toMilliseconds(value: number): number {
+			return value / 1e+6;
+		}
+		static toSeconds(value: number): number {
+			return value / 1e+9;
+		}
+		static toMinutes(value: number): number {
+			return value / 6e+10;
+		}
+		static toHours(value: number): number {
+			return value / 3.6e+12;
+		}
+		static toDays(value: number): number {
+			return value / 8.64e+13;
+		}
+		static toWeeks(value: number): number {
+			return value / 6.048e+14;
+		}
+		static toMonths(value: number): number {
+			return value / 2629746000000000.0;
+		}
+		static toYears(value: number): number {
+			return value / 3.154e+16;
+		}
+		static toDecades(value: number): number {
+			return value / 3.154e+17;
+		}
+		static toCenturies(value: number): number {
+			return value / 3.154e+18;
+		}
+	}
+
 	export class Seconds {
+		static toNanoseconds(value: number): number {
+			return value * 1e+9;
+		}
+		static toMicroseconds(value: number): number {
+			return value * 1e+6;
+		}
+		static toMilliseconds(value: number): number {
+			return value * 1000.0;
+		}
 		static toMinutes(value: number): number {
 			return value / 60.0;
 		}
@@ -195,6 +366,15 @@ export namespace Time {
 	}
 
 	export class Weeks {
+		static toNanoseconds(value: number): number {
+			return value * 6.048e+14;
+		}
+		static toMicroseconds(value: number): number {
+			return value * 6.048e+11;
+		}
+		static toMilliseconds(value: number): number {
+			return value * 6.048e+8;
+		}
 		static toSeconds(value: number): number {
 			return value * 604800.0;
 		}
@@ -222,6 +402,15 @@ export namespace Time {
 	}
 
 	export class Years {
+		static toNanoseconds(value: number): number {
+			return value * 3.154e+16;
+		}
+		static toMicroseconds(value: number): number {
+			return value * 3.154e+13;
+		}
+		static toMilliseconds(value: number): number {
+			return value * 31556952000.0;
+		}
 		static toSeconds(value: number): number {
 			return value * 3.1536e+7;
 		}

@@ -7,6 +7,39 @@
 import * as fc from 'fast-check';
 import { Time } from '../src/Time';
 
+it('From Centuries to Nanoseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Centuries.toNanoseconds(value)
+            const convertBack = Time.Nanoseconds.toCenturies(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Centuries to Microseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Centuries.toMicroseconds(value)
+            const convertBack = Time.Microseconds.toCenturies(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Centuries to Milliseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Centuries.toMilliseconds(value)
+            const convertBack = Time.Milliseconds.toCenturies(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
 it('From Centuries to Seconds and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -93,6 +126,45 @@ it('From Centuries to Decades and back', () => {
             expect(convertBack).toBeCloseTo(convertBack, 1);
         })
     )
+});
+
+it('From Days to Nanoseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Days.toNanoseconds(value)
+            const convertBack = Time.Nanoseconds.toDays(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Days to Microseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Days.toMicroseconds(value)
+            const convertBack = Time.Microseconds.toDays(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Days to Milliseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Days.toMilliseconds(value)
+            const convertBack = Time.Milliseconds.toDays(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Days to Milliseconds', () => {
+    expect(Time.Days.toMilliseconds(0.0009)).toBeCloseTo(77760.0, 1);
+    expect(Time.Days.toMilliseconds(0.03)).toBeCloseTo(2592000.0, 1);
+    expect(Time.Days.toMilliseconds(0.006)).toBeCloseTo(518400.0, 1);
 });
 
 it('From Days to Seconds and back', () => {
@@ -219,6 +291,39 @@ it('From Days to Centuries and back', () => {
     )
 });
 
+it('From Decades to Nanoseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Decades.toNanoseconds(value)
+            const convertBack = Time.Nanoseconds.toDecades(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Decades to Microseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Decades.toMicroseconds(value)
+            const convertBack = Time.Microseconds.toDecades(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Decades to Milliseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Decades.toMilliseconds(value)
+            const convertBack = Time.Milliseconds.toDecades(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
 it('From Decades to Seconds and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -305,6 +410,45 @@ it('From Decades to Centuries and back', () => {
             expect(convertBack).toBeCloseTo(convertBack, 1);
         })
     )
+});
+
+it('From Hours to Nanoseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Hours.toNanoseconds(value)
+            const convertBack = Time.Nanoseconds.toHours(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Hours to Microseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Hours.toMicroseconds(value)
+            const convertBack = Time.Microseconds.toHours(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Hours to Milliseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Hours.toMilliseconds(value)
+            const convertBack = Time.Milliseconds.toHours(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Hours to Milliseconds', () => {
+    expect(Time.Hours.toMilliseconds(0.006)).toBeCloseTo(21600.0, 1);
+    expect(Time.Hours.toMilliseconds(0.09)).toBeCloseTo(324000.0, 1);
+    expect(Time.Hours.toMilliseconds(0.007)).toBeCloseTo(25200.0, 1);
 });
 
 it('From Hours to Seconds and back', () => {
@@ -431,6 +575,329 @@ it('From Hours to Centuries and back', () => {
     )
 });
 
+it('From Microseconds to Nanoseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Microseconds.toNanoseconds(value)
+            const convertBack = Time.Nanoseconds.toMicroseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Microseconds to Milliseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Microseconds.toMilliseconds(value)
+            const convertBack = Time.Milliseconds.toMicroseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Microseconds to Seconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Microseconds.toSeconds(value)
+            const convertBack = Time.Seconds.toMicroseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Microseconds to Minutes and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Microseconds.toMinutes(value)
+            const convertBack = Time.Minutes.toMicroseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Microseconds to Hours and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Microseconds.toHours(value)
+            const convertBack = Time.Hours.toMicroseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Microseconds to Days and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Microseconds.toDays(value)
+            const convertBack = Time.Days.toMicroseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Microseconds to Weeks and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Microseconds.toWeeks(value)
+            const convertBack = Time.Weeks.toMicroseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Microseconds to Months and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Microseconds.toMonths(value)
+            const convertBack = Time.Months.toMicroseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Microseconds to Years and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Microseconds.toYears(value)
+            const convertBack = Time.Years.toMicroseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Microseconds to Decades and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Microseconds.toDecades(value)
+            const convertBack = Time.Decades.toMicroseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Microseconds to Centuries and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Microseconds.toCenturies(value)
+            const convertBack = Time.Centuries.toMicroseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Milliseconds to Nanoseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Milliseconds.toNanoseconds(value)
+            const convertBack = Time.Nanoseconds.toMilliseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Milliseconds to Microseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Milliseconds.toMicroseconds(value)
+            const convertBack = Time.Microseconds.toMilliseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Milliseconds to Seconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Milliseconds.toSeconds(value)
+            const convertBack = Time.Seconds.toMilliseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Milliseconds to Seconds', () => {
+    expect(Time.Milliseconds.toSeconds(8.0)).toBeCloseTo(0.008, 1);
+    expect(Time.Milliseconds.toSeconds(780.0)).toBeCloseTo(0.78, 1);
+    expect(Time.Milliseconds.toSeconds(900.0)).toBeCloseTo(0.9, 1);
+});
+
+it('From Milliseconds to Minutes and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Milliseconds.toMinutes(value)
+            const convertBack = Time.Minutes.toMilliseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Milliseconds to Minutes', () => {
+    expect(Time.Milliseconds.toMinutes(900.0)).toBeCloseTo(0.015, 1);
+    expect(Time.Milliseconds.toMinutes(67000.0)).toBeCloseTo(1.1166667, 1);
+    expect(Time.Milliseconds.toMinutes(1234567.0)).toBeCloseTo(20.57611667, 1);
+});
+
+it('From Milliseconds to Hours and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Milliseconds.toHours(value)
+            const convertBack = Time.Hours.toMilliseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Milliseconds to Hours', () => {
+    expect(Time.Milliseconds.toHours(1234567.0)).toBeCloseTo(0.3429352778, 1);
+    expect(Time.Milliseconds.toHours(100900.0)).toBeCloseTo(0.0280277778, 1);
+    expect(Time.Milliseconds.toHours(46000.0)).toBeCloseTo(0.012777778, 1);
+});
+
+it('From Milliseconds to Days and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Milliseconds.toDays(value)
+            const convertBack = Time.Days.toMilliseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Milliseconds to Days', () => {
+    expect(Time.Milliseconds.toDays(9000000.0)).toBeCloseTo(0.1041666667, 1);
+    expect(Time.Milliseconds.toDays(123456789.0)).toBeCloseTo(1.42889802083, 1);
+    expect(Time.Milliseconds.toDays(89008900.0)).toBeCloseTo(1.0301956019, 1);
+});
+
+it('From Milliseconds to Weeks and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Milliseconds.toWeeks(value)
+            const convertBack = Time.Weeks.toMilliseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Milliseconds to Weeks', () => {
+    expect(Time.Milliseconds.toWeeks(89008900.0)).toBeCloseTo(0.14717080026, 1);
+    expect(Time.Milliseconds.toWeeks(1234567890.0)).toBeCloseTo(2.041282886905, 1);
+    expect(Time.Milliseconds.toWeeks(100200300.0)).toBeCloseTo(0.165675099206, 1);
+});
+
+it('From Milliseconds to Months and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Milliseconds.toMonths(value)
+            const convertBack = Time.Months.toMilliseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Milliseconds to Months', () => {
+    expect(Time.Milliseconds.toMonths(100200300400.0)).toBeCloseTo(38.102653412154631, 1);
+    expect(Time.Milliseconds.toMonths(90001000.0)).toBeCloseTo(0.034246918329, 1);
+    expect(Time.Milliseconds.toMonths(8888888888.0)).toBeCloseTo(3.382374104552, 1);
+});
+
+it('From Milliseconds to Years and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Milliseconds.toYears(value)
+            const convertBack = Time.Years.toMilliseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Milliseconds to Years', () => {
+    expect(Time.Milliseconds.toYears(8888888888.0)).toBeCloseTo(0.28167767558793383, 1);
+    expect(Time.Milliseconds.toYears(123456789123.0)).toBeCloseTo(3.9121899074093087, 1);
+    expect(Time.Milliseconds.toYears(900080007000.0)).toBeCloseTo(28.522399977032002, 1);
+});
+
+it('From Milliseconds to Decades and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Milliseconds.toDecades(value)
+            const convertBack = Time.Decades.toMilliseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Milliseconds to Centuries and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Milliseconds.toCenturies(value)
+            const convertBack = Time.Centuries.toMilliseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Minutes to Nanoseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Minutes.toNanoseconds(value)
+            const convertBack = Time.Nanoseconds.toMinutes(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Minutes to Microseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Minutes.toMicroseconds(value)
+            const convertBack = Time.Microseconds.toMinutes(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Minutes to Milliseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Minutes.toMilliseconds(value)
+            const convertBack = Time.Milliseconds.toMinutes(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Minutes to Milliseconds', () => {
+    expect(Time.Minutes.toMilliseconds(0.007)).toBeCloseTo(420.0, 1);
+    expect(Time.Minutes.toMilliseconds(0.8)).toBeCloseTo(48000.0, 1);
+    expect(Time.Minutes.toMilliseconds(9.0)).toBeCloseTo(540000.0, 1);
+});
+
 it('From Minutes to Seconds and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -553,6 +1020,45 @@ it('From Minutes to Centuries and back', () => {
             expect(convertBack).toBeCloseTo(convertBack, 1);
         })
     )
+});
+
+it('From Months to Nanoseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Months.toNanoseconds(value)
+            const convertBack = Time.Nanoseconds.toMonths(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Months to Microseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Months.toMicroseconds(value)
+            const convertBack = Time.Microseconds.toMonths(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Months to Milliseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Months.toMilliseconds(value)
+            const convertBack = Time.Milliseconds.toMonths(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Months to Milliseconds', () => {
+    expect(Time.Months.toMilliseconds(0.00034)).toBeCloseTo(894113.64, 1);
+    expect(Time.Months.toMilliseconds(0.001)).toBeCloseTo(2629746.0, 1);
+    expect(Time.Months.toMilliseconds(0.006)).toBeCloseTo(15778476.0, 1);
 });
 
 it('From Months to Seconds and back', () => {
@@ -679,6 +1185,196 @@ it('From Months to Centuries and back', () => {
     )
 });
 
+it('From Nanoseconds to Microseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Nanoseconds.toMicroseconds(value)
+            const convertBack = Time.Microseconds.toNanoseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Nanoseconds to Microseconds', () => {
+    expect(Time.Nanoseconds.toMicroseconds(1234.0)).toBeCloseTo(1.234, 1);
+    expect(Time.Nanoseconds.toMicroseconds(90.9)).toBeCloseTo(0.0909, 1);
+    expect(Time.Nanoseconds.toMicroseconds(70000.0)).toBeCloseTo(70.0, 1);
+});
+
+it('From Nanoseconds to Milliseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Nanoseconds.toMilliseconds(value)
+            const convertBack = Time.Milliseconds.toNanoseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Nanoseconds to Milliseconds', () => {
+    expect(Time.Nanoseconds.toMilliseconds(70000.0)).toBeCloseTo(0.07, 1);
+    expect(Time.Nanoseconds.toMilliseconds(123456.0)).toBeCloseTo(0.123456, 1);
+    expect(Time.Nanoseconds.toMilliseconds(900900.0)).toBeCloseTo(0.9009, 1);
+});
+
+it('From Nanoseconds to Seconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Nanoseconds.toSeconds(value)
+            const convertBack = Time.Seconds.toNanoseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Nanoseconds to Seconds', () => {
+    expect(Time.Nanoseconds.toSeconds(900000000.0)).toBeCloseTo(0.9, 1);
+    expect(Time.Nanoseconds.toSeconds(123456789.0)).toBeCloseTo(0.123456789, 1);
+    expect(Time.Nanoseconds.toSeconds(800400700.0)).toBeCloseTo(0.8004007, 1);
+});
+
+it('From Nanoseconds to Minutes and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Nanoseconds.toMinutes(value)
+            const convertBack = Time.Minutes.toNanoseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Nanoseconds to Minutes', () => {
+    expect(Time.Nanoseconds.toMinutes(1234567890.0)).toBeCloseTo(0.0205761315, 1);
+    expect(Time.Nanoseconds.toMinutes(800400700.0)).toBeCloseTo(0.0133400116667, 1);
+    expect(Time.Nanoseconds.toMinutes(800100800.0)).toBeCloseTo(0.0133350133333, 1);
+});
+
+it('From Nanoseconds to Hours and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Nanoseconds.toHours(value)
+            const convertBack = Time.Hours.toNanoseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Nanoseconds to Hours', () => {
+    expect(Time.Nanoseconds.toHours(1234567890123.0)).toBeCloseTo(0.3429355250341667, 1);
+    expect(Time.Nanoseconds.toHours(900800700600.0)).toBeCloseTo(0.250222416833333, 1);
+    expect(Time.Nanoseconds.toHours(66677788999.0)).toBeCloseTo(0.018521608055278, 1);
+});
+
+it('From Nanoseconds to Days and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Nanoseconds.toDays(value)
+            const convertBack = Time.Days.toNanoseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Nanoseconds to Weeks and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Nanoseconds.toWeeks(value)
+            const convertBack = Time.Weeks.toNanoseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Nanoseconds to Months and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Nanoseconds.toMonths(value)
+            const convertBack = Time.Months.toNanoseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Nanoseconds to Years and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Nanoseconds.toYears(value)
+            const convertBack = Time.Years.toNanoseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Nanoseconds to Decades and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Nanoseconds.toDecades(value)
+            const convertBack = Time.Decades.toNanoseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Nanoseconds to Centuries and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Nanoseconds.toCenturies(value)
+            const convertBack = Time.Centuries.toNanoseconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Seconds to Nanoseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Seconds.toNanoseconds(value)
+            const convertBack = Time.Nanoseconds.toSeconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Seconds to Microseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Seconds.toMicroseconds(value)
+            const convertBack = Time.Microseconds.toSeconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Seconds to Milliseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Seconds.toMilliseconds(value)
+            const convertBack = Time.Milliseconds.toSeconds(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Seconds to Milliseconds', () => {
+    expect(Time.Seconds.toMilliseconds(9.0)).toBeCloseTo(9000.0, 1);
+    expect(Time.Seconds.toMilliseconds(3.1)).toBeCloseTo(3100.0, 1);
+    expect(Time.Seconds.toMilliseconds(0.9)).toBeCloseTo(900.0, 1);
+});
+
 it('From Seconds to Minutes and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -803,6 +1499,45 @@ it('From Seconds to Centuries and back', () => {
     )
 });
 
+it('From Weeks to Nanoseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Weeks.toNanoseconds(value)
+            const convertBack = Time.Nanoseconds.toWeeks(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Weeks to Microseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Weeks.toMicroseconds(value)
+            const convertBack = Time.Microseconds.toWeeks(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Weeks to Milliseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Weeks.toMilliseconds(value)
+            const convertBack = Time.Milliseconds.toWeeks(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Weeks to Milliseconds', () => {
+    expect(Time.Weeks.toMilliseconds(0.001)).toBeCloseTo(604800.0, 1);
+    expect(Time.Weeks.toMilliseconds(0.005)).toBeCloseTo(3024000.0, 1);
+    expect(Time.Weeks.toMilliseconds(0.0009)).toBeCloseTo(544320.0, 1);
+});
+
 it('From Weeks to Seconds and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -925,6 +1660,45 @@ it('From Weeks to Centuries and back', () => {
             expect(convertBack).toBeCloseTo(convertBack, 1);
         })
     )
+});
+
+it('From Years to Nanoseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Years.toNanoseconds(value)
+            const convertBack = Time.Nanoseconds.toYears(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Years to Microseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Years.toMicroseconds(value)
+            const convertBack = Time.Microseconds.toYears(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('From Years to Milliseconds and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Time.Years.toMilliseconds(value)
+            const convertBack = Time.Milliseconds.toYears(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Years to Milliseconds', () => {
+    expect(Time.Years.toMilliseconds(0.001)).toBeCloseTo(31556952.0, 1);
+    expect(Time.Years.toMilliseconds(0.0009)).toBeCloseTo(28401256.8, 1);
+    expect(Time.Years.toMilliseconds(0.00034)).toBeCloseTo(10729363.680000002, 1);
 });
 
 it('From Years to Seconds and back', () => {
