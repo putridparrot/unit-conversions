@@ -14,6 +14,7 @@ Package available via [npm](https://www.npmjs.com/package/@putridparrot/conversi
 [C#](https://github.com/putridparrot/PutridParrot.Units)  
 [Dart](https://github.com/putridparrot/DartUnits)  
 [F#](https://github.com/putridparrot/FSharp.Units)  
+[Go](https://github.com/putridparrot/GoUnits)  
 [Java](https://github.com/putridparrot/JavaUnits)  
 [Python](https://github.com/putridparrot/PyUnits)  
 [Rust](https://github.com/putridparrot/RustUnits)   
