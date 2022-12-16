@@ -667,7 +667,7 @@ it('From Kibibits Per Second to TeraBytes Per Second and back', () => {
 it('Convert known Kibibits Per Second to TeraBytes Per Second', () => {
     expect(DataTransferRate.KibibitsPerSecond.toTeraBytesPerSecond(120000000.0)).toBeCloseTo(0.01536, 1);
     expect(DataTransferRate.KibibitsPerSecond.toTeraBytesPerSecond(88e12)).toBeCloseTo(11264.0, 1);
-    expect(DataTransferRate.KibibitsPerSecond.toTeraBytesPerSecond(9000000.0)).toBeCloseTo(0.009216, 1);
+    expect(DataTransferRate.KibibitsPerSecond.toTeraBytesPerSecond(9000000.0)).toBeCloseTo(0.001152, 1);
 });
 
 it('From Kibibits Per Second to Mebibits Per Second and back', () => {

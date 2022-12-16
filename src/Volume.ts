@@ -5,6 +5,186 @@
 // </auto-generated>
 
 export namespace Volume {
+	export class CubicFeet {
+		static toMillilitres(value: number): number {
+			return value * 28316.8;
+		}
+		static toLitres(value: number): number {
+			return value * 28.3168;
+		}
+		static toKilolitres(value: number): number {
+			return value / 35.3147;
+		}
+		static toTeaspoons(value: number): number {
+			return value * 4783.74;
+		}
+		static toTablespoons(value: number): number {
+			return value * 1594.58;
+		}
+		static toQuarts(value: number): number {
+			return value * 24.9153;
+		}
+		static toPints(value: number): number {
+			return value * 49.8307;
+		}
+		static toGallons(value: number): number {
+			return value * 6.22884;
+		}
+		static toFluidOunces(value: number): number {
+			return value * 996.614;
+		}
+		static toUSTeaspoons(value: number): number {
+			return value * 5745.04;
+		}
+		static toUSTablespoons(value: number): number {
+			return value * 1915.01;
+		}
+		static toUSQuarts(value: number): number {
+			return value * 29.9221;
+		}
+		static toUSPints(value: number): number {
+			return value * 59.8442;
+		}
+		static toUSGallons(value: number): number {
+			return value * 7.48052;
+		}
+		static toUSFluidOunces(value: number): number {
+			return value * 957.506;
+		}
+		static toUSCups(value: number): number {
+			return value * 117.987;
+		}
+		static toCubicMetres(value: number): number {
+			return value / 35.3147;
+		}
+		static toCubicInches(value: number): number {
+			return value * 1728.0;
+		}
+		static toOilBarrels(value: number): number {
+			return value / 5.61458;
+		}
+	}
+
+	export class CubicInches {
+		static toMillilitres(value: number): number {
+			return value * 16.3871;
+		}
+		static toLitres(value: number): number {
+			return value / 61.0237;
+		}
+		static toKilolitres(value: number): number {
+			return value / 61023.7;
+		}
+		static toTeaspoons(value: number): number {
+			return value * 2.76837;
+		}
+		static toTablespoons(value: number): number {
+			return value / 1.08367;
+		}
+		static toQuarts(value: number): number {
+			return value / 69.3549;
+		}
+		static toPints(value: number): number {
+			return value / 34.6774;
+		}
+		static toGallons(value: number): number {
+			return value / 277.419;
+		}
+		static toFluidOunces(value: number): number {
+			return value / 1.73387;
+		}
+		static toUSTeaspoons(value: number): number {
+			return value * 3.32468;
+		}
+		static toUSTablespoons(value: number): number {
+			return value * 1.10823;
+		}
+		static toUSQuarts(value: number): number {
+			return value / 57.75;
+		}
+		static toUSPints(value: number): number {
+			return value / 28.875;
+		}
+		static toUSGallons(value: number): number {
+			return value / 231.0;
+		}
+		static toUSFluidOunces(value: number): number {
+			return value / 1.80469;
+		}
+		static toUSCups(value: number): number {
+			return value / 14.6457;
+		}
+		static toCubicMetres(value: number): number {
+			return value / 61023.7;
+		}
+		static toCubicFeet(value: number): number {
+			return value / 1728.0;
+		}
+		static toOilBarrels(value: number): number {
+			return value / 9702.0;
+		}
+	}
+
+	export class CubicMetres {
+		static toMillilitres(value: number): number {
+			return value * 1000000.0;
+		}
+		static toLitres(value: number): number {
+			return value * 1000.0;
+		}
+		static toKilolitres(value: number): number {
+			return value * 1.0;
+		}
+		static toTeaspoons(value: number): number {
+			return value * 168936.0;
+		}
+		static toTablespoons(value: number): number {
+			return value * 56312.1;
+		}
+		static toQuarts(value: number): number {
+			return value * 879.877;
+		}
+		static toPints(value: number): number {
+			return value * 1759.75;
+		}
+		static toGallons(value: number): number {
+			return value * 219.969;
+		}
+		static toFluidOunces(value: number): number {
+			return value * 35195.1;
+		}
+		static toUSTeaspoons(value: number): number {
+			return value * 202884.0;
+		}
+		static toUSTablespoons(value: number): number {
+			return value * 67628.0;
+		}
+		static toUSQuarts(value: number): number {
+			return value * 1056.69;
+		}
+		static toUSPints(value: number): number {
+			return value * 2113.38;
+		}
+		static toUSGallons(value: number): number {
+			return value * 264.172;
+		}
+		static toUSFluidOunces(value: number): number {
+			return value * 33814.0;
+		}
+		static toUSCups(value: number): number {
+			return value * 4166.67;
+		}
+		static toCubicFeet(value: number): number {
+			return value * 35.3147;
+		}
+		static toCubicInches(value: number): number {
+			return value * 61023.7;
+		}
+		static toOilBarrels(value: number): number {
+			return value * 6.28981;
+		}
+	}
+
 	export class FluidOunces {
 		static toMillilitres(value: number): number {
 			return value * 28.413074243749994496;
@@ -50,6 +230,18 @@ export namespace Volume {
 		}
 		static toUSCups(value: number): number {
 			return value / 8.3267384046639071232;
+		}
+		static toCubicMetres(value: number): number {
+			return value / 35195.1;
+		}
+		static toCubicFeet(value: number): number {
+			return value / 996.614;
+		}
+		static toCubicInches(value: number): number {
+			return value * 1.73387;
+		}
+		static toOilBarrels(value: number): number {
+			return value / 5595.57;
 		}
 	}
 
@@ -99,6 +291,18 @@ export namespace Volume {
 		static toUSCups(value: number): number {
 			return value / 0.052042115029149417472;
 		}
+		static toCubicMetres(value: number): number {
+			return value / 219.969;
+		}
+		static toCubicFeet(value: number): number {
+			return value / 6.22884;
+		}
+		static toCubicInches(value: number): number {
+			return value * 277.419;
+		}
+		static toOilBarrels(value: number): number {
+			return value / 34.9723;
+		}
 	}
 
 	export class Kilolitres {
@@ -146,6 +350,18 @@ export namespace Volume {
 		}
 		static toUSCups(value: number): number {
 			return value / 0.000236588236499999989;
+		}
+		static toCubicMetres(value: number): number {
+			return value * 1.0;
+		}
+		static toCubicFeet(value: number): number {
+			return value * 35.3147;
+		}
+		static toCubicInches(value: number): number {
+			return value * 61023.7;
+		}
+		static toOilBarrels(value: number): number {
+			return value * 6.28981;
 		}
 	}
 
@@ -195,6 +411,18 @@ export namespace Volume {
 		static toUSCups(value: number): number {
 			return value / 0.23658823649999998976;
 		}
+		static toCubicMetres(value: number): number {
+			return value / 1000.0;
+		}
+		static toCubicFeet(value: number): number {
+			return value / 28.3168;
+		}
+		static toCubicInches(value: number): number {
+			return value * 61.0237;
+		}
+		static toOilBarrels(value: number): number {
+			return value / 158.987;
+		}
 	}
 
 	export class Millilitres {
@@ -242,6 +470,78 @@ export namespace Volume {
 		}
 		static toUSCups(value: number): number {
 			return value / 236.58823649999998976;
+		}
+		static toCubicMetres(value: number): number {
+			return value / 1000000.0;
+		}
+		static toCubicFeet(value: number): number {
+			return value / 28316.8;
+		}
+		static toCubicInches(value: number): number {
+			return value / 16.3871;
+		}
+		static toOilBarrels(value: number): number {
+			return value / 158987.0;
+		}
+	}
+
+	export class OilBarrels {
+		static toMillilitres(value: number): number {
+			return value * 158987.0;
+		}
+		static toLitres(value: number): number {
+			return value * 158.987;
+		}
+		static toKilolitres(value: number): number {
+			return value / 6.28981;
+		}
+		static toTeaspoons(value: number): number {
+			return value * 26858.7;
+		}
+		static toTablespoons(value: number): number {
+			return value * 8952.91;
+		}
+		static toQuarts(value: number): number {
+			return value * 139.889;
+		}
+		static toPints(value: number): number {
+			return value * 279.779;
+		}
+		static toGallons(value: number): number {
+			return value * 34.9723;
+		}
+		static toFluidOunces(value: number): number {
+			return value * 5595.57;
+		}
+		static toUSTeaspoons(value: number): number {
+			return value * 32256.0;
+		}
+		static toUSTablespoons(value: number): number {
+			return value * 10752.0;
+		}
+		static toUSQuarts(value: number): number {
+			return value * 168.0;
+		}
+		static toUSPints(value: number): number {
+			return value * 336.0;
+		}
+		static toUSGallons(value: number): number {
+			return value * 42.0;
+		}
+		static toUSFluidOunces(value: number): number {
+			return value * 5376.0;
+		}
+		static toUSCups(value: number): number {
+			return value * 662.447;
+		}
+		static toCubicMetres(value: number): number {
+			return value / 6.28981;
+		}
+		static toCubicFeet(value: number): number {
+			return value * 5.61458;
+		}
+		static toCubicInches(value: number): number {
+			return value * 9702.0;
 		}
 	}
 
@@ -291,6 +591,18 @@ export namespace Volume {
 		static toUSCups(value: number): number {
 			return value / 0.41633692023319535616;
 		}
+		static toCubicMetres(value: number): number {
+			return value / 1759.75;
+		}
+		static toCubicFeet(value: number): number {
+			return value / 49.8307;
+		}
+		static toCubicInches(value: number): number {
+			return value * 34.6774;
+		}
+		static toOilBarrels(value: number): number {
+			return value / 279.779;
+		}
 	}
 
 	export class Quarts {
@@ -338,6 +650,18 @@ export namespace Volume {
 		}
 		static toUSCups(value: number): number {
 			return value / 0.20816846011659767808;
+		}
+		static toCubicMetres(value: number): number {
+			return value / 879.877;
+		}
+		static toCubicFeet(value: number): number {
+			return value / 24.9153;
+		}
+		static toCubicInches(value: number): number {
+			return value * 69.3549;
+		}
+		static toOilBarrels(value: number): number {
+			return value / 139.889;
 		}
 	}
 
@@ -387,6 +711,18 @@ export namespace Volume {
 		static toUSCups(value: number): number {
 			return value / 13.322781447462250496;
 		}
+		static toCubicMetres(value: number): number {
+			return value / 56312.1;
+		}
+		static toCubicFeet(value: number): number {
+			return value / 1594.58;
+		}
+		static toCubicInches(value: number): number {
+			return value * 1.08367;
+		}
+		static toOilBarrels(value: number): number {
+			return value / 8952.91;
+		}
 	}
 
 	export class Teaspoons {
@@ -434,6 +770,18 @@ export namespace Volume {
 		}
 		static toUSCups(value: number): number {
 			return value / 39.968344342386753536;
+		}
+		static toCubicMetres(value: number): number {
+			return value / 168936.0;
+		}
+		static toCubicFeet(value: number): number {
+			return value / 4783.74;
+		}
+		static toCubicInches(value: number): number {
+			return value / 2.76837;
+		}
+		static toOilBarrels(value: number): number {
+			return value / 26858.7;
 		}
 	}
 
@@ -483,6 +831,18 @@ export namespace Volume {
 		static toUSFluidOunces(value: number): number {
 			return value * 8.0;
 		}
+		static toCubicMetres(value: number): number {
+			return value / 4166.67;
+		}
+		static toCubicFeet(value: number): number {
+			return value / 117.987;
+		}
+		static toCubicInches(value: number): number {
+			return value * 14.6457;
+		}
+		static toOilBarrels(value: number): number {
+			return value / 662.447;
+		}
 	}
 
 	export class USFluidOunces {
@@ -530,6 +890,18 @@ export namespace Volume {
 		}
 		static toUSCups(value: number): number {
 			return value / 8.0;
+		}
+		static toCubicMetres(value: number): number {
+			return value / 33814.0;
+		}
+		static toCubicFeet(value: number): number {
+			return value / 957.506;
+		}
+		static toCubicInches(value: number): number {
+			return value * 1.80469;
+		}
+		static toOilBarrels(value: number): number {
+			return value / 5376.0;
 		}
 	}
 
@@ -579,6 +951,18 @@ export namespace Volume {
 		static toUSCups(value: number): number {
 			return value * 16.0;
 		}
+		static toCubicMetres(value: number): number {
+			return value / 264.172;
+		}
+		static toCubicFeet(value: number): number {
+			return value / 7.48052;
+		}
+		static toCubicInches(value: number): number {
+			return value * 231.0;
+		}
+		static toOilBarrels(value: number): number {
+			return value / 42.0;
+		}
 	}
 
 	export class USPints {
@@ -626,6 +1010,18 @@ export namespace Volume {
 		}
 		static toUSCups(value: number): number {
 			return value * 2.0;
+		}
+		static toCubicMetres(value: number): number {
+			return value / 2113.38;
+		}
+		static toCubicFeet(value: number): number {
+			return value / 59.8442;
+		}
+		static toCubicInches(value: number): number {
+			return value * 28.875;
+		}
+		static toOilBarrels(value: number): number {
+			return value / 336.0;
 		}
 	}
 
@@ -675,6 +1071,18 @@ export namespace Volume {
 		static toUSCups(value: number): number {
 			return value * 4.0;
 		}
+		static toCubicMetres(value: number): number {
+			return value / 1056.69;
+		}
+		static toCubicFeet(value: number): number {
+			return value / 29.9221;
+		}
+		static toCubicInches(value: number): number {
+			return value * 57.75;
+		}
+		static toOilBarrels(value: number): number {
+			return value / 168.0;
+		}
 	}
 
 	export class USTablespoons {
@@ -723,6 +1131,18 @@ export namespace Volume {
 		static toUSCups(value: number): number {
 			return value / 16.0;
 		}
+		static toCubicMetres(value: number): number {
+			return value / 67628.0;
+		}
+		static toCubicFeet(value: number): number {
+			return value / 1915.01;
+		}
+		static toCubicInches(value: number): number {
+			return value / 1.10823;
+		}
+		static toOilBarrels(value: number): number {
+			return value / 10752.0;
+		}
 	}
 
 	export class USTeaspoons {
@@ -770,6 +1190,18 @@ export namespace Volume {
 		}
 		static toUSCups(value: number): number {
 			return value / 48.0;
+		}
+		static toCubicMetres(value: number): number {
+			return value / 202884.0;
+		}
+		static toCubicFeet(value: number): number {
+			return value / 5745.04;
+		}
+		static toCubicInches(value: number): number {
+			return value / 3.32468;
+		}
+		static toOilBarrels(value: number): number {
+			return value / 32256.0;
 		}
 	}
 }

@@ -7,6 +7,975 @@
 import * as fc from 'fast-check';
 import { Volume } from '../src/Volume';
 
+it('From Cubic Feet to Millilitres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicFeet.toMillilitres(value)
+            const convertBack = Volume.Millilitres.toCubicFeet(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Feet to Millilitres', () => {
+    expect(Volume.CubicFeet.toMillilitres(0.08)).toBeCloseTo(2265.348, 1);
+    expect(Volume.CubicFeet.toMillilitres(6.0)).toBeCloseTo(169900.79, 1);
+    expect(Volume.CubicFeet.toMillilitres(0.2393275)).toBeCloseTo(6776.988, 1);
+});
+
+it('From Cubic Feet to Litres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicFeet.toLitres(value)
+            const convertBack = Volume.Litres.toCubicFeet(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Feet to Litres', () => {
+    expect(Volume.CubicFeet.toLitres(0.3)).toBeCloseTo(8.49505, 1);
+    expect(Volume.CubicFeet.toLitres(6.0)).toBeCloseTo(169.901, 1);
+    expect(Volume.CubicFeet.toLitres(56.0)).toBeCloseTo(1585.74, 1);
+});
+
+it('From Cubic Feet to Kilolitres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicFeet.toKilolitres(value)
+            const convertBack = Volume.Kilolitres.toCubicFeet(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Feet to Kilolitres', () => {
+    expect(Volume.CubicFeet.toKilolitres(300.0)).toBeCloseTo(8.49505, 1);
+    expect(Volume.CubicFeet.toKilolitres(141.259)).toBeCloseTo(4.0, 1);
+    expect(Volume.CubicFeet.toKilolitres(111.0)).toBeCloseTo(3.14317, 1);
+});
+
+it('From Cubic Feet to Teaspoons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicFeet.toTeaspoons(value)
+            const convertBack = Volume.Teaspoons.toCubicFeet(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Feet to Teaspoons', () => {
+    expect(Volume.CubicFeet.toTeaspoons(0.3)).toBeCloseTo(1435.12, 1);
+    expect(Volume.CubicFeet.toTeaspoons(4.0)).toBeCloseTo(19134.95, 1);
+    expect(Volume.CubicFeet.toTeaspoons(67.0)).toBeCloseTo(320510.579, 1);
+});
+
+it('From Cubic Feet to Tablespoons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicFeet.toTablespoons(value)
+            const convertBack = Volume.Tablespoons.toCubicFeet(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Feet to Tablespoons', () => {
+    expect(Volume.CubicFeet.toTablespoons(0.7)).toBeCloseTo(1116.21, 1);
+    expect(Volume.CubicFeet.toTablespoons(1.1)).toBeCloseTo(1754.04, 1);
+    expect(Volume.CubicFeet.toTablespoons(0.494174)).toBeCloseTo(788.0, 1);
+});
+
+it('From Cubic Feet to Quarts and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicFeet.toQuarts(value)
+            const convertBack = Volume.Quarts.toCubicFeet(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Feet to Quarts', () => {
+    expect(Volume.CubicFeet.toQuarts(0.6)).toBeCloseTo(14.9492, 1);
+    expect(Volume.CubicFeet.toQuarts(0.20068)).toBeCloseTo(5.0, 1);
+    expect(Volume.CubicFeet.toQuarts(0.301019)).toBeCloseTo(7.5, 1);
+});
+
+it('From Cubic Feet to Pints and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicFeet.toPints(value)
+            const convertBack = Volume.Pints.toCubicFeet(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Feet to Pints', () => {
+    expect(Volume.CubicFeet.toPints(0.6)).toBeCloseTo(29.8984, 1);
+    expect(Volume.CubicFeet.toPints(0.88299)).toBeCloseTo(44.0, 1);
+    expect(Volume.CubicFeet.toPints(18.0612)).toBeCloseTo(900.0, 1);
+});
+
+it('From Cubic Feet to Gallons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicFeet.toGallons(value)
+            const convertBack = Volume.Gallons.toCubicFeet(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Feet to Gallons', () => {
+    expect(Volume.CubicFeet.toGallons(3.0)).toBeCloseTo(18.6865, 1);
+    expect(Volume.CubicFeet.toGallons(2.08707)).toBeCloseTo(13.0, 1);
+    expect(Volume.CubicFeet.toGallons(14.1278)).toBeCloseTo(88.0, 1);
+});
+
+it('From Cubic Feet to Fluid Ounces and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicFeet.toFluidOunces(value)
+            const convertBack = Volume.FluidOunces.toCubicFeet(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Feet to Fluid Ounces', () => {
+    expect(Volume.CubicFeet.toFluidOunces(14.0)).toBeCloseTo(13952.6, 1);
+    expect(Volume.CubicFeet.toFluidOunces(7.0)).toBeCloseTo(6976.3, 1);
+    expect(Volume.CubicFeet.toFluidOunces(0.34777769)).toBeCloseTo(346.6, 1);
+});
+
+it('From Cubic Feet to US Teaspoons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicFeet.toUSTeaspoons(value)
+            const convertBack = Volume.USTeaspoons.toCubicFeet(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Feet to US Teaspoons', () => {
+    expect(Volume.CubicFeet.toUSTeaspoons(5.0)).toBeCloseTo(28725.2, 1);
+    expect(Volume.CubicFeet.toUSTeaspoons(0.4)).toBeCloseTo(2298.02, 1);
+    expect(Volume.CubicFeet.toUSTeaspoons(9.2)).toBeCloseTo(52854.3679, 1);
+});
+
+it('From Cubic Feet to US Tablespoons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicFeet.toUSTablespoons(value)
+            const convertBack = Volume.USTablespoons.toCubicFeet(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Feet to US Tablespoons', () => {
+    expect(Volume.CubicFeet.toUSTablespoons(1.4)).toBeCloseTo(2681.02, 1);
+    expect(Volume.CubicFeet.toUSTablespoons(4.0)).toBeCloseTo(7660.04, 1);
+    expect(Volume.CubicFeet.toUSTablespoons(0.6443821)).toBeCloseTo(1234.0, 1);
+});
+
+it('From Cubic Feet to US Quarts and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicFeet.toUSQuarts(value)
+            const convertBack = Volume.USQuarts.toCubicFeet(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Feet to US Quarts', () => {
+    expect(Volume.CubicFeet.toUSQuarts(6.0)).toBeCloseTo(179.532, 1);
+    expect(Volume.CubicFeet.toUSQuarts(12.0)).toBeCloseTo(359.065, 1);
+    expect(Volume.CubicFeet.toUSQuarts(25.9674)).toBeCloseTo(777.0, 1);
+});
+
+it('From Cubic Feet to US Pints and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicFeet.toUSPints(value)
+            const convertBack = Volume.USPints.toCubicFeet(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Feet to US Pints', () => {
+    expect(Volume.CubicFeet.toUSPints(6.9)).toBeCloseTo(412.925, 1);
+    expect(Volume.CubicFeet.toUSPints(23.0)).toBeCloseTo(1376.42, 1);
+    expect(Volume.CubicFeet.toUSPints(14.8385)).toBeCloseTo(888.0, 1);
+});
+
+it('From Cubic Feet to US Gallons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicFeet.toUSGallons(value)
+            const convertBack = Volume.USGallons.toCubicFeet(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Feet to US Gallons', () => {
+    expect(Volume.CubicFeet.toUSGallons(77.0)).toBeCloseTo(576.0, 1);
+    expect(Volume.CubicFeet.toUSGallons(45.0)).toBeCloseTo(336.623, 1);
+    expect(Volume.CubicFeet.toUSGallons(4.0)).toBeCloseTo(29.9221, 1);
+});
+
+it('From Cubic Feet to US Fluid Ounces and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicFeet.toUSFluidOunces(value)
+            const convertBack = Volume.USFluidOunces.toCubicFeet(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Feet to US Fluid Ounces', () => {
+    expect(Volume.CubicFeet.toUSFluidOunces(20.0)).toBeCloseTo(19150.119, 1);
+    expect(Volume.CubicFeet.toUSFluidOunces(0.359266)).toBeCloseTo(344.0, 1);
+    expect(Volume.CubicFeet.toUSFluidOunces(0.699734)).toBeCloseTo(670.0, 1);
+});
+
+it('From Cubic Feet to US Cups and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicFeet.toUSCups(value)
+            const convertBack = Volume.USCups.toCubicFeet(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Feet to US Cups', () => {
+    expect(Volume.CubicFeet.toUSCups(77.0)).toBeCloseTo(9084.99, 1);
+    expect(Volume.CubicFeet.toUSCups(8.0)).toBeCloseTo(943.895, 1);
+    expect(Volume.CubicFeet.toUSCups(4.79714)).toBeCloseTo(566.0, 1);
+});
+
+it('From Cubic Feet to Cubic Metres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicFeet.toCubicMetres(value)
+            const convertBack = Volume.CubicMetres.toCubicFeet(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Feet to Cubic Metres', () => {
+    expect(Volume.CubicFeet.toCubicMetres(28.2517)).toBeCloseTo(0.8, 1);
+    expect(Volume.CubicFeet.toCubicMetres(45.0)).toBeCloseTo(1.27426, 1);
+    expect(Volume.CubicFeet.toCubicMetres(2719.23)).toBeCloseTo(77.0, 1);
+});
+
+it('From Cubic Feet to Cubic Inches and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicFeet.toCubicInches(value)
+            const convertBack = Volume.CubicInches.toCubicFeet(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Feet to Cubic Inches', () => {
+    expect(Volume.CubicFeet.toCubicInches(6.8)).toBeCloseTo(11750.4, 1);
+    expect(Volume.CubicFeet.toCubicInches(5666.0)).toBeCloseTo(9790848.0, 1);
+    expect(Volume.CubicFeet.toCubicInches(0.7)).toBeCloseTo(1209.6, 1);
+});
+
+it('From Cubic Feet to Oil Barrels and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicFeet.toOilBarrels(value)
+            const convertBack = Volume.OilBarrels.toCubicFeet(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Feet to Oil Barrels', () => {
+    expect(Volume.CubicFeet.toOilBarrels(67.0)).toBeCloseTo(11.9332, 1);
+    expect(Volume.CubicFeet.toOilBarrels(44.0)).toBeCloseTo(7.83673, 1);
+    expect(Volume.CubicFeet.toOilBarrels(67.375)).toBeCloseTo(12.0, 1);
+});
+
+it('From Cubic Inches to Millilitres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicInches.toMillilitres(value)
+            const convertBack = Volume.Millilitres.toCubicInches(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Inches to Millilitres', () => {
+    expect(Volume.CubicInches.toMillilitres(3.9)).toBeCloseTo(63.9095, 1);
+    expect(Volume.CubicInches.toMillilitres(4.0)).toBeCloseTo(65.5483, 1);
+    expect(Volume.CubicInches.toMillilitres(5.37009)).toBeCloseTo(88.0, 1);
+});
+
+it('From Cubic Inches to Litres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicInches.toLitres(value)
+            const convertBack = Volume.Litres.toCubicInches(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Inches to Litres', () => {
+    expect(Volume.CubicInches.toLitres(560.0)).toBeCloseTo(9.17676, 1);
+    expect(Volume.CubicInches.toLitres(555.0)).toBeCloseTo(9.09482, 1);
+    expect(Volume.CubicInches.toLitres(7444.9)).toBeCloseTo(122.0, 1);
+});
+
+it('From Cubic Inches to Kilolitres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicInches.toKilolitres(value)
+            const convertBack = Volume.Kilolitres.toCubicInches(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Inches to Kilolitres', () => {
+    expect(Volume.CubicInches.toKilolitres(560.0)).toBeCloseTo(0.009176, 1);
+    expect(Volume.CubicInches.toKilolitres(5555.0)).toBeCloseTo(0.09103014, 1);
+    expect(Volume.CubicInches.toKilolitres(100000.0)).toBeCloseTo(1.6387064, 1);
+});
+
+it('From Cubic Inches to Teaspoons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicInches.toTeaspoons(value)
+            const convertBack = Volume.Teaspoons.toCubicInches(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Inches to Teaspoons', () => {
+    expect(Volume.CubicInches.toTeaspoons(5.0)).toBeCloseTo(13.8419, 1);
+    expect(Volume.CubicInches.toTeaspoons(6.0)).toBeCloseTo(16.6102, 1);
+    expect(Volume.CubicInches.toTeaspoons(11.5591)).toBeCloseTo(32.0, 1);
+});
+
+it('From Cubic Inches to Tablespoons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicInches.toTablespoons(value)
+            const convertBack = Volume.Tablespoons.toCubicInches(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Inches to Tablespoons', () => {
+    expect(Volume.CubicInches.toTablespoons(34.0)).toBeCloseTo(31.3749, 1);
+    expect(Volume.CubicInches.toTablespoons(11.9204)).toBeCloseTo(11.0, 1);
+    expect(Volume.CubicInches.toTablespoons(99.0)).toBeCloseTo(91.3562246, 1);
+});
+
+it('From Cubic Inches to Quarts and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicInches.toQuarts(value)
+            const convertBack = Volume.Quarts.toCubicInches(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Inches to Quarts', () => {
+    expect(Volume.CubicInches.toQuarts(800.0)).toBeCloseTo(11.5349, 1);
+    expect(Volume.CubicInches.toQuarts(77.0)).toBeCloseTo(1.11023, 1);
+    expect(Volume.CubicInches.toQuarts(4577.42)).toBeCloseTo(66.0, 1);
+});
+
+it('From Cubic Inches to Pints and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicInches.toPints(value)
+            const convertBack = Volume.Pints.toCubicInches(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Inches to Pints', () => {
+    expect(Volume.CubicInches.toPints(89.5)).toBeCloseTo(2.58093, 1);
+    expect(Volume.CubicInches.toPints(23095.2)).toBeCloseTo(666.0, 1);
+    expect(Volume.CubicInches.toPints(2670.16)).toBeCloseTo(77.0, 1);
+});
+
+it('From Cubic Inches to Gallons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicInches.toGallons(value)
+            const convertBack = Volume.Gallons.toCubicInches(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Inches to Gallons', () => {
+    expect(Volume.CubicInches.toGallons(900.0)).toBeCloseTo(3.24419, 1);
+    expect(Volume.CubicInches.toGallons(666.0)).toBeCloseTo(2.4007, 1);
+    expect(Volume.CubicInches.toGallons(21361.3)).toBeCloseTo(77.0, 1);
+});
+
+it('From Cubic Inches to Fluid Ounces and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicInches.toFluidOunces(value)
+            const convertBack = Volume.FluidOunces.toCubicInches(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Inches to Fluid Ounces', () => {
+    expect(Volume.CubicInches.toFluidOunces(77.0)).toBeCloseTo(44.4093, 1);
+    expect(Volume.CubicInches.toFluidOunces(55.0)).toBeCloseTo(31.7209, 1);
+    expect(Volume.CubicInches.toFluidOunces(27.7419)).toBeCloseTo(16.0, 1);
+});
+
+it('From Cubic Inches to US Teaspoons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicInches.toUSTeaspoons(value)
+            const convertBack = Volume.USTeaspoons.toCubicInches(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Inches to US Teaspoons', () => {
+    expect(Volume.CubicInches.toUSTeaspoons(678.0)).toBeCloseTo(2254.13, 1);
+    expect(Volume.CubicInches.toUSTeaspoons(55.0)).toBeCloseTo(182.857, 1);
+    expect(Volume.CubicInches.toUSTeaspoons(26.4687)).toBeCloseTo(88.0, 1);
+});
+
+it('From Cubic Inches to US Tablespoons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicInches.toUSTablespoons(value)
+            const convertBack = Volume.USTablespoons.toCubicInches(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Inches to US Tablespoons', () => {
+    expect(Volume.CubicInches.toUSTablespoons(66.0)).toBeCloseTo(73.1429, 1);
+    expect(Volume.CubicInches.toUSTablespoons(55.0)).toBeCloseTo(60.9524, 1);
+    expect(Volume.CubicInches.toUSTablespoons(10.8281)).toBeCloseTo(12.0, 1);
+});
+
+it('From Cubic Inches to US Quarts and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicInches.toUSQuarts(value)
+            const convertBack = Volume.USQuarts.toCubicInches(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Inches to US Quarts', () => {
+    expect(Volume.CubicInches.toUSQuarts(345.0)).toBeCloseTo(5.97403, 1);
+    expect(Volume.CubicInches.toUSQuarts(33.0)).toBeCloseTo(0.571429, 1);
+    expect(Volume.CubicInches.toUSQuarts(3176.25)).toBeCloseTo(55.0, 1);
+});
+
+it('From Cubic Inches to US Pints and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicInches.toUSPints(value)
+            const convertBack = Volume.USPints.toCubicInches(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Inches to US Pints', () => {
+    expect(Volume.CubicInches.toUSPints(89.0)).toBeCloseTo(3.08225, 1);
+    expect(Volume.CubicInches.toUSPints(3176.25)).toBeCloseTo(110.0, 1);
+    expect(Volume.CubicInches.toUSPints(462.0)).toBeCloseTo(16.0, 1);
+});
+
+it('From Cubic Inches to US Gallons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicInches.toUSGallons(value)
+            const convertBack = Volume.USGallons.toCubicInches(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Inches to US Gallons', () => {
+    expect(Volume.CubicInches.toUSGallons(600.0)).toBeCloseTo(2.5974, 1);
+    expect(Volume.CubicInches.toUSGallons(462.0)).toBeCloseTo(2.0, 1);
+    expect(Volume.CubicInches.toUSGallons(899.0)).toBeCloseTo(3.89177, 1);
+});
+
+it('From Cubic Inches to US Fluid Ounces and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicInches.toUSFluidOunces(value)
+            const convertBack = Volume.USFluidOunces.toCubicInches(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Inches to US Fluid Ounces', () => {
+    expect(Volume.CubicInches.toUSFluidOunces(900.0)).toBeCloseTo(498.700607, 1);
+    expect(Volume.CubicInches.toUSFluidOunces(777.0)).toBeCloseTo(430.544858, 1);
+    expect(Volume.CubicInches.toUSFluidOunces(178.664)).toBeCloseTo(98.99982822, 1);
+});
+
+it('From Cubic Inches to US Cups and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicInches.toUSCups(value)
+            const convertBack = Volume.USCups.toCubicInches(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Inches to US Cups', () => {
+    expect(Volume.CubicInches.toUSCups(7.0)).toBeCloseTo(0.477956, 1);
+    expect(Volume.CubicInches.toUSCups(77.0)).toBeCloseTo(5.25752, 1);
+    expect(Volume.CubicInches.toUSCups(123.0)).toBeCloseTo(8.39837, 1);
+});
+
+it('From Cubic Inches to Cubic Metres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicInches.toCubicMetres(value)
+            const convertBack = Volume.CubicMetres.toCubicInches(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Inches to Cubic Metres', () => {
+    expect(Volume.CubicInches.toCubicMetres(24409.5)).toBeCloseTo(0.4, 1);
+    expect(Volume.CubicInches.toCubicMetres(7777.0)).toBeCloseTo(0.1274422, 1);
+    expect(Volume.CubicInches.toCubicMetres(366142.0)).toBeCloseTo(6.0, 1);
+});
+
+it('From Cubic Inches to Cubic Feet and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicInches.toCubicFeet(value)
+            const convertBack = Volume.CubicFeet.toCubicInches(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Inches to Cubic Feet', () => {
+    expect(Volume.CubicInches.toCubicFeet(11750.4)).toBeCloseTo(6.8, 1);
+    expect(Volume.CubicInches.toCubicFeet(57024.0)).toBeCloseTo(33.0, 1);
+    expect(Volume.CubicInches.toCubicFeet(1234.0)).toBeCloseTo(0.7141204, 1);
+});
+
+it('From Cubic Inches to Oil Barrels and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicInches.toOilBarrels(value)
+            const convertBack = Volume.OilBarrels.toCubicInches(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Inches to Oil Barrels', () => {
+    expect(Volume.CubicInches.toOilBarrels(90000.0)).toBeCloseTo(9.2764378, 1);
+    expect(Volume.CubicInches.toOilBarrels(8888.0)).toBeCloseTo(0.9160998, 1);
+    expect(Volume.CubicInches.toOilBarrels(11642.4)).toBeCloseTo(1.2, 1);
+});
+
+it('From Cubic Metres to Millilitres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicMetres.toMillilitres(value)
+            const convertBack = Volume.Millilitres.toCubicMetres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Metres to Millilitres', () => {
+    expect(Volume.CubicMetres.toMillilitres(0.01)).toBeCloseTo(10000.0, 1);
+    expect(Volume.CubicMetres.toMillilitres(0.2306735)).toBeCloseTo(230673.5, 1);
+    expect(Volume.CubicMetres.toMillilitres(0.009)).toBeCloseTo(9000.0, 1);
+});
+
+it('From Cubic Metres to Litres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicMetres.toLitres(value)
+            const convertBack = Volume.Litres.toCubicMetres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Metres to Litres', () => {
+    expect(Volume.CubicMetres.toLitres(0.1)).toBeCloseTo(100.0, 1);
+    expect(Volume.CubicMetres.toLitres(0.009)).toBeCloseTo(9.0, 1);
+    expect(Volume.CubicMetres.toLitres(0.08989)).toBeCloseTo(89.89, 1);
+});
+
+it('From Cubic Metres to Kilolitres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicMetres.toKilolitres(value)
+            const convertBack = Volume.Kilolitres.toCubicMetres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Metres to Kilolitres', () => {
+    expect(Volume.CubicMetres.toKilolitres(0.9)).toBeCloseTo(0.9, 1);
+    expect(Volume.CubicMetres.toKilolitres(100.9)).toBeCloseTo(100.9, 1);
+    expect(Volume.CubicMetres.toKilolitres(666.9)).toBeCloseTo(666.9, 1);
+});
+
+it('From Cubic Metres to Teaspoons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicMetres.toTeaspoons(value)
+            const convertBack = Volume.Teaspoons.toCubicMetres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Metres to Teaspoons', () => {
+    expect(Volume.CubicMetres.toTeaspoons(0.1)).toBeCloseTo(16893.6, 1);
+    expect(Volume.CubicMetres.toTeaspoons(3.0)).toBeCloseTo(506808.0, 1);
+    expect(Volume.CubicMetres.toTeaspoons(0.91)).toBeCloseTo(153731.76, 1);
+});
+
+it('From Cubic Metres to Tablespoons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicMetres.toTablespoons(value)
+            const convertBack = Volume.Tablespoons.toCubicMetres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Metres to Tablespoons', () => {
+    expect(Volume.CubicMetres.toTablespoons(0.9)).toBeCloseTo(50680.8899, 1);
+    expect(Volume.CubicMetres.toTablespoons(0.1)).toBeCloseTo(5631.21, 1);
+    expect(Volume.CubicMetres.toTablespoons(9.0)).toBeCloseTo(506808.89, 1);
+});
+
+it('From Cubic Metres to Quarts and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicMetres.toQuarts(value)
+            const convertBack = Volume.Quarts.toCubicMetres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Metres to Quarts', () => {
+    expect(Volume.CubicMetres.toQuarts(0.8)).toBeCloseTo(703.902, 1);
+    expect(Volume.CubicMetres.toQuarts(0.4)).toBeCloseTo(351.951, 1);
+    expect(Volume.CubicMetres.toQuarts(6.0)).toBeCloseTo(5279.26, 1);
+});
+
+it('From Cubic Metres to Pints and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicMetres.toPints(value)
+            const convertBack = Volume.Pints.toCubicMetres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Metres to Pints', () => {
+    expect(Volume.CubicMetres.toPints(0.7)).toBeCloseTo(1231.83, 1);
+    expect(Volume.CubicMetres.toPints(4.5)).toBeCloseTo(7918.875, 1);
+    expect(Volume.CubicMetres.toPints(0.06)).toBeCloseTo(105.5852, 1);
+});
+
+it('From Cubic Metres to Gallons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicMetres.toGallons(value)
+            const convertBack = Volume.Gallons.toCubicMetres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Metres to Gallons', () => {
+    expect(Volume.CubicMetres.toGallons(0.2)).toBeCloseTo(43.9938, 1);
+    expect(Volume.CubicMetres.toGallons(0.4)).toBeCloseTo(87.9877, 1);
+    expect(Volume.CubicMetres.toGallons(0.0272765)).toBeCloseTo(6.0, 1);
+});
+
+it('From Cubic Metres to Fluid Ounces and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicMetres.toFluidOunces(value)
+            const convertBack = Volume.FluidOunces.toCubicMetres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Metres to Fluid Ounces', () => {
+    expect(Volume.CubicMetres.toFluidOunces(0.7)).toBeCloseTo(24636.569, 1);
+    expect(Volume.CubicMetres.toFluidOunces(0.09)).toBeCloseTo(3167.557, 1);
+    expect(Volume.CubicMetres.toFluidOunces(4.0)).toBeCloseTo(140780.399, 1);
+});
+
+it('From Cubic Metres to US Teaspoons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicMetres.toUSTeaspoons(value)
+            const convertBack = Volume.USTeaspoons.toCubicMetres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Metres to US Teaspoons', () => {
+    expect(Volume.CubicMetres.toUSTeaspoons(0.5)).toBeCloseTo(101442.0, 1);
+    expect(Volume.CubicMetres.toUSTeaspoons(2.0)).toBeCloseTo(405768.0, 1);
+    expect(Volume.CubicMetres.toUSTeaspoons(0.3)).toBeCloseTo(60865.199, 1);
+});
+
+it('From Cubic Metres to US Tablespoons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicMetres.toUSTablespoons(value)
+            const convertBack = Volume.USTablespoons.toCubicMetres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Metres to US Tablespoons', () => {
+    expect(Volume.CubicMetres.toUSTablespoons(0.2)).toBeCloseTo(13525.6, 1);
+    expect(Volume.CubicMetres.toUSTablespoons(0.9)).toBeCloseTo(60865.2, 1);
+    expect(Volume.CubicMetres.toUSTablespoons(2.0)).toBeCloseTo(135256.0, 1);
+});
+
+it('From Cubic Metres to US Quarts and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicMetres.toUSQuarts(value)
+            const convertBack = Volume.USQuarts.toCubicMetres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Metres to US Quarts', () => {
+    expect(Volume.CubicMetres.toUSQuarts(0.2)).toBeCloseTo(211.338, 1);
+    expect(Volume.CubicMetres.toUSQuarts(4.0)).toBeCloseTo(4226.76, 1);
+    expect(Volume.CubicMetres.toUSQuarts(0.851718)).toBeCloseTo(900.0, 1);
+});
+
+it('From Cubic Metres to US Pints and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicMetres.toUSPints(value)
+            const convertBack = Volume.USPints.toCubicMetres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Metres to US Pints', () => {
+    expect(Volume.CubicMetres.toUSPints(0.4)).toBeCloseTo(845.351, 1);
+    expect(Volume.CubicMetres.toUSPints(7.0)).toBeCloseTo(14793.66, 1);
+    expect(Volume.CubicMetres.toUSPints(6.0)).toBeCloseTo(12680.280, 1);
+});
+
+it('From Cubic Metres to US Gallons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicMetres.toUSGallons(value)
+            const convertBack = Volume.USGallons.toCubicMetres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Metres to US Gallons', () => {
+    expect(Volume.CubicMetres.toUSGallons(0.7)).toBeCloseTo(184.92, 1);
+    expect(Volume.CubicMetres.toUSGallons(0.851718)).toBeCloseTo(225.0, 1);
+    expect(Volume.CubicMetres.toUSGallons(0.02)).toBeCloseTo(5.283441, 1);
+});
+
+it('From Cubic Metres to US Fluid Ounces and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicMetres.toUSFluidOunces(value)
+            const convertBack = Volume.USFluidOunces.toCubicMetres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Metres to US Fluid Ounces', () => {
+    expect(Volume.CubicMetres.toUSFluidOunces(0.9)).toBeCloseTo(30432.6, 1);
+    expect(Volume.CubicMetres.toUSFluidOunces(0.3)).toBeCloseTo(10144.2, 1);
+    expect(Volume.CubicMetres.toUSFluidOunces(3.3)).toBeCloseTo(111586.2, 1);
+});
+
+it('From Cubic Metres to US Cups and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicMetres.toUSCups(value)
+            const convertBack = Volume.USCups.toCubicMetres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Metres to US Cups', () => {
+    expect(Volume.CubicMetres.toUSCups(7.0)).toBeCloseTo(29166.7, 1);
+    expect(Volume.CubicMetres.toUSCups(11.0)).toBeCloseTo(45833.37, 1);
+    expect(Volume.CubicMetres.toUSCups(66.0)).toBeCloseTo(275000.22, 1);
+});
+
+it('From Cubic Metres to Cubic Feet and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicMetres.toCubicFeet(value)
+            const convertBack = Volume.CubicFeet.toCubicMetres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Metres to Cubic Feet', () => {
+    expect(Volume.CubicMetres.toCubicFeet(0.8)).toBeCloseTo(28.2517, 1);
+    expect(Volume.CubicMetres.toCubicFeet(5.0)).toBeCloseTo(176.573, 1);
+    expect(Volume.CubicMetres.toCubicFeet(12.12)).toBeCloseTo(428.014163, 1);
+});
+
+it('From Cubic Metres to Cubic Inches and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicMetres.toCubicInches(value)
+            const convertBack = Volume.CubicInches.toCubicMetres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Metres to Cubic Inches', () => {
+    expect(Volume.CubicMetres.toCubicInches(0.4)).toBeCloseTo(24409.48, 1);
+    expect(Volume.CubicMetres.toCubicInches(3.0)).toBeCloseTo(183071.099, 1);
+    expect(Volume.CubicMetres.toCubicInches(0.99)).toBeCloseTo(60413.4629, 1);
+});
+
+it('From Cubic Metres to Oil Barrels and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.CubicMetres.toOilBarrels(value)
+            const convertBack = Volume.OilBarrels.toCubicMetres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Cubic Metres to Oil Barrels', () => {
+    expect(Volume.CubicMetres.toOilBarrels(0.09)).toBeCloseTo(0.566083, 1);
+    expect(Volume.CubicMetres.toOilBarrels(5.0)).toBeCloseTo(31.4491, 1);
+    expect(Volume.CubicMetres.toOilBarrels(1.2)).toBeCloseTo(7.547772, 1);
+});
+
 it('From Fluid Ounces to Millilitres and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -260,6 +1229,74 @@ it('Convert known Fluid Ounces to US Cups', () => {
     expect(Volume.FluidOunces.toUSCups(6.0)).toBeCloseTo(0.72057, 1);
     expect(Volume.FluidOunces.toUSCups(1800.0)).toBeCloseTo(216.171, 1);
     expect(Volume.FluidOunces.toUSCups(6.9)).toBeCloseTo(0.828655, 1);
+});
+
+it('From Fluid Ounces to Cubic Metres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.FluidOunces.toCubicMetres(value)
+            const convertBack = Volume.CubicMetres.toFluidOunces(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Fluid Ounces to Cubic Metres', () => {
+    expect(Volume.FluidOunces.toCubicMetres(316756.0)).toBeCloseTo(9.00000284, 1);
+    expect(Volume.FluidOunces.toCubicMetres(8000.0)).toBeCloseTo(0.2273043690, 1);
+    expect(Volume.FluidOunces.toCubicMetres(123456.0)).toBeCloseTo(3.5077610, 1);
+});
+
+it('From Fluid Ounces to Cubic Feet and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.FluidOunces.toCubicFeet(value)
+            const convertBack = Volume.CubicFeet.toFluidOunces(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Fluid Ounces to Cubic Feet', () => {
+    expect(Volume.FluidOunces.toCubicFeet(888.0)).toBeCloseTo(0.891017, 1);
+    expect(Volume.FluidOunces.toCubicFeet(100900.0)).toBeCloseTo(101.242841, 1);
+    expect(Volume.FluidOunces.toCubicFeet(678.0)).toBeCloseTo(0.680304, 1);
+});
+
+it('From Fluid Ounces to Cubic Inches and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.FluidOunces.toCubicInches(value)
+            const convertBack = Volume.CubicInches.toFluidOunces(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Fluid Ounces to Cubic Inches', () => {
+    expect(Volume.FluidOunces.toCubicInches(7.0)).toBeCloseTo(12.1371, 1);
+    expect(Volume.FluidOunces.toCubicInches(900.0)).toBeCloseTo(1560.48, 1);
+    expect(Volume.FluidOunces.toCubicInches(6.0)).toBeCloseTo(10.4032, 1);
+});
+
+it('From Fluid Ounces to Oil Barrels and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.FluidOunces.toOilBarrels(value)
+            const convertBack = Volume.OilBarrels.toFluidOunces(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Fluid Ounces to Oil Barrels', () => {
+    expect(Volume.FluidOunces.toOilBarrels(430859.0)).toBeCloseTo(77.0, 1);
+    expect(Volume.FluidOunces.toOilBarrels(777.0)).toBeCloseTo(0.13886, 1);
+    expect(Volume.FluidOunces.toOilBarrels(1234.0)).toBeCloseTo(0.2205316, 1);
 });
 
 it('From Gallons to Millilitres and back', () => {
@@ -517,6 +1554,74 @@ it('Convert known Gallons to US Cups', () => {
     expect(Volume.Gallons.toUSCups(890.0)).toBeCloseTo(17101.534007630, 1);
 });
 
+it('From Gallons to Cubic Metres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Gallons.toCubicMetres(value)
+            const convertBack = Volume.CubicMetres.toGallons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Gallons to Cubic Metres', () => {
+    expect(Volume.Gallons.toCubicMetres(9898.62)).toBeCloseTo(45.0, 1);
+    expect(Volume.Gallons.toCubicMetres(12345.0)).toBeCloseTo(56.121481, 1);
+    expect(Volume.Gallons.toCubicMetres(80.0)).toBeCloseTo(0.363687, 1);
+});
+
+it('From Gallons to Cubic Feet and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Gallons.toCubicFeet(value)
+            const convertBack = Volume.CubicFeet.toGallons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Gallons to Cubic Feet', () => {
+    expect(Volume.Gallons.toCubicFeet(55.0)).toBeCloseTo(8.8299, 1);
+    expect(Volume.Gallons.toCubicFeet(90.5)).toBeCloseTo(14.5292, 1);
+    expect(Volume.Gallons.toCubicFeet(123.0)).toBeCloseTo(19.7469, 1);
+});
+
+it('From Gallons to Cubic Inches and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Gallons.toCubicInches(value)
+            const convertBack = Volume.CubicInches.toGallons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Gallons to Cubic Inches', () => {
+    expect(Volume.Gallons.toCubicInches(66.0)).toBeCloseTo(18309.6539, 1);
+    expect(Volume.Gallons.toCubicInches(2.4007)).toBeCloseTo(666.0, 1);
+    expect(Volume.Gallons.toCubicInches(77.0)).toBeCloseTo(21361.2629, 1);
+});
+
+it('From Gallons to Oil Barrels and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Gallons.toOilBarrels(value)
+            const convertBack = Volume.OilBarrels.toGallons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Gallons to Oil Barrels', () => {
+    expect(Volume.Gallons.toOilBarrels(174.862)).toBeCloseTo(5.0, 1);
+    expect(Volume.Gallons.toOilBarrels(19409.6)).toBeCloseTo(555.0, 1);
+    expect(Volume.Gallons.toOilBarrels(24.4806)).toBeCloseTo(0.7, 1);
+});
+
 it('From Kilolitres to Millilitres and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -770,6 +1875,74 @@ it('Convert known Kilolitres to US Cups', () => {
     expect(Volume.Kilolitres.toUSCups(12.0)).toBeCloseTo(50721.03405276, 1);
     expect(Volume.Kilolitres.toUSCups(0.8)).toBeCloseTo(3381.4, 1);
     expect(Volume.Kilolitres.toUSCups(6.2)).toBeCloseTo(26205.86759392, 1);
+});
+
+it('From Kilolitres to Cubic Metres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Kilolitres.toCubicMetres(value)
+            const convertBack = Volume.CubicMetres.toKilolitres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Kilolitres to Cubic Metres', () => {
+    expect(Volume.Kilolitres.toCubicMetres(1000.0)).toBeCloseTo(1000.0, 1);
+    expect(Volume.Kilolitres.toCubicMetres(0.9)).toBeCloseTo(0.9, 1);
+    expect(Volume.Kilolitres.toCubicMetres(6.09)).toBeCloseTo(6.09, 1);
+});
+
+it('From Kilolitres to Cubic Feet and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Kilolitres.toCubicFeet(value)
+            const convertBack = Volume.CubicFeet.toKilolitres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Kilolitres to Cubic Feet', () => {
+    expect(Volume.Kilolitres.toCubicFeet(0.0566337)).toBeCloseTo(2.0, 1);
+    expect(Volume.Kilolitres.toCubicFeet(7.9)).toBeCloseTo(278.986, 1);
+    expect(Volume.Kilolitres.toCubicFeet(88.0)).toBeCloseTo(3107.69, 1);
+});
+
+it('From Kilolitres to Cubic Inches and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Kilolitres.toCubicInches(value)
+            const convertBack = Volume.CubicInches.toKilolitres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Kilolitres to Cubic Inches', () => {
+    expect(Volume.Kilolitres.toCubicInches(6.0)).toBeCloseTo(366142.19999, 1);
+    expect(Volume.Kilolitres.toCubicInches(0.1)).toBeCloseTo(6102.37, 1);
+    expect(Volume.Kilolitres.toCubicInches(0.8)).toBeCloseTo(48818.959, 1);
+});
+
+it('From Kilolitres to Oil Barrels and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Kilolitres.toOilBarrels(value)
+            const convertBack = Volume.OilBarrels.toKilolitres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Kilolitres to Oil Barrels', () => {
+    expect(Volume.Kilolitres.toOilBarrels(0.476962)).toBeCloseTo(3.0, 1);
+    expect(Volume.Kilolitres.toOilBarrels(4.0)).toBeCloseTo(25.1592, 1);
+    expect(Volume.Kilolitres.toOilBarrels(6.0)).toBeCloseTo(37.7389, 1);
 });
 
 it('From Litres to Millilitres and back', () => {
@@ -1027,6 +2200,74 @@ it('Convert known Litres to US Cups', () => {
     expect(Volume.Litres.toUSCups(71.6)).toBeCloseTo(302.6355, 1);
 });
 
+it('From Litres to Cubic Metres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Litres.toCubicMetres(value)
+            const convertBack = Volume.CubicMetres.toLitres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Litres to Cubic Metres', () => {
+    expect(Volume.Litres.toCubicMetres(400.5)).toBeCloseTo(0.4005, 1);
+    expect(Volume.Litres.toCubicMetres(900.0)).toBeCloseTo(0.9, 1);
+    expect(Volume.Litres.toCubicMetres(6090.0)).toBeCloseTo(6.09, 1);
+});
+
+it('From Litres to Cubic Feet and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Litres.toCubicFeet(value)
+            const convertBack = Volume.CubicFeet.toLitres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Litres to Cubic Feet', () => {
+    expect(Volume.Litres.toCubicFeet(5.0)).toBeCloseTo(0.176573, 1);
+    expect(Volume.Litres.toCubicFeet(84.9505)).toBeCloseTo(3.0, 1);
+    expect(Volume.Litres.toCubicFeet(6.0)).toBeCloseTo(0.211888, 1);
+});
+
+it('From Litres to Cubic Inches and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Litres.toCubicInches(value)
+            const convertBack = Volume.CubicInches.toLitres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Litres to Cubic Inches', () => {
+    expect(Volume.Litres.toCubicInches(666.0)).toBeCloseTo(40641.7842, 1);
+    expect(Volume.Litres.toCubicInches(788.0)).toBeCloseTo(48086.675599, 1);
+    expect(Volume.Litres.toCubicInches(4.0)).toBeCloseTo(244.095, 1);
+});
+
+it('From Litres to Oil Barrels and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Litres.toOilBarrels(value)
+            const convertBack = Volume.OilBarrels.toLitres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Litres to Oil Barrels', () => {
+    expect(Volume.Litres.toOilBarrels(8744.3)).toBeCloseTo(55.0, 1);
+    expect(Volume.Litres.toOilBarrels(1234.0)).toBeCloseTo(7.761626, 1);
+    expect(Volume.Litres.toOilBarrels(953.924)).toBeCloseTo(6.0, 1);
+});
+
 it('From Millilitres to Litres and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -1280,6 +2521,397 @@ it('Convert known Millilitres to US Cups', () => {
     expect(Volume.Millilitres.toUSCups(348.0)).toBeCloseTo(1.47091, 1);
     expect(Volume.Millilitres.toUSCups(12.9)).toBeCloseTo(0.05452511, 1);
     expect(Volume.Millilitres.toUSCups(700.0)).toBeCloseTo(2.95873, 1);
+});
+
+it('From Millilitres to Cubic Metres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Millilitres.toCubicMetres(value)
+            const convertBack = Volume.CubicMetres.toMillilitres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Millilitres to Cubic Metres', () => {
+    expect(Volume.Millilitres.toCubicMetres(9999999.0)).toBeCloseTo(9.999999, 1);
+    expect(Volume.Millilitres.toCubicMetres(123456.0)).toBeCloseTo(0.123456, 1);
+    expect(Volume.Millilitres.toCubicMetres(400500.0)).toBeCloseTo(0.4005, 1);
+});
+
+it('From Millilitres to Cubic Feet and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Millilitres.toCubicFeet(value)
+            const convertBack = Volume.CubicFeet.toMillilitres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Millilitres to Cubic Feet', () => {
+    expect(Volume.Millilitres.toCubicFeet(254852.0)).toBeCloseTo(9.0, 1);
+    expect(Volume.Millilitres.toCubicFeet(6000.0)).toBeCloseTo(0.211888, 1);
+    expect(Volume.Millilitres.toCubicFeet(70792.1)).toBeCloseTo(2.5, 1);
+});
+
+it('From Millilitres to Cubic Inches and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Millilitres.toCubicInches(value)
+            const convertBack = Volume.CubicInches.toMillilitres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Millilitres to Cubic Inches', () => {
+    expect(Volume.Millilitres.toCubicInches(777.0)).toBeCloseTo(47.4154, 1);
+    expect(Volume.Millilitres.toCubicInches(98.3224)).toBeCloseTo(5.999987, 1);
+    expect(Volume.Millilitres.toCubicInches(12.0)).toBeCloseTo(0.732285, 1);
+});
+
+it('From Millilitres to Oil Barrels and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Millilitres.toOilBarrels(value)
+            const convertBack = Volume.OilBarrels.toMillilitres(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Millilitres to Oil Barrels', () => {
+    expect(Volume.Millilitres.toOilBarrels(47696.2)).toBeCloseTo(0.3, 1);
+    expect(Volume.Millilitres.toOilBarrels(143089.0)).toBeCloseTo(0.9, 1);
+    expect(Volume.Millilitres.toOilBarrels(317.97459)).toBeCloseTo(0.002, 1);
+});
+
+it('From Oil Barrels to Millilitres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.OilBarrels.toMillilitres(value)
+            const convertBack = Volume.Millilitres.toOilBarrels(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Oil Barrels to Millilitres', () => {
+    expect(Volume.OilBarrels.toMillilitres(0.8)).toBeCloseTo(127189.6, 1);
+    expect(Volume.OilBarrels.toMillilitres(6.0)).toBeCloseTo(953922.0, 1);
+    expect(Volume.OilBarrels.toMillilitres(0.06289182)).toBeCloseTo(9998.981786, 1);
+});
+
+it('From Oil Barrels to Litres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.OilBarrels.toLitres(value)
+            const convertBack = Volume.Litres.toOilBarrels(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Oil Barrels to Litres', () => {
+    expect(Volume.OilBarrels.toLitres(12.0)).toBeCloseTo(1907.85, 1);
+    expect(Volume.OilBarrels.toLitres(6.0)).toBeCloseTo(953.924, 1);
+    expect(Volume.OilBarrels.toLitres(77.0)).toBeCloseTo(12242.0, 1);
+});
+
+it('From Oil Barrels to Kilolitres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.OilBarrels.toKilolitres(value)
+            const convertBack = Volume.Kilolitres.toOilBarrels(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Oil Barrels to Kilolitres', () => {
+    expect(Volume.OilBarrels.toKilolitres(12.0)).toBeCloseTo(1.90785, 1);
+    expect(Volume.OilBarrels.toKilolitres(8.0)).toBeCloseTo(1.2719, 1);
+    expect(Volume.OilBarrels.toKilolitres(77.0)).toBeCloseTo(12.242, 1);
+});
+
+it('From Oil Barrels to Teaspoons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.OilBarrels.toTeaspoons(value)
+            const convertBack = Volume.Teaspoons.toOilBarrels(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Oil Barrels to Teaspoons', () => {
+    expect(Volume.OilBarrels.toTeaspoons(0.6)).toBeCloseTo(16115.219, 1);
+    expect(Volume.OilBarrels.toTeaspoons(4.0)).toBeCloseTo(107434.8, 1);
+    expect(Volume.OilBarrels.toTeaspoons(6.7)).toBeCloseTo(179953.29, 1);
+});
+
+it('From Oil Barrels to Tablespoons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.OilBarrels.toTablespoons(value)
+            const convertBack = Volume.Tablespoons.toOilBarrels(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Oil Barrels to Tablespoons', () => {
+    expect(Volume.OilBarrels.toTablespoons(0.7)).toBeCloseTo(6267.04, 1);
+    expect(Volume.OilBarrels.toTablespoons(8.0)).toBeCloseTo(71623.279, 1);
+    expect(Volume.OilBarrels.toTablespoons(10.052487)).toBeCloseTo(89999.011387, 1);
+});
+
+it('From Oil Barrels to Quarts and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.OilBarrels.toQuarts(value)
+            const convertBack = Volume.Quarts.toOilBarrels(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Oil Barrels to Quarts', () => {
+    expect(Volume.OilBarrels.toQuarts(88.0)).toBeCloseTo(12310.232, 1);
+    expect(Volume.OilBarrels.toQuarts(12.0)).toBeCloseTo(1678.67, 1);
+    expect(Volume.OilBarrels.toQuarts(6.0)).toBeCloseTo(839.336, 1);
+});
+
+it('From Oil Barrels to Pints and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.OilBarrels.toPints(value)
+            const convertBack = Volume.Pints.toOilBarrels(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Oil Barrels to Pints', () => {
+    expect(Volume.OilBarrels.toPints(8.0)).toBeCloseTo(2238.23, 1);
+    expect(Volume.OilBarrels.toPints(6.0)).toBeCloseTo(1678.67, 1);
+    expect(Volume.OilBarrels.toPints(0.275218)).toBeCloseTo(77.0, 1);
+});
+
+it('From Oil Barrels to Gallons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.OilBarrels.toGallons(value)
+            const convertBack = Volume.Gallons.toOilBarrels(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Oil Barrels to Gallons', () => {
+    expect(Volume.OilBarrels.toGallons(4.0)).toBeCloseTo(139.889, 1);
+    expect(Volume.OilBarrels.toGallons(6.0)).toBeCloseTo(209.834, 1);
+    expect(Volume.OilBarrels.toGallons(18.0)).toBeCloseTo(629.502, 1);
+});
+
+it('From Oil Barrels to Fluid Ounces and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.OilBarrels.toFluidOunces(value)
+            const convertBack = Volume.FluidOunces.toOilBarrels(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Oil Barrels to Fluid Ounces', () => {
+    expect(Volume.OilBarrels.toFluidOunces(0.5)).toBeCloseTo(2797.79, 1);
+    expect(Volume.OilBarrels.toFluidOunces(6.0)).toBeCloseTo(33573.4199, 1);
+    expect(Volume.OilBarrels.toFluidOunces(77.0)).toBeCloseTo(430858.889, 1);
+});
+
+it('From Oil Barrels to US Teaspoons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.OilBarrels.toUSTeaspoons(value)
+            const convertBack = Volume.USTeaspoons.toOilBarrels(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Oil Barrels to US Teaspoons', () => {
+    expect(Volume.OilBarrels.toUSTeaspoons(0.3)).toBeCloseTo(9676.8, 1);
+    expect(Volume.OilBarrels.toUSTeaspoons(7.0)).toBeCloseTo(225792.0, 1);
+    expect(Volume.OilBarrels.toUSTeaspoons(1.5)).toBeCloseTo(48384.0, 1);
+});
+
+it('From Oil Barrels to US Tablespoons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.OilBarrels.toUSTablespoons(value)
+            const convertBack = Volume.USTablespoons.toOilBarrels(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Oil Barrels to US Tablespoons', () => {
+    expect(Volume.OilBarrels.toUSTablespoons(0.2)).toBeCloseTo(2150.4, 1);
+    expect(Volume.OilBarrels.toUSTablespoons(6.0)).toBeCloseTo(64512.0, 1);
+    expect(Volume.OilBarrels.toUSTablespoons(77.0)).toBeCloseTo(827904.0, 1);
+});
+
+it('From Oil Barrels to US Quarts and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.OilBarrels.toUSQuarts(value)
+            const convertBack = Volume.USQuarts.toOilBarrels(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Oil Barrels to US Quarts', () => {
+    expect(Volume.OilBarrels.toUSQuarts(4.5)).toBeCloseTo(756.0, 1);
+    expect(Volume.OilBarrels.toUSQuarts(77.0)).toBeCloseTo(12936.0, 1);
+    expect(Volume.OilBarrels.toUSQuarts(0.7)).toBeCloseTo(117.6, 1);
+});
+
+it('From Oil Barrels to US Pints and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.OilBarrels.toUSPints(value)
+            const convertBack = Volume.USPints.toOilBarrels(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Oil Barrels to US Pints', () => {
+    expect(Volume.OilBarrels.toUSPints(7.8)).toBeCloseTo(2620.8, 1);
+    expect(Volume.OilBarrels.toUSPints(0.7)).toBeCloseTo(235.2, 1);
+    expect(Volume.OilBarrels.toUSPints(3.0)).toBeCloseTo(1008.0, 1);
+});
+
+it('From Oil Barrels to US Gallons and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.OilBarrels.toUSGallons(value)
+            const convertBack = Volume.USGallons.toOilBarrels(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Oil Barrels to US Gallons', () => {
+    expect(Volume.OilBarrels.toUSGallons(78.0)).toBeCloseTo(3276.0, 1);
+    expect(Volume.OilBarrels.toUSGallons(3.0)).toBeCloseTo(126.0, 1);
+    expect(Volume.OilBarrels.toUSGallons(777.0)).toBeCloseTo(32634.0, 1);
+});
+
+it('From Oil Barrels to US Fluid Ounces and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.OilBarrels.toUSFluidOunces(value)
+            const convertBack = Volume.USFluidOunces.toOilBarrels(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Oil Barrels to US Fluid Ounces', () => {
+    expect(Volume.OilBarrels.toUSFluidOunces(4.9)).toBeCloseTo(26342.4, 1);
+    expect(Volume.OilBarrels.toUSFluidOunces(0.4)).toBeCloseTo(2150.4, 1);
+    expect(Volume.OilBarrels.toUSFluidOunces(3.0)).toBeCloseTo(16128.0, 1);
+});
+
+it('From Oil Barrels to US Cups and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.OilBarrels.toUSCups(value)
+            const convertBack = Volume.USCups.toOilBarrels(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Oil Barrels to US Cups', () => {
+    expect(Volume.OilBarrels.toUSCups(55.0)).toBeCloseTo(36434.5849, 1);
+    expect(Volume.OilBarrels.toUSCups(0.686847)).toBeCloseTo(455.0, 1);
+    expect(Volume.OilBarrels.toUSCups(9.2)).toBeCloseTo(6094.51, 1);
+});
+
+it('From Oil Barrels to Cubic Metres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.OilBarrels.toCubicMetres(value)
+            const convertBack = Volume.CubicMetres.toOilBarrels(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Oil Barrels to Cubic Metres', () => {
+    expect(Volume.OilBarrels.toCubicMetres(7.0)).toBeCloseTo(1.1129112, 1);
+    expect(Volume.OilBarrels.toCubicMetres(3.0)).toBeCloseTo(0.476962, 1);
+    expect(Volume.OilBarrels.toCubicMetres(78.0)).toBeCloseTo(12.401, 1);
+});
+
+it('From Oil Barrels to Cubic Feet and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.OilBarrels.toCubicFeet(value)
+            const convertBack = Volume.CubicFeet.toOilBarrels(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Oil Barrels to Cubic Feet', () => {
+    expect(Volume.OilBarrels.toCubicFeet(88.0)).toBeCloseTo(494.083, 1);
+    expect(Volume.OilBarrels.toCubicFeet(3.0)).toBeCloseTo(16.8438, 1);
+    expect(Volume.OilBarrels.toCubicFeet(11.0)).toBeCloseTo(61.7604, 1);
+});
+
+it('From Oil Barrels to Cubic Inches and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.OilBarrels.toCubicInches(value)
+            const convertBack = Volume.CubicInches.toOilBarrels(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Oil Barrels to Cubic Inches', () => {
+    expect(Volume.OilBarrels.toCubicInches(100.4)).toBeCloseTo(974080.8, 1);
+    expect(Volume.OilBarrels.toCubicInches(5.0)).toBeCloseTo(48510.0, 1);
+    expect(Volume.OilBarrels.toCubicInches(66.0)).toBeCloseTo(640332.0, 1);
 });
 
 it('From Pints to Millilitres and back', () => {
@@ -1537,6 +3169,74 @@ it('Convert known Pints to US Cups', () => {
     expect(Volume.Pints.toUSCups(50.6)).toBeCloseTo(121.5361, 1);
 });
 
+it('From Pints to Cubic Metres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Pints.toCubicMetres(value)
+            const convertBack = Volume.CubicMetres.toPints(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Pints to Cubic Metres', () => {
+    expect(Volume.Pints.toCubicMetres(21117.0)).toBeCloseTo(12.0, 1);
+    expect(Volume.Pints.toCubicMetres(14078.0)).toBeCloseTo(8.0, 1);
+    expect(Volume.Pints.toCubicMetres(9999.0)).toBeCloseTo(5.682044, 1);
+});
+
+it('From Pints to Cubic Feet and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Pints.toCubicFeet(value)
+            const convertBack = Volume.CubicFeet.toPints(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Pints to Cubic Feet', () => {
+    expect(Volume.Pints.toCubicFeet(44.0)).toBeCloseTo(0.88299, 1);
+    expect(Volume.Pints.toCubicFeet(1234.0)).toBeCloseTo(24.76386, 1);
+    expect(Volume.Pints.toCubicFeet(8000.0)).toBeCloseTo(160.5436, 1);
+});
+
+it('From Pints to Cubic Inches and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Pints.toCubicInches(value)
+            const convertBack = Volume.CubicInches.toPints(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Pints to Cubic Inches', () => {
+    expect(Volume.Pints.toCubicInches(5.0)).toBeCloseTo(173.387, 1);
+    expect(Volume.Pints.toCubicInches(777.0)).toBeCloseTo(26944.33979, 1);
+    expect(Volume.Pints.toCubicInches(35.58511)).toBeCloseTo(1234.0, 1);
+});
+
+it('From Pints to Oil Barrels and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Pints.toOilBarrels(value)
+            const convertBack = Volume.OilBarrels.toPints(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Pints to Oil Barrels', () => {
+    expect(Volume.Pints.toOilBarrels(1398.89)).toBeCloseTo(5.0, 1);
+    expect(Volume.Pints.toOilBarrels(122.0)).toBeCloseTo(0.436059, 1);
+    expect(Volume.Pints.toOilBarrels(559.557)).toBeCloseTo(2.0, 1);
+});
+
 it('From Quarts to Millilitres and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -1790,6 +3490,74 @@ it('Convert known Quarts to US Cups', () => {
     expect(Volume.Quarts.toUSCups(2.0)).toBeCloseTo(9.6076, 1);
     expect(Volume.Quarts.toUSCups(800.9)).toBeCloseTo(3847.3632, 1);
     expect(Volume.Quarts.toUSCups(0.23)).toBeCloseTo(1.104874, 1);
+});
+
+it('From Quarts to Cubic Metres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Quarts.toCubicMetres(value)
+            const convertBack = Volume.CubicMetres.toQuarts(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Quarts to Cubic Metres', () => {
+    expect(Volume.Quarts.toCubicMetres(7918.89)).toBeCloseTo(9.0, 1);
+    expect(Volume.Quarts.toCubicMetres(1200.0)).toBeCloseTo(1.363827, 1);
+    expect(Volume.Quarts.toCubicMetres(8000.0)).toBeCloseTo(9.09218, 1);
+});
+
+it('From Quarts to Cubic Feet and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Quarts.toCubicFeet(value)
+            const convertBack = Volume.CubicFeet.toQuarts(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Quarts to Cubic Feet', () => {
+    expect(Volume.Quarts.toCubicFeet(20.0)).toBeCloseTo(0.802718, 1);
+    expect(Volume.Quarts.toCubicFeet(800.0)).toBeCloseTo(32.1087, 1);
+    expect(Volume.Quarts.toCubicFeet(67.0)).toBeCloseTo(2.68911, 1);
+});
+
+it('From Quarts to Cubic Inches and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Quarts.toCubicInches(value)
+            const convertBack = Volume.CubicInches.toQuarts(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Quarts to Cubic Inches', () => {
+    expect(Volume.Quarts.toCubicInches(777.0)).toBeCloseTo(53888.75729, 1);
+    expect(Volume.Quarts.toCubicInches(8.16093)).toBeCloseTo(566.0, 1);
+    expect(Volume.Quarts.toCubicInches(76.0)).toBeCloseTo(5270.97, 1);
+});
+
+it('From Quarts to Oil Barrels and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Quarts.toOilBarrels(value)
+            const convertBack = Volume.OilBarrels.toQuarts(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Quarts to Oil Barrels', () => {
+    expect(Volume.Quarts.toOilBarrels(839.336)).toBeCloseTo(6.0, 1);
+    expect(Volume.Quarts.toOilBarrels(41.9668)).toBeCloseTo(0.3, 1);
+    expect(Volume.Quarts.toOilBarrels(22.0)).toBeCloseTo(0.157267, 1);
 });
 
 it('From Tablespoons to Millilitres and back', () => {
@@ -2047,6 +3815,74 @@ it('Convert known Tablespoons to US Cups', () => {
     expect(Volume.Tablespoons.toUSCups(1000.0)).toBeCloseTo(75.0594, 1);
 });
 
+it('From Tablespoons to Cubic Metres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Tablespoons.toCubicMetres(value)
+            const convertBack = Volume.CubicMetres.toTablespoons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Tablespoons to Cubic Metres', () => {
+    expect(Volume.Tablespoons.toCubicMetres(10000.0)).toBeCloseTo(0.1775817, 1);
+    expect(Volume.Tablespoons.toCubicMetres(3378.726)).toBeCloseTo(0.059999995422, 1);
+    expect(Volume.Tablespoons.toCubicMetres(800009.0)).toBeCloseTo(14.2066969, 1);
+});
+
+it('From Tablespoons to Cubic Feet and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Tablespoons.toCubicFeet(value)
+            const convertBack = Volume.CubicFeet.toTablespoons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Tablespoons to Cubic Feet', () => {
+    expect(Volume.Tablespoons.toCubicFeet(780.0)).toBeCloseTo(0.489157, 1);
+    expect(Volume.Tablespoons.toCubicFeet(6378.32)).toBeCloseTo(4.0, 1);
+    expect(Volume.Tablespoons.toCubicFeet(8451.28)).toBeCloseTo(5.3, 1);
+});
+
+it('From Tablespoons to Cubic Inches and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Tablespoons.toCubicInches(value)
+            const convertBack = Volume.CubicInches.toTablespoons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Tablespoons to Cubic Inches', () => {
+    expect(Volume.Tablespoons.toCubicInches(66.0)).toBeCloseTo(71.5222, 1);
+    expect(Volume.Tablespoons.toCubicInches(123.0)).toBeCloseTo(133.291, 1);
+    expect(Volume.Tablespoons.toCubicInches(56.0)).toBeCloseTo(60.6855, 1);
+});
+
+it('From Tablespoons to Oil Barrels and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Tablespoons.toOilBarrels(value)
+            const convertBack = Volume.OilBarrels.toTablespoons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Tablespoons to Oil Barrels', () => {
+    expect(Volume.Tablespoons.toOilBarrels(44764.5)).toBeCloseTo(5.0, 1);
+    expect(Volume.Tablespoons.toOilBarrels(12222.0)).toBeCloseTo(1.3651429, 1);
+    expect(Volume.Tablespoons.toOilBarrels(800.0)).toBeCloseTo(0.0893564, 1);
+});
+
 it('From Teaspoons to Millilitres and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -2248,7 +4084,7 @@ it('From Teaspoons to US Pints and back', () => {
 it('Convert known Teaspoons to US Pints', () => {
     expect(Volume.Teaspoons.toUSPints(106.0)).toBeCloseTo(1.32605, 1);
     expect(Volume.Teaspoons.toUSPints(34.0)).toBeCloseTo(0.425337, 1);
-    expect(Volume.Teaspoons.toUSPints(6.21)).toBeCloseTo(0.07656059, 1);
+    expect(Volume.Teaspoons.toUSPints(6.21)).toBeCloseTo(0.07768648, 1);
 });
 
 it('From Teaspoons to US Gallons and back', () => {
@@ -2300,6 +4136,74 @@ it('Convert known Teaspoons to US Cups', () => {
     expect(Volume.Teaspoons.toUSCups(8000.0)).toBeCloseTo(200.1584, 1);
     expect(Volume.Teaspoons.toUSCups(34.0)).toBeCloseTo(0.850673, 1);
     expect(Volume.Teaspoons.toUSCups(109.9)).toBeCloseTo(2.7496761, 1);
+});
+
+it('From Teaspoons to Cubic Metres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Teaspoons.toCubicMetres(value)
+            const convertBack = Volume.CubicMetres.toTeaspoons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Teaspoons to Cubic Metres', () => {
+    expect(Volume.Teaspoons.toCubicMetres(152043.0)).toBeCloseTo(0.9, 1);
+    expect(Volume.Teaspoons.toCubicMetres(3378.726)).toBeCloseTo(0.02, 1);
+    expect(Volume.Teaspoons.toCubicMetres(8000.0)).toBeCloseTo(0.04735512, 1);
+});
+
+it('From Teaspoons to Cubic Feet and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Teaspoons.toCubicFeet(value)
+            const convertBack = Volume.CubicFeet.toTeaspoons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Teaspoons to Cubic Feet', () => {
+    expect(Volume.Teaspoons.toCubicFeet(600.0)).toBeCloseTo(0.125425, 1);
+    expect(Volume.Teaspoons.toCubicFeet(1234.0)).toBeCloseTo(0.257957, 1);
+    expect(Volume.Teaspoons.toCubicFeet(880.0)).toBeCloseTo(0.183956, 1);
+});
+
+it('From Teaspoons to Cubic Inches and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Teaspoons.toCubicInches(value)
+            const convertBack = Volume.CubicInches.toTeaspoons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Teaspoons to Cubic Inches', () => {
+    expect(Volume.Teaspoons.toCubicInches(8.0)).toBeCloseTo(2.88979, 1);
+    expect(Volume.Teaspoons.toCubicInches(12.0)).toBeCloseTo(4.33468, 1);
+    expect(Volume.Teaspoons.toCubicInches(666.0)).toBeCloseTo(240.575, 1);
+});
+
+it('From Teaspoons to Oil Barrels and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.Teaspoons.toOilBarrels(value)
+            const convertBack = Volume.OilBarrels.toTeaspoons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Teaspoons to Oil Barrels', () => {
+    expect(Volume.Teaspoons.toOilBarrels(10743.5)).toBeCloseTo(0.4, 1);
+    expect(Volume.Teaspoons.toOilBarrels(107435.0)).toBeCloseTo(4.0, 1);
+    expect(Volume.Teaspoons.toOilBarrels(134294.0)).toBeCloseTo(5.0, 1);
 });
 
 it('From US Cups to Millilitres and back', () => {
@@ -2557,6 +4461,74 @@ it('Convert known US Cups to US Fluid Ounces', () => {
     expect(Volume.USCups.toUSFluidOunces(0.9)).toBeCloseTo(7.2, 1);
 });
 
+it('From US Cups to Cubic Metres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USCups.toCubicMetres(value)
+            const convertBack = Volume.CubicMetres.toUSCups(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Cups to Cubic Metres', () => {
+    expect(Volume.USCups.toCubicMetres(4555.0)).toBeCloseTo(1.0932, 1);
+    expect(Volume.USCups.toCubicMetres(100900.0)).toBeCloseTo(24.216, 1);
+    expect(Volume.USCups.toCubicMetres(7800.0)).toBeCloseTo(1.872, 1);
+});
+
+it('From US Cups to Cubic Feet and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USCups.toCubicFeet(value)
+            const convertBack = Volume.CubicFeet.toUSCups(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Cups to Cubic Feet', () => {
+    expect(Volume.USCups.toCubicFeet(88.0)).toBeCloseTo(0.745846, 1);
+    expect(Volume.USCups.toCubicFeet(471.947)).toBeCloseTo(4.0, 1);
+    expect(Volume.USCups.toCubicFeet(123.0)).toBeCloseTo(1.04249, 1);
+});
+
+it('From US Cups to Cubic Inches and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USCups.toCubicInches(value)
+            const convertBack = Volume.CubicInches.toUSCups(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Cups to Cubic Inches', () => {
+    expect(Volume.USCups.toCubicInches(6.0)).toBeCloseTo(87.8742, 1);
+    expect(Volume.USCups.toCubicInches(2.3)).toBeCloseTo(33.6851, 1);
+    expect(Volume.USCups.toCubicInches(0.9)).toBeCloseTo(13.1811, 1);
+});
+
+it('From US Cups to Oil Barrels and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USCups.toOilBarrels(value)
+            const convertBack = Volume.OilBarrels.toUSCups(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Cups to Oil Barrels', () => {
+    expect(Volume.USCups.toOilBarrels(43721.5)).toBeCloseTo(66.0, 1);
+    expect(Volume.USCups.toOilBarrels(1111.0)).toBeCloseTo(1.677115, 1);
+    expect(Volume.USCups.toOilBarrels(3312.24)).toBeCloseTo(5.0, 1);
+});
+
 it('From US Fluid Ounces to Millilitres and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -2810,6 +4782,74 @@ it('Convert known US Fluid Ounces to US Cups', () => {
     expect(Volume.USFluidOunces.toUSCups(45.0)).toBeCloseTo(5.625, 1);
     expect(Volume.USFluidOunces.toUSCups(66.9)).toBeCloseTo(8.3625, 1);
     expect(Volume.USFluidOunces.toUSCups(0.29)).toBeCloseTo(0.03625, 1);
+});
+
+it('From US Fluid Ounces to Cubic Metres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USFluidOunces.toCubicMetres(value)
+            const convertBack = Volume.CubicMetres.toUSFluidOunces(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Fluid Ounces to Cubic Metres', () => {
+    expect(Volume.USFluidOunces.toCubicMetres(800900.0)).toBeCloseTo(23.6854398, 1);
+    expect(Volume.USFluidOunces.toCubicMetres(789.0)).toBeCloseTo(0.0233335, 1);
+    expect(Volume.USFluidOunces.toCubicMetres(100100.0)).toBeCloseTo(2.96031031, 1);
+});
+
+it('From US Fluid Ounces to Cubic Feet and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USFluidOunces.toCubicFeet(value)
+            const convertBack = Volume.CubicFeet.toUSFluidOunces(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Fluid Ounces to Cubic Feet', () => {
+    expect(Volume.USFluidOunces.toCubicFeet(344.0)).toBeCloseTo(0.359266, 1);
+    expect(Volume.USFluidOunces.toCubicFeet(8009.0)).toBeCloseTo(8.364434, 1);
+    expect(Volume.USFluidOunces.toCubicFeet(3830.03)).toBeCloseTo(4.0, 1);
+});
+
+it('From US Fluid Ounces to Cubic Inches and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USFluidOunces.toCubicInches(value)
+            const convertBack = Volume.CubicInches.toUSFluidOunces(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Fluid Ounces to Cubic Inches', () => {
+    expect(Volume.USFluidOunces.toCubicInches(66.0)).toBeCloseTo(119.109, 1);
+    expect(Volume.USFluidOunces.toCubicInches(900.0)).toBeCloseTo(1624.22, 1);
+    expect(Volume.USFluidOunces.toCubicInches(8.0)).toBeCloseTo(14.4375, 1);
+});
+
+it('From US Fluid Ounces to Oil Barrels and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USFluidOunces.toOilBarrels(value)
+            const convertBack = Volume.OilBarrels.toUSFluidOunces(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Fluid Ounces to Oil Barrels', () => {
+    expect(Volume.USFluidOunces.toOilBarrels(32256.0)).toBeCloseTo(6.0, 1);
+    expect(Volume.USFluidOunces.toOilBarrels(1899.0)).toBeCloseTo(0.3532366, 1);
+    expect(Volume.USFluidOunces.toOilBarrels(6988.8)).toBeCloseTo(1.3, 1);
 });
 
 it('From US Gallons to Millilitres and back', () => {
@@ -3067,6 +5107,74 @@ it('Convert known US Gallons to US Cups', () => {
     expect(Volume.USGallons.toUSCups(0.98)).toBeCloseTo(15.68, 1);
 });
 
+it('From US Gallons to Cubic Metres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USGallons.toCubicMetres(value)
+            const convertBack = Volume.CubicMetres.toUSGallons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Gallons to Cubic Metres', () => {
+    expect(Volume.USGallons.toCubicMetres(1849.2)).toBeCloseTo(7.0, 1);
+    expect(Volume.USGallons.toCubicMetres(87.0)).toBeCloseTo(0.329331, 1);
+    expect(Volume.USGallons.toCubicMetres(123456.0)).toBeCloseTo(467.331797, 1);
+});
+
+it('From US Gallons to Cubic Feet and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USGallons.toCubicFeet(value)
+            const convertBack = Volume.CubicFeet.toUSGallons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Gallons to Cubic Feet', () => {
+    expect(Volume.USGallons.toCubicFeet(6.0)).toBeCloseTo(0.802083, 1);
+    expect(Volume.USGallons.toCubicFeet(24.0)).toBeCloseTo(3.20833, 1);
+    expect(Volume.USGallons.toCubicFeet(5.0)).toBeCloseTo(0.668403, 1);
+});
+
+it('From US Gallons to Cubic Inches and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USGallons.toCubicInches(value)
+            const convertBack = Volume.CubicInches.toUSGallons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Gallons to Cubic Inches', () => {
+    expect(Volume.USGallons.toCubicInches(6.0)).toBeCloseTo(1386.0, 1);
+    expect(Volume.USGallons.toCubicInches(190.0)).toBeCloseTo(43890.0, 1);
+    expect(Volume.USGallons.toCubicInches(55.0)).toBeCloseTo(12705.0, 1);
+});
+
+it('From US Gallons to Oil Barrels and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USGallons.toOilBarrels(value)
+            const convertBack = Volume.OilBarrels.toUSGallons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Gallons to Oil Barrels', () => {
+    expect(Volume.USGallons.toOilBarrels(966.0)).toBeCloseTo(23.0, 1);
+    expect(Volume.USGallons.toOilBarrels(1234.0)).toBeCloseTo(29.38095, 1);
+    expect(Volume.USGallons.toOilBarrels(16.8)).toBeCloseTo(0.4, 1);
+});
+
 it('From US Pints to Millilitres and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -3320,6 +5428,74 @@ it('Convert known US Pints to US Cups', () => {
     expect(Volume.USPints.toUSCups(23.9)).toBeCloseTo(47.8, 1);
     expect(Volume.USPints.toUSCups(1009.0)).toBeCloseTo(2018.0, 1);
     expect(Volume.USPints.toUSCups(45.9)).toBeCloseTo(91.8, 1);
+});
+
+it('From US Pints to Cubic Metres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USPints.toCubicMetres(value)
+            const convertBack = Volume.CubicMetres.toUSPints(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Pints to Cubic Metres', () => {
+    expect(Volume.USPints.toCubicMetres(14793.6)).toBeCloseTo(7.0, 1);
+    expect(Volume.USPints.toCubicMetres(700.0)).toBeCloseTo(0.331224, 1);
+    expect(Volume.USPints.toCubicMetres(123456.0)).toBeCloseTo(58.4164747, 1);
+});
+
+it('From US Pints to Cubic Feet and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USPints.toCubicFeet(value)
+            const convertBack = Volume.CubicFeet.toUSPints(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Pints to Cubic Feet', () => {
+    expect(Volume.USPints.toCubicFeet(66.0)).toBeCloseTo(1.10286, 1);
+    expect(Volume.USPints.toCubicFeet(2692.99)).toBeCloseTo(45.0, 1);
+    expect(Volume.USPints.toCubicFeet(123.0)).toBeCloseTo(2.05534, 1);
+});
+
+it('From US Pints to Cubic Inches and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USPints.toCubicInches(value)
+            const convertBack = Volume.CubicInches.toUSPints(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Pints to Cubic Inches', () => {
+    expect(Volume.USPints.toCubicInches(66.0)).toBeCloseTo(1905.75, 1);
+    expect(Volume.USPints.toCubicInches(900.0)).toBeCloseTo(25987.5, 1);
+    expect(Volume.USPints.toCubicInches(6.7)).toBeCloseTo(193.463, 1);
+});
+
+it('From US Pints to Oil Barrels and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USPints.toOilBarrels(value)
+            const convertBack = Volume.OilBarrels.toUSPints(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Pints to Oil Barrels', () => {
+    expect(Volume.USPints.toOilBarrels(223776.0)).toBeCloseTo(666.0, 1);
+    expect(Volume.USPints.toOilBarrels(1234.0)).toBeCloseTo(3.672619, 1);
+    expect(Volume.USPints.toOilBarrels(302.4)).toBeCloseTo(0.9, 1);
 });
 
 it('From US Quarts to Millilitres and back', () => {
@@ -3577,6 +5753,74 @@ it('Convert known US Quarts to US Cups', () => {
     expect(Volume.USQuarts.toUSCups(0.66)).toBeCloseTo(2.64, 1);
 });
 
+it('From US Quarts to Cubic Metres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USQuarts.toCubicMetres(value)
+            const convertBack = Volume.CubicMetres.toUSQuarts(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Quarts to Cubic Metres', () => {
+    expect(Volume.USQuarts.toCubicMetres(8453.51)).toBeCloseTo(8.0, 1);
+    expect(Volume.USQuarts.toCubicMetres(5000.0)).toBeCloseTo(4.731765, 1);
+    expect(Volume.USQuarts.toCubicMetres(123456.0)).toBeCloseTo(116.832949, 1);
+});
+
+it('From US Quarts to Cubic Feet and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USQuarts.toCubicFeet(value)
+            const convertBack = Volume.CubicFeet.toUSQuarts(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Quarts to Cubic Feet', () => {
+    expect(Volume.USQuarts.toCubicFeet(44.0)).toBeCloseTo(1.47049, 1);
+    expect(Volume.USQuarts.toCubicFeet(2663.06)).toBeCloseTo(89.0, 1);
+    expect(Volume.USQuarts.toCubicFeet(444.0)).toBeCloseTo(14.8385, 1);
+});
+
+it('From US Quarts to Cubic Inches and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USQuarts.toCubicInches(value)
+            const convertBack = Volume.CubicInches.toUSQuarts(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Quarts to Cubic Inches', () => {
+    expect(Volume.USQuarts.toCubicInches(44.0)).toBeCloseTo(2541.0, 1);
+    expect(Volume.USQuarts.toCubicInches(800.0)).toBeCloseTo(46200.0, 1);
+    expect(Volume.USQuarts.toCubicInches(6.0)).toBeCloseTo(346.5, 1);
+});
+
+it('From US Quarts to Oil Barrels and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USQuarts.toOilBarrels(value)
+            const convertBack = Volume.OilBarrels.toUSQuarts(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Quarts to Oil Barrels', () => {
+    expect(Volume.USQuarts.toOilBarrels(9240.0)).toBeCloseTo(55.0, 1);
+    expect(Volume.USQuarts.toOilBarrels(1344.0)).toBeCloseTo(8.0, 1);
+    expect(Volume.USQuarts.toOilBarrels(207312.0)).toBeCloseTo(1234.0, 1);
+});
+
 it('From US Tablespoons to Millilitres and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -3832,6 +6076,74 @@ it('Convert known US Tablespoons to US Cups', () => {
     expect(Volume.USTablespoons.toUSCups(9000.9)).toBeCloseTo(562.55625, 1);
 });
 
+it('From US Tablespoons to Cubic Metres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USTablespoons.toCubicMetres(value)
+            const convertBack = Volume.CubicMetres.toUSTablespoons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Tablespoons to Cubic Metres', () => {
+    expect(Volume.USTablespoons.toCubicMetres(541024.0)).toBeCloseTo(8.0, 1);
+    expect(Volume.USTablespoons.toCubicMetres(10200.0)).toBeCloseTo(0.150825, 1);
+    expect(Volume.USTablespoons.toCubicMetres(123456.0)).toBeCloseTo(1.82551483, 1);
+});
+
+it('From US Tablespoons to Cubic Feet and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USTablespoons.toCubicFeet(value)
+            const convertBack = Volume.CubicFeet.toUSTablespoons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Tablespoons to Cubic Feet', () => {
+    expect(Volume.USTablespoons.toCubicFeet(66.0)).toBeCloseTo(0.0344645, 1);
+    expect(Volume.USTablespoons.toCubicFeet(7660.05)).toBeCloseTo(4.0, 1);
+    expect(Volume.USTablespoons.toCubicFeet(1234.0)).toBeCloseTo(0.6443821, 1);
+});
+
+it('From US Tablespoons to Cubic Inches and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USTablespoons.toCubicInches(value)
+            const convertBack = Volume.CubicInches.toUSTablespoons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Tablespoons to Cubic Inches', () => {
+    expect(Volume.USTablespoons.toCubicInches(900.0)).toBeCloseTo(812.109, 1);
+    expect(Volume.USTablespoons.toCubicInches(10.0)).toBeCloseTo(9.02344, 1);
+    expect(Volume.USTablespoons.toCubicInches(4.0)).toBeCloseTo(3.60938, 1);
+});
+
+it('From US Tablespoons to Oil Barrels and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USTablespoons.toOilBarrels(value)
+            const convertBack = Volume.OilBarrels.toUSTablespoons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Tablespoons to Oil Barrels', () => {
+    expect(Volume.USTablespoons.toOilBarrels(591360.0)).toBeCloseTo(55.0, 1);
+    expect(Volume.USTablespoons.toOilBarrels(4300.8)).toBeCloseTo(0.4, 1);
+    expect(Volume.USTablespoons.toOilBarrels(34406.4)).toBeCloseTo(3.2, 1);
+});
+
 it('From US Teaspoons to Millilitres and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -4085,5 +6397,73 @@ it('Convert known US Teaspoons to US Cups', () => {
     expect(Volume.USTeaspoons.toUSCups(90.0)).toBeCloseTo(1.875, 1);
     expect(Volume.USTeaspoons.toUSCups(4500.8)).toBeCloseTo(93.7666363, 1);
     expect(Volume.USTeaspoons.toUSCups(0.9)).toBeCloseTo(0.01875, 1);
+});
+
+it('From US Teaspoons to Cubic Metres and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USTeaspoons.toCubicMetres(value)
+            const convertBack = Volume.CubicMetres.toUSTeaspoons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Teaspoons to Cubic Metres', () => {
+    expect(Volume.USTeaspoons.toCubicMetres(405768.0)).toBeCloseTo(2.0, 1);
+    expect(Volume.USTeaspoons.toCubicMetres(80808.0)).toBeCloseTo(0.39829617, 1);
+    expect(Volume.USTeaspoons.toCubicMetres(123456.0)).toBeCloseTo(0.608504748, 1);
+});
+
+it('From US Teaspoons to Cubic Feet and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USTeaspoons.toCubicFeet(value)
+            const convertBack = Volume.CubicFeet.toUSTeaspoons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Teaspoons to Cubic Feet', () => {
+    expect(Volume.USTeaspoons.toCubicFeet(2000.0)).toBeCloseTo(0.3481263, 1);
+    expect(Volume.USTeaspoons.toCubicFeet(6894.05)).toBeCloseTo(1.2, 1);
+    expect(Volume.USTeaspoons.toCubicFeet(12345.0)).toBeCloseTo(2.1488098, 1);
+});
+
+it('From US Teaspoons to Cubic Inches and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USTeaspoons.toCubicInches(value)
+            const convertBack = Volume.CubicInches.toUSTeaspoons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Teaspoons to Cubic Inches', () => {
+    expect(Volume.USTeaspoons.toCubicInches(23.2727)).toBeCloseTo(7.0, 1);
+    expect(Volume.USTeaspoons.toCubicInches(219.429)).toBeCloseTo(66.0, 1);
+    expect(Volume.USTeaspoons.toCubicInches(39.8961)).toBeCloseTo(12.0, 1);
+});
+
+it('From US Teaspoons to Oil Barrels and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Volume.USTeaspoons.toOilBarrels(value)
+            const convertBack = Volume.OilBarrels.toUSTeaspoons(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known US Teaspoons to Oil Barrels', () => {
+    expect(Volume.USTeaspoons.toOilBarrels(103219.0)).toBeCloseTo(3.2, 1);
+    expect(Volume.USTeaspoons.toOilBarrels(6666.0)).toBeCloseTo(0.2066592, 1);
+    expect(Volume.USTeaspoons.toOilBarrels(64512.0)).toBeCloseTo(2.0, 1);
 });
 

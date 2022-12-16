@@ -667,7 +667,7 @@ it('From Kibibits to Terabytes and back', () => {
 it('Convert known Kibibits to Terabytes', () => {
     expect(DataStorage.Kibibits.toTerabytes(120000000.0)).toBeCloseTo(0.01536, 1);
     expect(DataStorage.Kibibits.toTerabytes(88e12)).toBeCloseTo(11264.0, 1);
-    expect(DataStorage.Kibibits.toTerabytes(9000000.0)).toBeCloseTo(0.009216, 1);
+    expect(DataStorage.Kibibits.toTerabytes(9000000.0)).toBeCloseTo(0.001152, 1);
 });
 
 it('From Kibibits to Mebibits and back', () => {
