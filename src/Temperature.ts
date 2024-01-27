@@ -15,6 +15,9 @@ export namespace Temperature {
 		static toRankine(value: number): number {
 			return value * 9.0/5.0 + 491.67;
 		}
+		static toReaumur(value: number): number {
+			return value / 1.25;
+		}
 	}
 
 	export class Fahrenheit {
@@ -26,6 +29,9 @@ export namespace Temperature {
 		}
 		static toRankine(value: number): number {
 			return value + 459.67;
+		}
+		static toReaumur(value: number): number {
+			return (value - 32.0) / 2.25;
 		}
 	}
 
@@ -39,6 +45,9 @@ export namespace Temperature {
 		static toRankine(value: number): number {
 			return value * 1.8;
 		}
+		static toReaumur(value: number): number {
+			return (value - 273.15) / 1.25;
+		}
 	}
 
 	export class Rankine {
@@ -50,6 +59,24 @@ export namespace Temperature {
 		}
 		static toKelvin(value: number): number {
 			return value / 1.8;
+		}
+		static toReaumur(value: number): number {
+			return (value - 491.67) / 2.25;
+		}
+	}
+
+	export class Reaumur {
+		static toKelvin(value: number): number {
+			return value * 1.25 + 273.15;
+		}
+		static toCelsius(value: number): number {
+			return value * 1.25;
+		}
+		static toFahrenheit(value: number): number {
+			return value * 2.25 + 32.0;
+		}
+		static toRankine(value: number): number {
+			return value * 2.25 + 491.67;
 		}
 	}
 }

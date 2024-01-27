@@ -150,6 +150,11 @@ Each unit of measure then includes functions to convert to each for example, con
 	* Stones (stone)
 	* Tonnes (tonne)
 
+### Power
+
+	* Mechanical Horse Power (hp)
+	* Metric Horse Power (ps)
+
 ### Pressure
 
 	* Atmospheres (atm)
@@ -172,6 +177,7 @@ Each unit of measure then includes functions to convert to each for example, con
 	* Fahrenheit (F)
 	* Kelvin (K)
 	* Rankine (R)
+	* Reaumur (r)
 
 ### Time
 

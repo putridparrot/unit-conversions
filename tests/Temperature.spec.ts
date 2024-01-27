@@ -58,6 +58,23 @@ it('Convert known Celsius to Rankine', () => {
     expect(Temperature.Celsius.toRankine(-3.0)).toBeCloseTo(486.27, 1);
 });
 
+it('From Celsius to Reaumur and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Temperature.Celsius.toReaumur(value)
+            const convertBack = Temperature.Reaumur.toCelsius(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Celsius to Reaumur', () => {
+    expect(Temperature.Celsius.toReaumur(123.0)).toBeCloseTo(98.4, 1);
+    expect(Temperature.Celsius.toReaumur(15.67)).toBeCloseTo(12.536, 1);
+    expect(Temperature.Celsius.toReaumur(87.0)).toBeCloseTo(69.6, 1);
+});
+
 it('From Fahrenheit to Celsius and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -107,6 +124,23 @@ it('Convert known Fahrenheit to Rankine', () => {
     expect(Temperature.Fahrenheit.toRankine(123.0)).toBeCloseTo(582.67, 1);
     expect(Temperature.Fahrenheit.toRankine(9.2)).toBeCloseTo(468.87, 1);
     expect(Temperature.Fahrenheit.toRankine(0.2)).toBeCloseTo(459.87, 1);
+});
+
+it('From Fahrenheit to Reaumur and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Temperature.Fahrenheit.toReaumur(value)
+            const convertBack = Temperature.Reaumur.toFahrenheit(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Fahrenheit to Reaumur', () => {
+    expect(Temperature.Fahrenheit.toReaumur(67.0)).toBeCloseTo(15.555555556, 1);
+    expect(Temperature.Fahrenheit.toReaumur(1.6)).toBeCloseTo(-13.511111111, 1);
+    expect(Temperature.Fahrenheit.toReaumur(900.0)).toBeCloseTo(385.77777778, 1);
 });
 
 it('From Kelvin to Celsius and back', () => {
@@ -160,6 +194,23 @@ it('Convert known Kelvin to Rankine', () => {
     expect(Temperature.Kelvin.toRankine(0.8)).toBeCloseTo(1.44, 1);
 });
 
+it('From Kelvin to Reaumur and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Temperature.Kelvin.toReaumur(value)
+            const convertBack = Temperature.Reaumur.toKelvin(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Kelvin to Reaumur', () => {
+    expect(Temperature.Kelvin.toReaumur(900.0)).toBeCloseTo(501.48, 1);
+    expect(Temperature.Kelvin.toReaumur(1.3)).toBeCloseTo(-217.48, 1);
+    expect(Temperature.Kelvin.toReaumur(60.0)).toBeCloseTo(-170.52, 1);
+});
+
 it('From Rankine to Celsius and back', () => {
     fc.assert(
         fc.property(fc.float(), value => {
@@ -209,5 +260,90 @@ it('Convert known Rankine to Kelvin', () => {
     expect(Temperature.Rankine.toKelvin(123.0)).toBeCloseTo(68.333333333, 1);
     expect(Temperature.Rankine.toKelvin(0.9)).toBeCloseTo(0.5, 1);
     expect(Temperature.Rankine.toKelvin(23.0)).toBeCloseTo(12.777777778, 1);
+});
+
+it('From Rankine to Reaumur and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Temperature.Rankine.toReaumur(value)
+            const convertBack = Temperature.Reaumur.toRankine(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Rankine to Reaumur', () => {
+    expect(Temperature.Rankine.toReaumur(900.0)).toBeCloseTo(181.48, 1);
+    expect(Temperature.Rankine.toReaumur(34.9)).toBeCloseTo(-203.00888889, 1);
+    expect(Temperature.Rankine.toReaumur(0.7)).toBeCloseTo(-218.20888889, 1);
+});
+
+it('From Reaumur to Kelvin and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Temperature.Reaumur.toKelvin(value)
+            const convertBack = Temperature.Kelvin.toReaumur(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Reaumur to Kelvin', () => {
+    expect(Temperature.Reaumur.toKelvin(128.0)).toBeCloseTo(433.15, 1);
+    expect(Temperature.Reaumur.toKelvin(7.4)).toBeCloseTo(282.4, 1);
+    expect(Temperature.Reaumur.toKelvin(1.5)).toBeCloseTo(275.025, 1);
+});
+
+it('From Reaumur to Celsius and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Temperature.Reaumur.toCelsius(value)
+            const convertBack = Temperature.Celsius.toReaumur(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Reaumur to Celsius', () => {
+    expect(Temperature.Reaumur.toCelsius(1.5)).toBeCloseTo(1.875, 1);
+    expect(Temperature.Reaumur.toCelsius(23.9)).toBeCloseTo(29.875, 1);
+    expect(Temperature.Reaumur.toCelsius(0.3)).toBeCloseTo(0.375, 1);
+});
+
+it('From Reaumur to Fahrenheit and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Temperature.Reaumur.toFahrenheit(value)
+            const convertBack = Temperature.Fahrenheit.toReaumur(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Reaumur to Fahrenheit', () => {
+    expect(Temperature.Reaumur.toFahrenheit(0.3)).toBeCloseTo(32.675, 1);
+    expect(Temperature.Reaumur.toFahrenheit(87.0)).toBeCloseTo(227.75, 1);
+    expect(Temperature.Reaumur.toFahrenheit(34.1)).toBeCloseTo(108.725, 1);
+});
+
+it('From Reaumur to Rankine and back', () => {
+    fc.assert(
+        fc.property(fc.float(), value => {
+            const convertTo = Temperature.Reaumur.toRankine(value)
+            const convertBack = Temperature.Rankine.toReaumur(convertTo)
+
+            expect(convertBack).toBeCloseTo(convertBack, 1);
+        })
+    )
+});
+
+it('Convert known Reaumur to Rankine', () => {
+    expect(Temperature.Reaumur.toRankine(34.1)).toBeCloseTo(568.395, 1);
+    expect(Temperature.Reaumur.toRankine(10.6)).toBeCloseTo(515.52, 1);
+    expect(Temperature.Reaumur.toRankine(1.9)).toBeCloseTo(495.945, 1);
 });
 
